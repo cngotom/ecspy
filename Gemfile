@@ -36,8 +36,7 @@ gem 'jquery-rails'
 
 # To use debugger
 # gem 'ruby-debug19', :require => 'ruby-debug'
-
+gem "jquery-ui-rails"
 gem 'activeadmin'
 
-
-gem 'acts_as_versioned' 
+#gem 'acts_as_versioned', :git => 'https://github.com/jwhitehorn/acts_as_versioned.git'

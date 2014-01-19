@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  titie: MyString
+  desc: MyString
+  content: MyText
+  price: 1.5
+  shop_id: 
+  item_sn: MyString
+
+two:
+  titie: MyString
+  desc: MyString
+  content: MyText
+  price: 1.5
+  shop_id: 
+  item_sn: MyString
