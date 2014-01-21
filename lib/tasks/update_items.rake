@@ -1,13 +1,18 @@
 require 'json'
+require 'time'
 desc 'auto update shop`s items'
 
-Exec = 'phantomjs '
+Exec = 'phantomjs'
 Debug = '--debug=yes'
 ScriptDir = File.join(Rails.root,'lib','tasks','phantomjs-script')
 
 GetListLog = "log/phantomjs/getlist.log"
-
 GetListRes = "log/phantomjs/getlist.res"
+
+
+GetSalesLog  = "log/phantomjs/getsales.log"
+GetSalesRes = "log/phantomjs/getsales.res"
+
 task :update_shop_items_list => :environment do
   
 
@@ -61,6 +66,53 @@ task :update_shop_items_list => :environment do
 		end
 
 	end
+
+
+end
+
+
+
+
+task :update_shop_item_sales =>:environment do
+
+	shopitems = ShopItem.recently_not_check
+
+	shopitems.each do |item|
+		puts "#{item.title},last_check_time: #{item.last_check_time.strftime('%Y-%m-%d %H:%M:%S') if item.last_check_time}"
+
+
+		timestamp = item.last_check_time ? item.last_check_time.to_i : 0
+
+		puts "#{Exec} #{ScriptDir}/getitem.js #{item.item_sn} #{timestamp} #{GetSalesRes} #{GetSalesLog}"
+		retn = `#{Exec} #{ScriptDir}/getitem.js #{item.item_sn} #{timestamp} #{GetSalesRes} #{GetSalesLog}`
+		# => retn = 'ok'
+		if retn.chomp == 'ok'
+
+			puts 'execute ok'
+
+			if File.exist?(GetSalesRes)
+				open(GetSalesRes) do |out|
+					out.each_line do |line|	
+						data =  JSON.parse(line)
+						data['shop_item_id'] = item.id
+						data['buy_time'] = Time.parse(data['buy_time'])
+						ItemSale.create(data)
+
+					end
+				end
+			end
+
+
+			item.check
+
+		else
+			puts retn
+		end
+
+		File.delete GetSalesRes if File.exist?(GetSalesRes)
+
+	end
+
 
 
 end

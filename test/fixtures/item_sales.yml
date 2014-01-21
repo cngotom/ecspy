@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  user_name: MyString
+  user_level: MyString
+  item_price: 1.5
+  item_num: 1
+  buy_time: 2014-01-20 21:05:19
+
+two:
+  user_name: MyString
+  user_level: MyString
+  item_price: 1.5
+  item_num: 1
+  buy_time: 2014-01-20 21:05:19

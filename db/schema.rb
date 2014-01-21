@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140119140415) do
+ActiveRecord::Schema.define(:version => 20140120131036) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -46,6 +46,17 @@ ActiveRecord::Schema.define(:version => 20140119140415) do
   add_index "admin_users", ["email"], :name => "index_admin_users_on_email", :unique => true
   add_index "admin_users", ["reset_password_token"], :name => "index_admin_users_on_reset_password_token", :unique => true
 
+  create_table "item_sales", :force => true do |t|
+    t.string   "user_name"
+    t.string   "user_level"
+    t.float    "item_price"
+    t.integer  "item_num"
+    t.datetime "buy_time"
+    t.integer  "shop_item_id"
+  end
+
+  add_index "item_sales", ["shop_item_id"], :name => "index_item_sales_on_shop_item_id"
+
   create_table "shop_item_versions", :force => true do |t|
     t.integer  "shop_item_id"
     t.integer  "version"
@@ -66,15 +77,17 @@ ActiveRecord::Schema.define(:version => 20140119140415) do
     t.float    "price"
     t.integer  "shop_id"
     t.string   "item_sn"
-    t.datetime "created_at",                    :null => false
-    t.datetime "updated_at",                    :null => false
+    t.datetime "created_at",                     :null => false
+    t.datetime "updated_at",                     :null => false
     t.integer  "comments_count"
     t.integer  "sales_count"
     t.integer  "version"
-    t.integer  "status",         :default => 0
+    t.integer  "status",          :default => 0
+    t.datetime "last_check_time"
   end
 
   add_index "shop_items", ["item_sn"], :name => "index_shop_items_on_item_sn", :unique => true
+  add_index "shop_items", ["shop_id"], :name => "index_shop_items_on_shop_id"
 
   create_table "shops", :force => true do |t|
     t.string   "title"

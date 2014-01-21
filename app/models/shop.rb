@@ -12,4 +12,24 @@ class Shop < ActiveRecord::Base
 			update_attribute(:updated_at,Time.new);
 		end
 	end
+
+
+
+
+	def today_sales_count
+		shop_items.inject(0) {|sum,item|
+			#puts " #{item.id} #{item.title} #{item.today_sales_count}"
+			
+			sum + item.today_sales_count
+		}
+	end
+
+	def today_sales_money
+		shop_items.inject(0) {|sum,item| 
+			#puts " #{item.id} #{item.title} #{item.today_sales_money} #{item.today_sales_money}"
+			sum + item.today_sales_money
+		}
+	end
+
+
 end

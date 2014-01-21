@@ -2,9 +2,11 @@ class ShopItem < ActiveRecord::Base
 
 	belongs_to :shop
 
+	has_many :item_sales
 
 
-	attr_accessible :title,:desc,:content,:price,:shop_id,:item_sn,:sales_count,:comments_count,:status
+
+	attr_accessible :title,:desc,:content,:price,:shop_id,:item_sn,:sales_count,:comments_count,:status,:last_check_time
 
 	acts_as_versioned :if => Proc.new { |item| item.changed? }
 
@@ -15,6 +17,12 @@ class ShopItem < ActiveRecord::Base
 	self.non_versioned_columns << 'comments_count' 
 	self.non_versioned_columns << 'sales_count'
 	self.non_versioned_columns << 'status'
+
+
+
+	scope :recently_not_check ,where(["last_check_time < ? or ( last_check_time is NULL )", Time.now - 6.hour])
+
+
 
 
 	class << self
@@ -68,4 +76,21 @@ class ShopItem < ActiveRecord::Base
 	end
 
 
+	def check
+		update_attribute(:last_check_time,Time.new);
+	end
+
+
+	def today_sales
+		item_sales.where(["buy_time > ? and buy_time < ?",Time.new.beginning_of_day,Time.now])
+	end
+
+	def today_sales_count
+		today_sales.inject(0) {|sum,i| sum + 1 }
+	end
+
+	def today_sales_money
+		today_sales.inject(0) {|sum,i| sum + i.item_num * i.item_price}
+
+	end
 end

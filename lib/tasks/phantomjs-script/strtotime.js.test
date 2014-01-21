@@ -1,0 +1,94 @@
+var page = require('webpage').create();
+page.onConsoleMessage = function(msg) {
+
+		console.log(msg);
+	};
+	page.onCallback = function(msg)
+	{
+
+		fs.write(Args.outfile, msg, 'w');
+
+
+	}
+	page.onAlert = function(msg)
+	{
+		if(msg  === 'save')
+		{
+			page.evaluate(function() {
+				console.log(jQuery('body').html());
+			});
+		}
+		else if( msg === 'close' )
+		{
+			 console.log('ok'); //return code
+			 phantom.exit();
+		}
+}
+url = 'http://detail.tmall.com/item.htm?id=35233326721'
+
+page.settings.resourceTimeout = 100; // 5 seconds
+page.onResourceTimeout = function(e) {
+  console.log(e.errorCode);   // it'll probably be 408 
+  console.log(e.errorString); // it'll probably be 'Network timeout on resource'
+  console.log(e.url);         // the url whose request timed out
+  phantom.exit(1);
+};
+
+page.open(url, function(status) {
+
+
+		phantom.exit();
+		log('pageStart');
+		if ( status === "success" ) {
+
+			 if(page.injectJs("jQuery.min.js"))
+			 {
+			 	 log('loadJs end');
+
+			 	 page.scrollPosition = {
+			  		top: 6495,
+			  		left: 0
+				 };
+
+				page.evaluate(function() {
+
+
+
+					 function strtotime(str){
+					    var _arr = str.split(' ');
+					    var _day = _arr[0].split('-');
+					    _arr[1] = (_arr[1] == null) ? '0:0:0' :_arr[1];
+					    var _time = _arr[1].split(':');
+					    for (var i = _day.length - 1; i >= 0; i--) {
+					    	if(_day[i][0] == '0')
+					    		_day[i] = _day[i].substr(1);
+					        _day[i] = isNaN(parseInt(_day[i])) ? 0 :parseInt(_day[i]);
+					    };
+					    for (var i = _time.length - 1; i >= 0; i--) {
+
+					    	if(_time[i][0] == '0')
+					    		_time[i] = _time[i].substr(1);
+					        _time[i] = isNaN(parseInt(_time[i])) ? 0 :parseInt(_time[i]);
+					    };
+					    var _temp = new Date(_day[0],_day[1]-1,_day[2],_time[0],_time[1],_time[2]);
+
+					    return _temp.getTime() / 1000;
+					}
+
+
+
+
+						console.log(strtotime("2014-01-20 09:55:49"));
+
+
+						console.log(strtotime("2014-01-20 01:19:19"));
+
+
+					
+
+						alert('close')
+
+				});
+			}
+		}
+	});

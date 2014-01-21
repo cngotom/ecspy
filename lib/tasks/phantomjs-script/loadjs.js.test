@@ -1,0 +1,8 @@
+var jq = document.createElement('script');
+jq.src = "https://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js";
+document.getElementsByTagName('head')[0].appendChild(jq);
+
+
+
+
+	 ShopItem.all.each do |s| s.update_attributes(:last_check_time=>nil)  end
