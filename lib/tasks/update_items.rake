@@ -72,7 +72,7 @@ end
 
 
 
-
+desc 'auto update shop`s salesinfo'
 task :update_shop_item_sales =>:environment do
 
 	shopitems = ShopItem.recently_not_check
@@ -92,12 +92,23 @@ task :update_shop_item_sales =>:environment do
 
 			if File.exist?(GetSalesRes)
 				open(GetSalesRes) do |out|
+					index = 0
 					out.each_line do |line|	
-						data =  JSON.parse(line)
-						data['shop_item_id'] = item.id
-						data['buy_time'] = Time.parse(data['buy_time'])
-						ItemSale.create(data)
+						#first line is description
+						if index == 0
+							if !item.content
+								item.create_content
+							end
+							cont = item.content
+							cont.update_if_changed(line)
+						else
+							data =  JSON.parse(line)
+							data['shop_item_id'] = item.id
+							data['buy_time'] = Time.parse(data['buy_time'])
+							ItemSale.create(data)
+						end
 
+						index += 1
 					end
 				end
 			end

@@ -4,6 +4,8 @@ class ShopItem < ActiveRecord::Base
 
 	has_many :item_sales
 
+	has_one :content,:class_name => ShopItemContent
+
 
 
 	attr_accessible :title,:desc,:content,:price,:shop_id,:item_sn,:sales_count,:comments_count,:status,:last_check_time
@@ -17,7 +19,7 @@ class ShopItem < ActiveRecord::Base
 	self.non_versioned_columns << 'comments_count' 
 	self.non_versioned_columns << 'sales_count'
 	self.non_versioned_columns << 'status'
-
+	self.non_versioned_columns << 'last_check_time'
 
 
 	scope :recently_not_check ,where(["last_check_time < ? or ( last_check_time is NULL )", Time.now - 6.hour])

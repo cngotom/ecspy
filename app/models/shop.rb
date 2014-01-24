@@ -18,7 +18,7 @@ class Shop < ActiveRecord::Base
 
 	def today_sales_count
 		shop_items.inject(0) {|sum,item|
-			#puts " #{item.id} #{item.title} #{item.today_sales_count}"
+			puts " #{item.id} #{item.title} #{item.today_sales_count}"
 			
 			sum + item.today_sales_count
 		}

@@ -39,4 +39,9 @@ gem 'jquery-rails'
 gem "jquery-ui-rails"
 gem 'activeadmin'
 
+
+
+gem 'rspec-rails'
+gem 'rspec'
+
 #gem 'acts_as_versioned', :git => 'https://github.com/jwhitehorn/acts_as_versioned.git'
