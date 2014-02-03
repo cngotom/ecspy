@@ -1,0 +1,39 @@
+
+<%=  select_tag "fversion", options_from_collection_for_select(@shop_item.content.versions.find(:all,:order => 'updated_at desc'), "version","updated_at") %>
+
+
+
+
+<%=  select_tag "sversion", options_from_collection_for_select(@shop_item.content.versions.find(:all,:order => 'updated_at desc'), "version","updated_at") %>
+
+
+<%= button_tag "Compare", data: { 'id' => "compare"},type:'button',id:'compare_btn' %>
+
+
+<script type="text/javascript">
+	
+	$(function(){
+
+
+
+		$('#compare_btn').click(function(){
+
+
+			var id = <%= @shop_item.id %>
+
+			var fversion = $('#fversion').val()
+			var sversion = $('#sversion').val();
+
+			var url = Routes.content_compare_path(id,fversion,sversion);
+
+			window.location.href = url;
+
+
+		});
+
+
+
+	});
+
+
+</script>

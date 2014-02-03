@@ -2,7 +2,7 @@ require 'json'
 require 'time'
 desc 'auto update shop`s items'
 
-Exec = 'phantomjs'
+Exec = 'phantomjs  --load-images=no'
 Debug = '--debug=yes'
 ScriptDir = File.join(Rails.root,'lib','tasks','phantomjs-script')
 
@@ -84,6 +84,8 @@ task :update_shop_item_sales =>:environment do
 		timestamp = item.last_check_time ? item.last_check_time.to_i : 0
 
 		puts "#{Exec} #{ScriptDir}/getitem.js #{item.item_sn} #{timestamp} #{GetSalesRes} #{GetSalesLog}"
+
+		File.delete GetSalesRes if File.exist?(GetSalesRes)
 		retn = `#{Exec} #{ScriptDir}/getitem.js #{item.item_sn} #{timestamp} #{GetSalesRes} #{GetSalesLog}`
 		# => retn = 'ok'
 		if retn.chomp == 'ok'
@@ -97,10 +99,12 @@ task :update_shop_item_sales =>:environment do
 						#first line is description
 						if index == 0
 							if !item.content
-								item.create_content
+								item.create_content(:content=>line)
+							else
+								cont = item.content
+								cont.update_if_changed(line)
 							end
-							cont = item.content
-							cont.update_if_changed(line)
+					
 						else
 							data =  JSON.parse(line)
 							data['shop_item_id'] = item.id
@@ -120,10 +124,38 @@ task :update_shop_item_sales =>:environment do
 			puts retn
 		end
 
-		File.delete GetSalesRes if File.exist?(GetSalesRes)
-
 	end
 
 
+
+end
+
+
+
+
+
+
+desc "pre compare test"
+task :pre_content_compare do 
+
+	20.times do 
+ 		`phantomjs  --load-images=no lib/tasks/phantomjs-script/getitem.js 19943054675 1590315593 lib/tasks/log/phantomjs/getsales.res.compare lib/tasks/log/phantomjs/getsales.log`
+	end
+
+end
+
+
+
+
+desc 'test item content compare'
+task :content_compare =>:environment do
+
+	open('lib/tasks/log/phantomjs/getsales.res.compare') do |out|
+		last = nil
+		out.each_line do |line|
+			puts ShopItemContent.compare(line,last) if last
+			last = line 
+		end
+	end
 
 end

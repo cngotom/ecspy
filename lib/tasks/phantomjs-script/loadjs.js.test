@@ -2,7 +2,24 @@ var jq = document.createElement('script');
 jq.src = "https://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js";
 document.getElementsByTagName('head')[0].appendChild(jq);
 
+function getElementAbsPos(e) 
+{
+    var t = e.offsetTop;
+    var l = e.offsetLeft;
+    while(e = e.offsetParent)
+    {
+        t += e.offsetTop;
+	l += e.offsetLeft;
+    }
+
+    return {left:l,top:t};
+}
+
+http://ext.mdskip.taobao.com/extension/dealRecords.htm?_ksTS=1390705241529_5324&callback=jsonp5325&isOffline=&pageSize=15&isStart=false&itemType=b&ends=1390832742000&starts=1390227942000&itemId=10690475548&soldTotalNum=313&sellerNumId=705235443&isFromDetail=yes&totalSQ=6489&sbn=80f6d535e209fe07edc8eeadfc004cd5&isSecKill=false&isOriginPrice=false&bidPage=4 
+zzzz
+http://ext.mdskip.taobao.com/extension/dealRecords.htm?&bidPage=4&page_size=15&is_start=false&item_type=b&ends=1390701105000&starts=1390096305000&item_id=18204010699&user_tag=34672672&old_quantity=3000&seller_num_id=1646660459&isFromDetail=yes&totalSQ=6200&sbn=109229b60c8fd442941a8d6864cbfd4a
 
 
+$('#description>div.content img')
 
 	 ShopItem.all.each do |s| s.update_attributes(:last_check_time=>nil)  end

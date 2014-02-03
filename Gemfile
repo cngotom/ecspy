@@ -38,10 +38,18 @@ gem 'jquery-rails'
 # gem 'ruby-debug19', :require => 'ruby-debug'
 gem "jquery-ui-rails"
 gem 'activeadmin'
-
+gem 'nokogiri'
 
 
 gem 'rspec-rails'
 gem 'rspec'
 
+gem 'inherited_resources'
+
+
+gem "js-routes"
 #gem 'acts_as_versioned', :git => 'https://github.com/jwhitehorn/acts_as_versioned.git'
+
+gem 'bootstrap-sass', '2.3.2.2'
+
+gem "acts_as_follower", :git => 'git://github.com/tcocca/acts_as_follower.git', :branch => 'rails_3'

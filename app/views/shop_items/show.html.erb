@@ -1,0 +1,127 @@
+
+<div>
+	<ul>
+		<li> 
+			<span> 标题 </span>
+			<span> <%= @shop_item.title%> </span>
+		</li>
+		<li>
+			<span>价格</span>
+			<span> <%= @shop_item.price%> </span>
+		</li>
+		<li>
+			<span>销售数</span>
+			<span> <%= @shop_item.sales_count%> </span>
+		</li>
+		<li>
+			<span>评论数</span>
+			<span> <%= @shop_item.comments_count%> </span>
+		</li>
+		<li>
+			<span> <%=  link_to '宝贝地址', 'http://detail.tmall.com/id=?'+ @shop_item.item_sn      %> </span>
+
+		</li>
+	</ul>
+	
+
+
+</div>
+
+<div class="item_history">
+	<a href="#" id="view_history"> 查看  <%= @shop_item.versions.count %>条历史纪录 </a>
+
+	<div id="history_res"  style="display:none">
+		<table>
+			<tr>
+				<td> 时间 </td>
+				<td> 标题 </td>
+				<td> 价格 </td>				
+			</tr>
+			
+			<% @shop_item.versions.find(:all,:order => 'updated_at desc').each do |item| %>
+				<tr>
+					<td> <%= item.updated_at.strftime('%Y-%m-%d %H:%M:%S') %></td>
+					<td> <%= item.title %></td>
+					<td> <%= item.price %></td>
+
+				</tr>
+			<% end %>
+		
+
+		</table>
+
+
+
+
+
+
+	</div>
+</div>
+
+
+<div class="description">
+	<%= @shop_item.content.content.html_safe %>
+</div>
+
+
+<div class="content_history">
+	<%=  select_tag "fversion", options_from_collection_for_select(@shop_item.content.versions.find(:all,:order => 'updated_at desc'), "version","updated_at") %>
+
+
+
+
+<%=  select_tag "sversion", options_from_collection_for_select(@shop_item.content.versions.find(:all,:order => 'updated_at desc'), "version","updated_at") %>
+
+
+<%= button_tag "Compare", data: { 'id' => "compare"},type:'button',id:'compare_btn' ,class:'btn'%>
+
+
+</div>
+
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+	
+	$(function(){
+
+		$('#compare_btn').click(function(){
+
+
+			var id = <%= @shop_item.id %>
+
+			var fversion = $('#fversion').val()
+			var sversion = $('#sversion').val();
+
+			var url = Routes.content_compare_path(id,fversion,sversion);
+
+			window.location.href = url;
+
+
+		});
+
+
+		$('#view_history').click(function(){
+			$('#history_res').toggle();
+
+		});
+
+		$('img').each(function(index,ele){
+
+
+			if($(ele).attr('data-ks-lazyload'))
+			{
+				$(ele).attr('src',$(ele).attr('data-ks-lazyload'));
+			}
+
+		});
+
+	});
+
+
+</script>

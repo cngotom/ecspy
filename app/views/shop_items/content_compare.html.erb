@@ -1,0 +1,37 @@
+
+
+<div>
+	
+	<div style="width:50%;float:left">
+		<%= @fcontent.html_safe %>
+	
+	</div>
+
+	<div style="width:50%;float:left">
+		<%= @scontent.html_safe %>
+
+	</div>
+
+
+</div>
+
+
+<script type="text/javascript">
+	
+$(function(){
+
+	$('img').each(function(index,ele){
+
+
+		if($(ele).attr('data-ks-lazyload'))
+		{
+			$(ele).attr('src',$(ele).attr('data-ks-lazyload'));
+		}
+
+	});
+
+
+});
+
+
+</script>

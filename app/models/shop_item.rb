@@ -83,16 +83,16 @@ class ShopItem < ActiveRecord::Base
 	end
 
 
-	def today_sales
-		item_sales.where(["buy_time > ? and buy_time < ?",Time.new.beginning_of_day,Time.now])
+	def today_sales(offset = 0)
+		item_sales.where(["buy_time > ? and buy_time < ?",Time.new.beginning_of_day-offset*3600*24,Time.now.end_of_day-offset*3600*24])
 	end
 
-	def today_sales_count
-		today_sales.inject(0) {|sum,i| sum + 1 }
+	def today_sales_count(offset = 0)
+		today_sales(offset).inject(0) {|sum,i| sum + 1 }
 	end
 
-	def today_sales_money
-		today_sales.inject(0) {|sum,i| sum + i.item_num * i.item_price}
+	def today_sales_money(offset = 0)
+		today_sales(offset).inject(0) {|sum,i| sum + i.item_num * i.item_price}
 
 	end
 end

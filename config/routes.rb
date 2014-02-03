@@ -1,7 +1,35 @@
 Ecspy::Application.routes.draw do
+  
+
+  match "user_center/index" => 'user_center#index' ,:as => :user_center
+
+  devise_for :users
+
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
 
+
+
+  match 'shop_items/:id/content/:fversion/:sversion' => 'shop_items#content_compare', :as => :content_compare
+
+  resources :shop_items do
+    member do
+      #get  'content/:fversion/:sversion' => 'shop_items#content_compare', :as => :content_compare
+    end
+  end
+
+
+  namespace :user_center do 
+    resources :shops
+
+
+    resources :items
+
+
+    resources :sales
+  end 
+
+  match '/user_center/shops' => 'user_center#shops',:as => :user_shops
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

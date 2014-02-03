@@ -1,3 +1,10 @@
+GIT
+  remote: git://github.com/tcocca/acts_as_follower.git
+  revision: 4bd761e12398076d247bb34c7f84b8e27ca96913
+  branch: rails_3
+  specs:
+    acts_as_follower (0.1.1)
+
 GEM
   remote: http://ruby.taobao.org/
   specs:
@@ -44,6 +51,8 @@ GEM
       activesupport (>= 3.0.0)
     arel (3.0.3)
     bcrypt-ruby (3.1.2)
+    bootstrap-sass (2.3.2.2)
+      sass (~> 3.2)
     bourbon (3.1.8)
       sass (>= 3.2.0)
       thor
@@ -80,6 +89,8 @@ GEM
       thor (>= 0.14, < 2.0)
     jquery-ui-rails (4.1.1)
       railties (>= 3.1.0)
+    js-routes (0.9.6)
+      rails (>= 3.2)
     json (1.8.1)
     kaminari (0.15.1)
       actionpack (>= 3.0.0)
@@ -94,7 +105,10 @@ GEM
       activesupport (~> 3.1)
       polyamorous (~> 0.5.0)
     mime-types (1.25.1)
+    mini_portile (0.5.2)
     multi_json (1.8.4)
+    nokogiri (1.6.1)
+      mini_portile (~> 0.5.0)
     orm_adapter (0.5.0)
     polyamorous (0.5.0)
       activerecord (~> 3.0)
@@ -169,9 +183,14 @@ PLATFORMS
 
 DEPENDENCIES
   activeadmin
+  acts_as_follower!
+  bootstrap-sass (= 2.3.2.2)
   coffee-rails (~> 3.2.1)
+  inherited_resources
   jquery-rails
   jquery-ui-rails
+  js-routes
+  nokogiri
   rails (= 3.2.0)
   rspec
   rspec-rails

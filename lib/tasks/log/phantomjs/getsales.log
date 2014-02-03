@@ -1,153 +1,490 @@
-start item :26911624706
+start item :19943054675
 pageStart
 loadJs end
 0
 wait for contfunction () {
+
+				 	 			$('#description>div.content img').each(function(index,ele)
+				 	 			{
+
+									if($(ele).attr('data-ks-lazyload'))
+									{
+										return false;
+									}
+				 	 			});
+
 				 	 			return $('#J_TabBar li:eq(2) a').html() != undefined && $('#description>div.content').html().trim()!='描述加载中';		
 				 	 		}
+J_showBuyerList is 
+                        成交记录 (<em class="J_TDealCount">1910</em>件) 
 0
-wait for contfunction () {return $('#J_showBuyerList tr').length > 0;}
-0
-wait for contfunction () {return $('#J_showBuyerList tr').length > 0;}
+wait for contfunction () {
+	    											var pos = getElementAbsPos($('#J_showBuyerList')[0]);
+			 	 									window.scroll(pos.left,pos.top);
+
+	    											return $('#J_showBuyerList tr').length > 0;
+
+	    										}
 start page :0
-2014-01-08 16:18:13
-current: 1389169093
-start_time: 1390488848
-start item :26911624706
+2014-01-24 13:48:55
+current: 1390542535
+start_time: 1590315593
+start item :19943054675
+pageStart
+loadJs end
+J_showBuyerList is 
+                        成交记录 (<em class="J_TDealCount">0</em>件) 
+start item :19943054675
 pageStart
 loadJs end
 0
 wait for contfunction () {
+
+				 	 			$('#description>div.content img').each(function(index,ele)
+				 	 			{
+
+									if($(ele).attr('data-ks-lazyload'))
+									{
+										return false;
+									}
+				 	 			});
+
 				 	 			return $('#J_TabBar li:eq(2) a').html() != undefined && $('#description>div.content').html().trim()!='描述加载中';		
 				 	 		}
+J_showBuyerList is 
+                        成交记录 (<em class="J_TDealCount">1910</em>件) 
 0
-wait for contfunction () {return $('#J_showBuyerList tr').length > 0;}
-0
-wait for contfunction () {return $('#J_showBuyerList tr').length > 0;}
+wait for contfunction () {
+	    											var pos = getElementAbsPos($('#J_showBuyerList')[0]);
+			 	 									window.scroll(pos.left,pos.top);
+
+	    											return $('#J_showBuyerList tr').length > 0;
+
+	    										}
 start page :0
-2014-01-08 16:18:13
-current: 1389169093
-start_time: 1390488848
-start item :26911624706
+2014-01-24 13:48:55
+current: 1390542535
+start_time: 1590315593
+start item :19943054675
+pageStart
+loadJs end
+J_showBuyerList is 
+                        成交记录 (<em class="J_TDealCount">0</em>件) 
+start item :19943054675
+pageStart
+loadJs end
+J_showBuyerList is 
+                        成交记录 (<em class="J_TDealCount">0</em>件) 
+start item :19943054675
+pageStart
+loadJs end
+J_showBuyerList is 
+                        成交记录 (<em class="J_TDealCount">0</em>件) 
+start item :19943054675
 pageStart
 loadJs end
 0
 wait for contfunction () {
+
+				 	 			$('#description>div.content img').each(function(index,ele)
+				 	 			{
+
+									if($(ele).attr('data-ks-lazyload'))
+									{
+										return false;
+									}
+				 	 			});
+
 				 	 			return $('#J_TabBar li:eq(2) a').html() != undefined && $('#description>div.content').html().trim()!='描述加载中';		
 				 	 		}
+J_showBuyerList is 
+                        成交记录 (<em class="J_TDealCount">1910</em>件) 
 0
-wait for contfunction () {return $('#J_showBuyerList tr').length > 0;}
-0
-wait for contfunction () {return $('#J_showBuyerList tr').length > 0;}
+wait for contfunction () {
+	    											var pos = getElementAbsPos($('#J_showBuyerList')[0]);
+			 	 									window.scroll(pos.left,pos.top);
+
+	    											return $('#J_showBuyerList tr').length > 0;
+
+	    										}
 start page :0
-2014-01-08 16:18:13
-current: 1389169093
-start_time: 1390488848
-start item :26911624706
+2014-01-24 13:48:55
+current: 1390542535
+start_time: 1590315593
+start item :19943054675
 pageStart
 loadJs end
 0
 wait for contfunction () {
+
+				 	 			$('#description>div.content img').each(function(index,ele)
+				 	 			{
+
+									if($(ele).attr('data-ks-lazyload'))
+									{
+										return false;
+									}
+				 	 			});
+
 				 	 			return $('#J_TabBar li:eq(2) a').html() != undefined && $('#description>div.content').html().trim()!='描述加载中';		
 				 	 		}
+J_showBuyerList is 
+                        成交记录 (<em class="J_TDealCount">1910</em>件) 
 0
-wait for contfunction () {return $('#J_showBuyerList tr').length > 0;}
-0
-wait for contfunction () {return $('#J_showBuyerList tr').length > 0;}
+wait for contfunction () {
+	    											var pos = getElementAbsPos($('#J_showBuyerList')[0]);
+			 	 									window.scroll(pos.left,pos.top);
+
+	    											return $('#J_showBuyerList tr').length > 0;
+
+	    										}
 start page :0
-2014-01-08 16:18:13
-current: 1389169093
-start_time: 1390488848
-start item :26911624706
+2014-01-24 13:48:55
+current: 1390542535
+start_time: 1590315593
+start item :19943054675
 pageStart
 loadJs end
 0
 wait for contfunction () {
+
+				 	 			$('#description>div.content img').each(function(index,ele)
+				 	 			{
+
+									if($(ele).attr('data-ks-lazyload'))
+									{
+										return false;
+									}
+				 	 			});
+
 				 	 			return $('#J_TabBar li:eq(2) a').html() != undefined && $('#description>div.content').html().trim()!='描述加载中';		
 				 	 		}
+J_showBuyerList is 
+                        成交记录 (<em class="J_TDealCount">1910</em>件) 
 0
-wait for contfunction () {return $('#J_showBuyerList tr').length > 0;}
-0
-wait for contfunction () {return $('#J_showBuyerList tr').length > 0;}
+wait for contfunction () {
+	    											var pos = getElementAbsPos($('#J_showBuyerList')[0]);
+			 	 									window.scroll(pos.left,pos.top);
+
+	    											return $('#J_showBuyerList tr').length > 0;
+
+	    										}
 start page :0
-2014-01-08 16:18:13
-current: 1389169093
-start_time: 1390488848
-start item :26911624706
+2014-01-24 13:48:55
+current: 1390542535
+start_time: 1590315593
+start item :19943054675
 pageStart
 loadJs end
 0
 wait for contfunction () {
+
+				 	 			$('#description>div.content img').each(function(index,ele)
+				 	 			{
+
+									if($(ele).attr('data-ks-lazyload'))
+									{
+										return false;
+									}
+				 	 			});
+
 				 	 			return $('#J_TabBar li:eq(2) a').html() != undefined && $('#description>div.content').html().trim()!='描述加载中';		
 				 	 		}
-0
-wait for contfunction () {return $('#J_showBuyerList tr').length > 0;}
-0
-wait for contfunction () {return $('#J_showBuyerList tr').length > 0;}
-start page :0
-2014-01-08 16:18:13
-current: 1389169093
-start_time: 1290488848
-2014-01-02 11:27:22
-current: 1388633242
-start_time: 1290488848
-2013-12-26 16:56:02
-current: 1388048162
-start_time: 1290488848
-start item :26911624706
+J_showBuyerList is 
+                        成交记录 (<em class="J_TDealCount">0</em>件) 
+start item :19943054675
+pageStart
+loadJs end
+J_showBuyerList is 
+                        成交记录 (<em class="J_TDealCount">0</em>件) 
+start item :19943054675
 pageStart
 loadJs end
 0
 wait for contfunction () {
+
+				 	 			$('#description>div.content img').each(function(index,ele)
+				 	 			{
+
+									if($(ele).attr('data-ks-lazyload'))
+									{
+										return false;
+									}
+				 	 			});
+
 				 	 			return $('#J_TabBar li:eq(2) a').html() != undefined && $('#description>div.content').html().trim()!='描述加载中';		
 				 	 		}
+J_showBuyerList is 
+                        成交记录 (<em class="J_TDealCount">1910</em>件) 
 0
-wait for contfunction () {return $('#J_showBuyerList tr').length > 0;}
-0
-wait for contfunction () {return $('#J_showBuyerList tr').length > 0;}
+wait for contfunction () {
+	    											var pos = getElementAbsPos($('#J_showBuyerList')[0]);
+			 	 									window.scroll(pos.left,pos.top);
+
+	    											return $('#J_showBuyerList tr').length > 0;
+
+	    										}
 start page :0
-2014-01-08 16:18:13
-current: 1389169093
-start_time: 1290488848
-2014-01-02 11:27:22
-current: 1388633242
-start_time: 1290488848
-2013-12-26 16:56:02
-current: 1388048162
-start_time: 1290488848
-start item :26911624706
+2014-01-24 13:48:55
+current: 1390542535
+start_time: 1590315593
+start item :19943054675
 pageStart
 loadJs end
 0
 wait for contfunction () {
+
+				 	 			$('#description>div.content img').each(function(index,ele)
+				 	 			{
+
+									if($(ele).attr('data-ks-lazyload'))
+									{
+										return false;
+									}
+				 	 			});
+
 				 	 			return $('#J_TabBar li:eq(2) a').html() != undefined && $('#description>div.content').html().trim()!='描述加载中';		
 				 	 		}
-0
-wait for contfunction () {return $('#J_showBuyerList tr').length > 0;}
-0
-wait for contfunction () {return $('#J_showBuyerList tr').length > 0;}
-start page :0
-2014-01-08 16:18:13
-current: 1389169093
-start_time: 1290488848
-2014-01-02 11:27:22
-current: 1388633242
-start_time: 1290488848
-2013-12-26 16:56:02
-current: 1388048162
-start_time: 1290488848
-start item :26911624706
+J_showBuyerList is 
+                        成交记录 (<em class="J_TDealCount">0</em>件) 
+start item :19943054675
 pageStart
 loadJs end
 0
 wait for contfunction () {
+
+				 	 			$('#description>div.content img').each(function(index,ele)
+				 	 			{
+
+									if($(ele).attr('data-ks-lazyload'))
+									{
+										return false;
+									}
+				 	 			});
+
 				 	 			return $('#J_TabBar li:eq(2) a').html() != undefined && $('#description>div.content').html().trim()!='描述加载中';		
 				 	 		}
+J_showBuyerList is 
+                        成交记录 (<em class="J_TDealCount">0</em>件) 
+start item :19943054675
+pageStart
+loadJs end
+J_showBuyerList is 
+                        成交记录 (<em class="J_TDealCount">0</em>件) 
+start item :19943054675
+pageStart
+loadJs end
+J_showBuyerList is 
+                        成交记录 (<em class="J_TDealCount">0</em>件) 
+start item :19943054675
+pageStart
+loadJs end
 0
-wait for contfunction () {return $('#J_showBuyerList tr').length > 0;}
+wait for contfunction () {
+
+				 	 			$('#description>div.content img').each(function(index,ele)
+				 	 			{
+
+									if($(ele).attr('data-ks-lazyload'))
+									{
+										return false;
+									}
+				 	 			});
+
+				 	 			return $('#J_TabBar li:eq(2) a').html() != undefined && $('#description>div.content').html().trim()!='描述加载中';		
+				 	 		}
+J_showBuyerList is 
+                        成交记录 (<em class="J_TDealCount">1910</em>件) 
 0
-wait for contfunction () {return $('#J_showBuyerList tr').length > 0;}
+wait for contfunction () {
+	    											var pos = getElementAbsPos($('#J_showBuyerList')[0]);
+			 	 									window.scroll(pos.left,pos.top);
+
+	    											return $('#J_showBuyerList tr').length > 0;
+
+	    										}
 start page :0
-2014-01-08 16:18:13
-current: 1389169093
-start_time: 1390488848
+2014-01-24 13:48:55
+current: 1390542535
+start_time: 1590315593
+start item :19943054675
+pageStart
+loadJs end
+J_showBuyerList is 
+                        成交记录 (<em class="J_TDealCount">0</em>件) 
+start item :19943054675
+pageStart
+loadJs end
+J_showBuyerList is 
+                        成交记录 (<em class="J_TDealCount">0</em>件) 
+start item :19943054675
+pageStart
+loadJs end
+J_showBuyerList is 
+                        成交记录 (<em class="J_TDealCount">0</em>件) 
+start item :19943054675
+pageStart
+loadJs end
+J_showBuyerList is 
+                        成交记录 (<em class="J_TDealCount">0</em>件) 
+start item :19943054675
+pageStart
+loadJs end
+J_showBuyerList is 
+                        成交记录 (<em class="J_TDealCount">0</em>件) 
+start item :19943054675
+pageStart
+loadJs end
+0
+wait for contfunction () {
+
+				 	 			$('#description>div.content img').each(function(index,ele)
+				 	 			{
+
+									if($(ele).attr('data-ks-lazyload'))
+									{
+										return false;
+									}
+				 	 			});
+
+				 	 			return $('#J_TabBar li:eq(2) a').html() != undefined && $('#description>div.content').html().trim()!='描述加载中';		
+				 	 		}
+J_showBuyerList is 
+                        成交记录 (<em class="J_TDealCount">0</em>件) 
+start item :19943054675
+pageStart
+loadJs end
+J_showBuyerList is 
+                        成交记录 (<em class="J_TDealCount">0</em>件) 
+start item :19943054675
+pageStart
+loadJs end
+J_showBuyerList is 
+                        成交记录 (<em class="J_TDealCount">0</em>件) 
+start item :19943054675
+pageStart
+loadJs end
+J_showBuyerList is 
+                        成交记录 (<em class="J_TDealCount">0</em>件) 
+start item :19943054675
+pageStart
+loadJs end
+0
+wait for contfunction () {
+
+				 	 			$('#description>div.content img').each(function(index,ele)
+				 	 			{
+
+									if($(ele).attr('data-ks-lazyload'))
+									{
+										return false;
+									}
+				 	 			});
+
+				 	 			return $('#J_TabBar li:eq(2) a').html() != undefined && $('#description>div.content').html().trim()!='描述加载中';		
+				 	 		}
+J_showBuyerList is 
+                        成交记录 (<em class="J_TDealCount">1910</em>件) 
+0
+wait for contfunction () {
+	    											var pos = getElementAbsPos($('#J_showBuyerList')[0]);
+			 	 									window.scroll(pos.left,pos.top);
+
+	    											return $('#J_showBuyerList tr').length > 0;
+
+	    										}
+start page :0
+2014-01-24 13:48:55
+current: 1390542535
+start_time: 1590315593
+start item :19943054675
+pageStart
+loadJs end
+0
+wait for contfunction () {
+
+				 	 			$('#description>div.content img').each(function(index,ele)
+				 	 			{
+
+									if($(ele).attr('data-ks-lazyload'))
+									{
+										return false;
+									}
+				 	 			});
+
+				 	 			return $('#J_TabBar li:eq(2) a').html() != undefined && $('#description>div.content').html().trim()!='描述加载中';		
+				 	 		}
+J_showBuyerList is 
+                        成交记录 (<em class="J_TDealCount">1910</em>件) 
+0
+wait for contfunction () {
+	    											var pos = getElementAbsPos($('#J_showBuyerList')[0]);
+			 	 									window.scroll(pos.left,pos.top);
+
+	    											return $('#J_showBuyerList tr').length > 0;
+
+	    										}
+start page :0
+2014-01-24 13:48:55
+current: 1390542535
+start_time: 1590315593
+start item :19943054675
+pageStart
+loadJs end
+0
+wait for contfunction () {
+
+				 	 			$('#description>div.content img').each(function(index,ele)
+				 	 			{
+
+									if($(ele).attr('data-ks-lazyload'))
+									{
+										return false;
+									}
+				 	 			});
+
+				 	 			return $('#J_TabBar li:eq(2) a').html() != undefined && $('#description>div.content').html().trim()!='描述加载中';		
+				 	 		}
+J_showBuyerList is 
+                        成交记录 (<em class="J_TDealCount">0</em>件) 
+start item :19943054675
+pageStart
+loadJs end
+J_showBuyerList is 
+                        成交记录 (<em class="J_TDealCount">0</em>件) 
+start item :19943054675
+pageStart
+loadJs end
+0
+wait for contfunction () {
+
+				 	 			$('#description>div.content img').each(function(index,ele)
+				 	 			{
+
+									if($(ele).attr('data-ks-lazyload'))
+									{
+										return false;
+									}
+				 	 			});
+
+				 	 			return $('#J_TabBar li:eq(2) a').html() != undefined && $('#description>div.content').html().trim()!='描述加载中';		
+				 	 		}
+J_showBuyerList is 
+                        成交记录 (<em class="J_TDealCount">1910</em>件) 
+0
+wait for contfunction () {
+	    											var pos = getElementAbsPos($('#J_showBuyerList')[0]);
+			 	 									window.scroll(pos.left,pos.top);
+
+	    											return $('#J_showBuyerList tr').length > 0;
+
+	    										}
+start page :0
+2014-01-24 13:48:55
+current: 1390542535
+start_time: 1590315593
+start item :19943054675
+pageStart
+loadJs end
+J_showBuyerList is 
+                        成交记录 (<em class="J_TDealCount">0</em>件) 

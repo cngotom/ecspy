@@ -1,6 +1,8 @@
 class Shop < ActiveRecord::Base
 	attr_accessible :title,:url,:goods_num
 
+	acts_as_followable
+
 	has_many :shop_items
 
 	#not update in 6 hours or created in 6 hours
@@ -16,18 +18,18 @@ class Shop < ActiveRecord::Base
 
 
 
-	def today_sales_count
+	def today_sales_count(offset = 0)
 		shop_items.inject(0) {|sum,item|
 			puts " #{item.id} #{item.title} #{item.today_sales_count}"
 			
-			sum + item.today_sales_count
+			sum + item.today_sales_count(offset)
 		}
 	end
 
-	def today_sales_money
+	def today_sales_money(offset = 0)
 		shop_items.inject(0) {|sum,item| 
 			#puts " #{item.id} #{item.title} #{item.today_sales_money} #{item.today_sales_money}"
-			sum + item.today_sales_money
+			sum + item.today_sales_money(offset)
 		}
 	end
 
