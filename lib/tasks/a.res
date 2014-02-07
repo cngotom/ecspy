@@ -1,2 +1,0 @@
-pageStart
-loadJs end
