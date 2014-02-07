@@ -15,15 +15,19 @@
 </head>
 <body>
 
-	<div class="container">
-		<div class="row">
-		<% if !user_signed_in?  %>
-					<%= link_to 'Sign in',new_user_session_path %>
-					<%= link_to 'Sign up',new_user_registration_path %>
-		<%else %>
-					<%= current_user.email  %>
-					<%= link_to "Sign out", destroy_user_session_path, :method => :delete %>
-		<%	end %>
+	<div class="container-fluid">
+		<div class="row-fluid">
+			<div class="span3 offset9">
+
+				<% if !user_signed_in?  %>
+							<%= link_to 'Sign in',new_user_session_path %>
+							<%= link_to 'Sign up',new_user_registration_path %>
+				<%else %>
+							<%= current_user.email  %>
+							<%= link_to "Sign out", destroy_user_session_path, :method => :delete %>
+				<%	end %>
+
+			</div>
 		</div>
 	</div>
 	

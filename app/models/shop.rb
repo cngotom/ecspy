@@ -1,6 +1,9 @@
 class Shop < ActiveRecord::Base
 	attr_accessible :title,:url,:goods_num
 
+	validates_presence_of :url,:title
+	validates_uniqueness_of :url
+
 	acts_as_followable
 
 	has_many :shop_items
@@ -8,6 +11,7 @@ class Shop < ActiveRecord::Base
 	#not update in 6 hours or created in 6 hours
 	scope :recently_not_updated,where( ["updated_at < ? or ( created_at > ?  and updated_at = created_at )", Time.now - 6.hour, Time.now - 6.hour])
 
+	#scope :unwatched, lamda {|user|  self.ALl - User.find(user).followed  }
 
 	def touch
 		if !new_record?
@@ -33,5 +37,21 @@ class Shop < ActiveRecord::Base
 		}
 	end
 
+
+	def self.unwatched(user)
+		watched = User.find(user).following_by_type(self.name)
+
+		watched_ids = []
+		watched.each do |w|
+			watched_ids << w
+		end
+		where(['id not in (?)', watched_ids ])
+
+	end
+
+
+	def self.watched(user)
+		watched = User.find(user).following_by_type(self.name)
+	end
 
 end

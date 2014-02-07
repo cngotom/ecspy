@@ -51,5 +51,8 @@ gem "js-routes"
 #gem 'acts_as_versioned', :git => 'https://github.com/jwhitehorn/acts_as_versioned.git'
 
 gem 'bootstrap-sass', '2.3.2.2'
+gem 'simple_form'
 
 gem "acts_as_follower", :git => 'git://github.com/tcocca/acts_as_follower.git', :branch => 'rails_3'
+
+gem "wice_grid", '3.2.1'

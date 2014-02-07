@@ -1,6 +1,7 @@
 Ecspy::Application.routes.draw do
   
 
+
   match "user_center/index" => 'user_center#index' ,:as => :user_center
 
   devise_for :users
@@ -12,6 +13,7 @@ Ecspy::Application.routes.draw do
 
   match 'shop_items/:id/content/:fversion/:sversion' => 'shop_items#content_compare', :as => :content_compare
 
+
   resources :shop_items do
     member do
       #get  'content/:fversion/:sversion' => 'shop_items#content_compare', :as => :content_compare
@@ -20,7 +22,16 @@ Ecspy::Application.routes.draw do
 
 
   namespace :user_center do 
-    resources :shops
+    resources :shops do
+
+      collection do
+
+        post 'subscribe'
+
+        post 'unsubscribe'
+      end
+
+    end
 
 
     resources :items

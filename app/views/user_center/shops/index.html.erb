@@ -1,1 +1,155 @@
-shops erb
+<style type="text/css">
+	
+	ul.thumbnails li{
+		margin-top:30px;
+	}
+
+	.thumbnails.row-fluid [class*="span"]:first-child, .row-fluid [class*="span"]:nth-child(4),
+	.row-fluid [class*="span"]:nth-child(7),.row-fluid [class*="span"]:nth-child(10),.row-fluid [class*="span"]:nth-child(13),
+	.row-fluid [class*="span"]:nth-child(16),.row-fluid [class*="span"]:nth-child(19),.row-fluid [class*="span"]:nth-child(22)
+
+	{
+    	margin-left: 0;
+	}
+</style>
+
+
+<% if notice %>
+<div class="alert">
+	<strong><%= notice %></strong>
+</div>
+<% end %>
+
+<div class="span3 offset3">
+		<i class="icon-plus"></i>
+		<%= link_to '新增', new_user_center_shop_path %>
+</div>
+
+<div class="clearfix"></div>
+
+
+
+<section id="unwatched_list">
+	<div >
+		<h3>未订阅</h3>
+		<ul class="thumbnails">
+
+			<% Shop.unwatched(1).each do |shop| %>
+				<li class="span4" shop-id='<%=shop.id%>'> 
+					标题: <%=shop.title %> <br>
+					url： <%=shop.url %> <br>
+					产品数: <%=shop.shop_items.count %> <br>
+
+					<a class="btn btn-info" > 订阅 </a>
+
+				</li>
+			<% end %>
+
+
+		</ul>
+		
+
+	</div>
+</section>
+
+
+<section id="watched_list">
+	<div >
+		<h3>已订阅</h3>
+		<ul class="thumbnails">
+
+			<% Shop.watched(1).each do |shop| %>
+				<li class="span4" shop-id='<%=shop.id%>'> 
+					标题: <%=shop.title %> <br>
+					url： <%=shop.url %> <br>
+					产品数: <%=shop.shop_items.count %> <br>
+
+					<a class="btn btn-info" > 取消订阅 </a>
+				</li>
+			<% end %>
+
+
+		</ul>
+		
+
+	</div>
+</section>
+
+
+<script type="text/javascript">
+	$(function(){
+
+		var unwatched_func = function(){
+
+			var li = $(this).closest('li');
+			var ul = $(li).parent();
+
+			var another_ul = $('section#watched_list ul');
+			//animate
+			$(li).hide('normal',function(){
+
+
+				//ajax
+				$.ajax({
+					'type':'POST',
+					'url':'<%=subscribe_user_center_shops_path%>',
+					'data':{'shop_id':$(li).attr('shop-id')},
+					'success':function(){}
+				})
+				//change li
+				$(li).find('a.btn').html('取消订阅');
+				$(li).unbind();
+				$(li).click(watched_func);
+
+				$(another_ul).append(li);
+				$(li).show('normal');
+			});
+
+
+		};
+
+		var watched_func = function(){
+
+			var li = $(this).closest('li');
+			var ul = $(li).parent();
+
+			var another_ul = $('section#unwatched_list ul');
+			//animate
+			$(li).hide('normal',function(){
+				//ajax
+				$.ajax({
+					'type':'POST',
+					'url':'<%=unsubscribe_user_center_shops_path%>',
+					'data':{'shop_id':$(li).attr('shop-id')},
+					'success':function(){}
+				})
+				//change li
+				$(li).find('a.btn').html('订阅');
+				$(li).unbind();
+				$(li).click(unwatched_func);
+
+
+				$(another_ul).append(li);
+				$(li).show('normal');
+			});
+
+
+		};
+
+
+		$('section#unwatched_list .thumbnails li a').click(unwatched_func);
+
+
+		$('section#watched_list .thumbnails li a').click(watched_func);
+
+
+	});
+
+	
+</script>
+
+
+
+
+
+
