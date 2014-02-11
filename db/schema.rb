@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140131024211) do
+ActiveRecord::Schema.define(:version => 20140211132803) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -97,6 +97,8 @@ ActiveRecord::Schema.define(:version => 20140131024211) do
     t.float    "price"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "status",       :default => 0
+    t.string   "thumb"
   end
 
   add_index "shop_item_versions", ["shop_item_id"], :name => "index_shop_item_versions_on_shop_item_id"
@@ -115,6 +117,7 @@ ActiveRecord::Schema.define(:version => 20140131024211) do
     t.integer  "version"
     t.integer  "status",          :default => 0
     t.datetime "last_check_time"
+    t.string   "thumb"
   end
 
   add_index "shop_items", ["item_sn"], :name => "index_shop_items_on_item_sn", :unique => true

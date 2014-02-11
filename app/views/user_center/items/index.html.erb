@@ -1,0 +1,40 @@
+<%= grid(@tasks_grid, show_filters: :when_filtered) do |g|
+
+ g.column name:  'ID', attribute: 'id', auto_reload:  true do |task|
+    task.id
+  end
+
+
+  g.column  name:  '标题', attribute: 'title', model: 'ShopItem'  do |task|
+    task.title
+  end
+
+  g.column  name:  '店铺', attribute: 'title', model: 'Shop', auto_reload: true ,custom_filter: current_user.following_by_type('Shop').map {|pr| [pr.title, pr.title]} do |task|
+    task.shop.title
+  end
+
+
+
+
+  g.column name: '修改次数'  do |task|
+  	task.versions.count
+  end
+
+
+  g.column name: '价格' ,attribute: 'price' 
+
+  g.column name: '评论数' ,attribute: 'comments_count'
+
+  g.column name: '销售量' ,attribute: 'sales_count'
+
+  g.column name:  '更新时间', attribute: 'updated_at'  do |task|
+  	task.updated_at
+  end
+
+
+
+  g.column name:  '操作'  do |task|
+    link_to('View', shop_item_path(task))
+  end
+end -%>
+

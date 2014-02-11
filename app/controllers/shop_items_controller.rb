@@ -1,5 +1,6 @@
 class ShopItemsController < InheritedResources::Base
-
+	before_filter :authenticate_user!
+  	layout 'user_center'
 
 	def content_compare
 

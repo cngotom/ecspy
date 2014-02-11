@@ -8,6 +8,8 @@ class Shop < ActiveRecord::Base
 
 	has_many :shop_items
 
+	has_many :shop_contents, :through => :shop_items,:source => :content
+
 	#not update in 6 hours or created in 6 hours
 	scope :recently_not_updated,where( ["updated_at < ? or ( created_at > ?  and updated_at = created_at )", Time.now - 6.hour, Time.now - 6.hour])
 
@@ -21,6 +23,9 @@ class Shop < ActiveRecord::Base
 
 
 
+	def tmall?
+		self.url.index("tmall")
+	end
 
 	def today_sales_count(offset = 0)
 		shop_items.inject(0) {|sum,item|
@@ -53,5 +58,7 @@ class Shop < ActiveRecord::Base
 	def self.watched(user)
 		watched = User.find(user).following_by_type(self.name)
 	end
+
+
 
 end

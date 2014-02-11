@@ -1,7 +1,7 @@
 
 
 class UserCenter::ShopsController < InheritedResources::Base
-
+  before_filter :authenticate_user!
 
   layout 'user_center'
 
@@ -31,7 +31,7 @@ class UserCenter::ShopsController < InheritedResources::Base
   		shop_id = params['shop_id'].to_i
 
   		#@TODO replace with current_user
-  		User.find(1).follow( Shop.find(shop_id)) 
+  		current_user.follow( Shop.find(shop_id)) 
 
   		render text: shop_id.to_s
   end
@@ -43,7 +43,7 @@ class UserCenter::ShopsController < InheritedResources::Base
 
   		#@TODO replace with current_user
 
-  		User.find(1).stop_following( Shop.find(shop_id)) 
+  		current_user.stop_following( Shop.find(shop_id)) 
 
   		render text: shop_id.to_s
 

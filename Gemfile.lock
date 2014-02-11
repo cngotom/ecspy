@@ -1,11 +1,4 @@
 GIT
-  remote: git://github.com/bogdan/datagrid
-  revision: ae3f4efe9d80bb4d6a7d58c74a3c79777a69665d
-  specs:
-    datagrid (1.0.5)
-      rails (>= 3.0)
-
-GIT
   remote: git://github.com/tcocca/acts_as_follower.git
   revision: 4bd761e12398076d247bb34c7f84b8e27ca96913
   branch: rails_3
@@ -187,6 +180,8 @@ GEM
       json (>= 1.8.0)
     warden (1.2.3)
       rack (>= 1.0)
+    wice_grid (3.2.1)
+      kaminari (>= 0.13.0)
 
 PLATFORMS
   ruby
@@ -196,7 +191,6 @@ DEPENDENCIES
   acts_as_follower!
   bootstrap-sass (= 2.3.2.2)
   coffee-rails (~> 3.2.1)
-  datagrid!
   inherited_resources
   jquery-rails
   jquery-ui-rails
@@ -209,3 +203,4 @@ DEPENDENCIES
   simple_form
   sqlite3
   uglifier (>= 1.0.3)
+  wice_grid (= 3.2.1)

@@ -15,4 +15,5 @@
 //= require js-routes
 //= require bootstrap
 //= require_tree .
+//= require wice_grid
 

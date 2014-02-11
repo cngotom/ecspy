@@ -3,6 +3,7 @@ require 'time'
 desc 'auto update shop`s items'
 
 Exec = 'phantomjs  --load-images=no'
+ExecTB = 'phantomjs --load-images=yes'
 Debug = '--debug=yes'
 ScriptDir = File.join(Rails.root,'lib','tasks','phantomjs-script')
 
@@ -17,12 +18,13 @@ task :update_shop_items_list => :environment do
   
 
 
-	out_file_ext = Time.new.strftime('.%Y-%m-%d-%H-%S')
+	out_file_ext = Time.new.strftime('.%Y-%m-%d-%H-%M')
 	out_file = GetListRes + out_file_ext
 
 	shops = Shop.recently_not_updated
 	shops.each do |shop|
 		puts "#{shop.title},last_updated: #{ shop.updated_at.strftime('%Y-%m-%d %H:%M:%S') }"
+		puts "#{Exec} #{ScriptDir}/getlist.js #{shop.url} #{shop.id} #{out_file} #{GetListLog}"
 		retn = `#{Exec} #{ScriptDir}/getlist.js #{shop.url} #{shop.id} #{out_file} #{GetListLog}`
 		# => retn = 'ok'
 		if retn.chomp == 'ok'
@@ -60,6 +62,8 @@ task :update_shop_items_list => :environment do
 				item.update_if_changed(data)
 				#item.touch
 
+				#make item open
+				item.update_status(0)
 
 
 			end
@@ -75,18 +79,28 @@ end
 desc 'auto update shop`s salesinfo'
 task :update_shop_item_sales =>:environment do
 
+	beg_time = Time.now 
+
 	shopitems = ShopItem.recently_not_check
 
+	item_count = shopitems.count
 	shopitems.each do |item|
 		puts "#{item.title},last_check_time: #{item.last_check_time.strftime('%Y-%m-%d %H:%M:%S') if item.last_check_time}"
 
 
 		timestamp = item.last_check_time ? item.last_check_time.to_i : 0
 
-		puts "#{Exec} #{ScriptDir}/getitem.js #{item.item_sn} #{timestamp} #{GetSalesRes} #{GetSalesLog}"
-
 		File.delete GetSalesRes if File.exist?(GetSalesRes)
-		retn = `#{Exec} #{ScriptDir}/getitem.js #{item.item_sn} #{timestamp} #{GetSalesRes} #{GetSalesLog}`
+
+		if item.shop.tmall?
+
+			puts "#{Exec} #{ScriptDir}/getitem.js #{item.item_sn} #{timestamp} #{GetSalesRes} #{GetSalesLog}"
+			retn = `#{Exec} #{ScriptDir}/getitem.js #{item.item_sn} #{timestamp} #{GetSalesRes} #{GetSalesLog}`
+		else
+			puts "#{ExecTB} #{ScriptDir}/getitem_tb.js #{item.item_sn} #{timestamp} #{GetSalesRes} #{GetSalesLog}"
+			retn = `#{ExecTB} #{ScriptDir}/getitem_tb.js #{item.item_sn} #{timestamp} #{GetSalesRes} #{GetSalesLog}`
+		end	
+
 		# => retn = 'ok'
 		if retn.chomp == 'ok'
 
@@ -119,13 +133,20 @@ task :update_shop_item_sales =>:environment do
 
 
 			item.check
-
+		elsif retn.chomp == 'closed'
+			puts "item: #{item.id} closed"
+			item.update_status(1)
 		else
 			puts retn
 		end
 
 	end
 
+	end_time = Time.now
+
+	last_time = end_time - beg_time
+	
+	puts "crawl #{item_count} items, last_time: #{last_time} seconds ,per #{last_time / item_count} items/s" if item_count > 0
 
 
 end

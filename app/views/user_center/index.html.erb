@@ -1,1 +1,45 @@
-today
+<% @shops.each do |shop| %>
+
+<section>
+	<h3> <%= shop.title %> </h3>
+
+
+	<dl class="dl-horizontal"> 
+		<dt>今日订单：</dt>
+		<dd><%= shop.today_sales_count() %> 个 </dd>
+
+		<dt>今日金额： </dt>
+		<dd> <%= shop.today_sales_money().round(2) %> 元 </dd>
+	</dl>
+	
+	<div class="accordion" id="accordion<%=shop.id%>">
+		<div class="accordion-group">
+	    	<div class="accordion-heading">
+	      		<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion<%=shop.id%>" href="#collapse<%=shop.id%>">
+	       	 		今日行为（<%= today_change_count(shop) %>）
+	      		</a>
+	    	</div>
+	    	<div id="collapse<%=shop.id%>" class="accordion-body collapse ">
+	      		<div class="accordion-inner">
+					<ul> 
+						<% today_changes(shop).each do |change| %>
+
+							<li>
+								
+								<%= change.html_safe %>
+							</li>
+
+
+						<% end %>
+					
+					</ul>
+
+	      		</div>
+	    	</div>
+	   </div>
+   </div>
+
+</section>
+	
+
+<% end %>

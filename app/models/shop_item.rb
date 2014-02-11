@@ -1,3 +1,4 @@
+#encoding:utf-8
 class ShopItem < ActiveRecord::Base
 
 	belongs_to :shop
@@ -8,17 +9,22 @@ class ShopItem < ActiveRecord::Base
 
 
 
-	attr_accessible :title,:desc,:content,:price,:shop_id,:item_sn,:sales_count,:comments_count,:status,:last_check_time
+	attr_accessible :title,:desc,:content,:price,:shop_id,:item_sn,:sales_count,:comments_count,:status,:thumb,:last_check_time
 
-	acts_as_versioned :if => Proc.new { |item| item.changed? }
+	acts_as_versioned :if => Proc.new { |item| item.changed? } do 
+		def status_text
+			(status==1)? '下架' : '上架'
+		end
+	end
 
-	VersiondAttr = [:title,:desc,:content,:price]
+	VersiondAttr = [:title,:desc,:content,:price,:status,:thumb]
 
 	self.non_versioned_columns << 'shop_id' 
 	self.non_versioned_columns << 'item_sn' 
 	self.non_versioned_columns << 'comments_count' 
 	self.non_versioned_columns << 'sales_count'
-	self.non_versioned_columns << 'status'
+	#self.non_versioned_columns << 'status'
+	self.non_versioned_columns << 'content'
 	self.non_versioned_columns << 'last_check_time'
 
 
@@ -35,10 +41,6 @@ class ShopItem < ActiveRecord::Base
 			res
 		end
 
-
-
-
-
 	end
 
 
@@ -51,9 +53,19 @@ class ShopItem < ActiveRecord::Base
 	end
 
 
+
+	def update_status(_status)
+		if status != _status
+			@changed = true
+			update_attributes(:status=>_status)
+			@changed = false
+		end
+	end
+
+
 	def update_if_changed(data)
 		data = data.clone
-		is_titile_or_price_changed = ( title != data['title'] ||  price != data['price']) 
+		is_titile_or_price_changed = ( title != data['title'] ||  price != data['price'] || thumb != data['thumb']) 
 		if is_titile_or_price_changed
 			@changed = true
 			assign_attributes(data)
@@ -92,7 +104,11 @@ class ShopItem < ActiveRecord::Base
 	end
 
 	def today_sales_money(offset = 0)
-		today_sales(offset).inject(0) {|sum,i| sum + i.item_num * i.item_price}
+		today_sales(offset).inject(0) {|sum,i| sum + i.item_num * (i.item_price ? i.item_price : i.shop_item.price)}
 
+	end
+
+	def status_text
+		(status==1)? '下架' : '上架'
 	end
 end

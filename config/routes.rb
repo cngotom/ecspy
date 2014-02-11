@@ -2,7 +2,10 @@ Ecspy::Application.routes.draw do
   
 
 
-  match "user_center/index" => 'user_center#index' ,:as => :user_center
+
+  match "user_center/index" => 'user_center#index' ,:as => :user_root
+
+  root to: 'user_center#index'
 
   devise_for :users
 
@@ -40,7 +43,6 @@ Ecspy::Application.routes.draw do
     resources :sales
   end 
 
-  match '/user_center/shops' => 'user_center#shops',:as => :user_shops
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

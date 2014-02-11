@@ -9,6 +9,10 @@
 			<span>价格</span>
 			<span> <%= @shop_item.price%> </span>
 		</li>
+
+		<li>
+			<span> <%= image_tag @shop_item.thumb%> </span>
+		</li>
 		<li>
 			<span>销售数</span>
 			<span> <%= @shop_item.sales_count%> </span>
@@ -18,7 +22,7 @@
 			<span> <%= @shop_item.comments_count%> </span>
 		</li>
 		<li>
-			<span> <%=  link_to '宝贝地址', 'http://detail.tmall.com/id=?'+ @shop_item.item_sn      %> </span>
+			<span> <%=  link_to '宝贝地址', 'http://detail.tmall.com/item.htm?id='+ @shop_item.item_sn      %> </span>
 
 		</li>
 	</ul>
@@ -35,7 +39,8 @@
 			<tr>
 				<td> 时间 </td>
 				<td> 标题 </td>
-				<td> 价格 </td>				
+				<td> 价格 </td>			
+				<td> 主图 </td>	
 			</tr>
 			
 			<% @shop_item.versions.find(:all,:order => 'updated_at desc').each do |item| %>
@@ -43,7 +48,7 @@
 					<td> <%= item.updated_at.strftime('%Y-%m-%d %H:%M:%S') %></td>
 					<td> <%= item.title %></td>
 					<td> <%= item.price %></td>
-
+					<td> <%= link_to (image_tag item.thumb ,:class=>'table_img_thumb'),item.thumb,target: "_blank" %></td>
 				</tr>
 			<% end %>
 		
@@ -58,19 +63,22 @@
 	</div>
 </div>
 
+<div class="row text-center">
+	<div class="description text-center" style="width:750px;margin:0 auto">
+		<%= @shop_item.content.content.html_safe %>
+	</div>
 
-<div class="description">
-	<%= @shop_item.content.content.html_safe %>
 </div>
 
 
-<div class="content_history">
+
+<div class="content_history text-center" style="margin-bottom:60px;">
 	<%=  select_tag "fversion", options_from_collection_for_select(@shop_item.content.versions.find(:all,:order => 'updated_at desc'), "version","updated_at") %>
 
 
 
 
-<%=  select_tag "sversion", options_from_collection_for_select(@shop_item.content.versions.find(:all,:order => 'updated_at desc'), "version","updated_at") %>
+<%=  select_tag "sversion", options_from_collection_for_select(@shop_item.content.versions.find(:all,:order => 'updated_at desc'), "version","updated_at") %><br>
 
 
 <%= button_tag "Compare", data: { 'id' => "compare"},type:'button',id:'compare_btn' ,class:'btn'%>
