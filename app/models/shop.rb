@@ -27,9 +27,26 @@ class Shop < ActiveRecord::Base
 		self.url.index("tmall")
 	end
 
+
+	def today_sales(offset = 0)
+		ItemSale.includes(:shop_item,:shop).where(['shops.id= ? and (buy_time > ? and buy_time < ? )',self.id, Time.new.beginning_of_day-offset*3600*24,Time.now.end_of_day-offset*3600*24])
+	end
+	
+
+	# def today_sales(offset = 0)
+	# 	sum = []
+	# 	shop_items.each {|item| 
+	# 		#puts " #{item.id} #{item.title} #{item.today_sales_money} #{item.today_sales_money}"
+	# 		res = item.today_sales(offset)
+	# 		sum.concat res if res.count > 0
+	# 	}
+	# 	sum
+	# end
+
+
 	def today_sales_count(offset = 0)
 		shop_items.inject(0) {|sum,item|
-			puts " #{item.id} #{item.title} #{item.today_sales_count}"
+			#puts " #{item.id} #{item.title} #{item.today_sales_count}"
 			
 			sum + item.today_sales_count(offset)
 		}

@@ -68,4 +68,27 @@ module UserCenterHelper
 	end
 
 
+	def today_sales(shop,offset=0)
+		res = {}
+		sales = shop.today_sales(offset)
+		sales.each do |s|
+
+			if !res[s.shop_item.id]
+				row = {}
+				row['item'] = link_to s.shop_item.title,shop_item_path(s.shop_item)
+				row['count'] = s.item_num.to_i
+				row['money'] = s.item_num.to_i * s.item_price.to_f
+				res[s.shop_item.id] = row
+			else
+				res[s.shop_item.id]['count'] += s.item_num.to_i
+				res[s.shop_item.id]['money'] += s.item_num.to_i* s.item_price.to_f
+			end
+		end
+		res = res.to_a.sort do |a,b|
+			b[1]['money'] <=>  a[1]['money']
+		end
+		res
+	end
+
+
 end

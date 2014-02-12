@@ -1,3 +1,5 @@
+<%= render :partial => "/user_center/time_select" %>  
+
 <% @shops.each do |shop| %>
 
 <section>
@@ -6,23 +8,26 @@
 
 	<dl class="dl-horizontal"> 
 		<dt>今日订单：</dt>
-		<dd><%= shop.today_sales_count() %> 个 </dd>
+		<dd><%= shop.today_sales_count(@offset) %> 个 </dd>
 
 		<dt>今日金额： </dt>
-		<dd> <%= shop.today_sales_money().round(2) %> 元 </dd>
+		<dd> <%= shop.today_sales_money(@offset).round(2) %> 元 </dd>
 	</dl>
 	
 	<div class="accordion" id="accordion<%=shop.id%>">
 		<div class="accordion-group">
+
+
+
 	    	<div class="accordion-heading">
 	      		<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion<%=shop.id%>" href="#collapse<%=shop.id%>">
-	       	 		今日行为（<%= today_change_count(shop) %>）
+	       	 		今日行为（<%= today_change_count(shop,@offset) %>）
 	      		</a>
 	    	</div>
 	    	<div id="collapse<%=shop.id%>" class="accordion-body collapse ">
 	      		<div class="accordion-inner">
 					<ul> 
-						<% today_changes(shop).each do |change| %>
+						<% today_changes(shop,@offset).each do |change| %>
 
 							<li>
 								
@@ -38,6 +43,38 @@
 	    	</div>
 	   </div>
    </div>
+
+
+	<div class="accordion" id="accordion_sale<%=shop.id%>">
+		<div class="accordion-group">
+
+
+
+	    	<div class="accordion-heading">
+	      		<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion_sale<%=shop.id%>" href="#collapse_sale<%=shop.id%>">
+	       	 		具体销售
+	      		</a>
+	    	</div>
+	    	<div id="collapse_sale<%=shop.id%>" class="accordion-body collapse ">
+	      		<div class="accordion-inner">
+					<ul> 
+						<% today_sales(shop,@offset).each do |k,sale| %>
+							<li>
+								<%= sale['item'] %> &nbsp;&nbsp; 数量：<%= sale['count'] %>&nbsp;&nbsp; 总金额: <%= sale['money'].round(2) %>
+							</li>
+
+
+
+
+						<% end %>
+					
+					</ul>
+
+	      		</div>
+	    	</div>
+	   </div>
+   </div>
+
 
 </section>
 	
