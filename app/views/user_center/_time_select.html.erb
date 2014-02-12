@@ -1,0 +1,55 @@
+<div class="search"><form action="index.php" method="get"><input type="hidden" name="m" value="stats">
+<input type="hidden" name="c" value="order">
+<input type="hidden" name="a" value="order_overview">
+<a href="" time="today">今天</a>&nbsp;&nbsp;<a href="" time="yesterday">昨天</a>&nbsp;&nbsp;<a href="" time="yyday">前天</a>&nbsp;&nbsp;
+<script type="text/javascript">
+
+
+$(function()
+{
+	var timeRange = {
+
+		'today': {
+			'offset':0,
+		},
+		'yesterday': {
+			'offset':1,
+		},
+		'yyday': {
+			'offset':2,
+		},
+	}
+	function directToUrl(start)
+	{
+		var href = window.location.href;
+		if(href.indexOf('offset')!=-1)
+			href = href.substr(0,href.indexOf('offset')-1)
+
+		if(href.indexOf('&') != -1)
+			href = href + '&'
+		href = href + '?offset=' +start ;
+
+		window.location.href = href;
+	}
+	$('.search a').click(function(){
+
+		var time = timeRange[$(this).attr('time')];
+
+		var start = time.offset;
+		
+		directToUrl(start);
+	
+		return false;
+	});
+
+});
+</script> 
+<!-- <input type="button" id="searchBtn" class="button" value="搜索" title="提示：由于系统限制，您目前只能查询最近三个月数据"> -->
+<style type="text/css">
+.table-list td,.table-list th{padding:3px;padding-left:3px;}
+.table-list tbody td,.table-list .btn{border-bottom: #ddd 1px solid; padding-top:5px; padding-bottom:5px}
+.table-list thead th{height:30px; background:#eef2f2; border-bottom:1px solid #d5dfe8; font-weight:normal}
+.td-line{border:1px solid #ddd;border-top:0;}
+.td-line td{border:1px solid #ddd;border-top:0;}
+</style>
+</form></div>
