@@ -79201,3 +79201,23 @@ start_time: 1392112788
 2014-02-09 21:33:44
 current: 1391952824
 start_time: 1392112788
+start item :16172623201
+pageStart
+start item :14355819808
+pageStart
+loadJs end
+0
+wait for contfunction () {
+
+				 	 			$('#description>div.content img').each(function(index,ele)
+				 	 			{
+
+									if($(ele).attr('data-ks-lazyload'))
+									{
+										return false;
+									}
+				 	 			});
+
+
+				 	 			return $('#J_TabBar li:eq(2) a').html() != undefined && $('#description>div.content').html().trim()!='描述加载中';		
+				 	 		}
