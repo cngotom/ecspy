@@ -78748,3 +78748,226 @@ start_time: 0
 2014-02-12 14:18:12
 current: 1392185892
 start_time: 0
+start item :21808059783
+pageStart
+loadJs end
+0
+wait for contfunction () {
+
+				 	 			$('#description>div.content img').each(function(index,ele)
+				 	 			{
+
+									if($(ele).attr('data-ks-lazyload'))
+									{
+										return false;
+									}
+				 	 			});
+
+
+				 	 			return $('#J_TabBar li:eq(2) a').html() != undefined && $('#description>div.content').html().trim()!='描述加载中';		
+				 	 		}
+0
+wait for contfunction () {
+
+				 	 			$('#description>div.content img').each(function(index,ele)
+				 	 			{
+
+									if($(ele).attr('data-ks-lazyload'))
+									{
+										return false;
+									}
+				 	 			});
+
+
+				 	 			return $('#J_TabBar li:eq(2) a').html() != undefined && $('#description>div.content').html().trim()!='描述加载中';		
+				 	 		}
+J_showBuyerList is 月成交记录<span class="J_MonSales" style="display: inline; "><em class="J_TDealCount tm-MRswitchRecord">7</em>件</span>
+0
+wait for contfunction () {
+	    											var pos = getElementAbsPos($('#J_showBuyerList')[0]);
+			 	 									window.scroll(pos.left,pos.top);
+
+	    											return $('#J_showBuyerList tr').length > 0;
+
+	    										}
+0
+wait for contfunction () {
+	    											var pos = getElementAbsPos($('#J_showBuyerList')[0]);
+			 	 									window.scroll(pos.left,pos.top);
+
+	    											return $('#J_showBuyerList tr').length > 0;
+
+	    										}
+start page :0
+2014-02-04 09:49:48
+current: 1391478588
+start_time: 1392128589
+start item :35509685880
+pageStart
+loadJs end
+0
+wait for contfunction () {
+
+				 	 			$('#description>div.content img').each(function(index,ele)
+				 	 			{
+
+									if($(ele).attr('data-ks-lazyload'))
+									{
+										return false;
+									}
+				 	 			});
+
+
+				 	 			return $('#J_TabBar li:eq(2) a').html() != undefined && $('#description>div.content').html().trim()!='描述加载中';		
+				 	 		}
+0
+wait for contfunction () {
+
+				 	 			$('#description>div.content img').each(function(index,ele)
+				 	 			{
+
+									if($(ele).attr('data-ks-lazyload'))
+									{
+										return false;
+									}
+				 	 			});
+
+
+				 	 			return $('#J_TabBar li:eq(2) a').html() != undefined && $('#description>div.content').html().trim()!='描述加载中';		
+				 	 		}
+J_showBuyerList is 月成交记录<span class="J_MonSales" style="display: inline; "><em class="J_TDealCount tm-MRswitchRecord">9</em>件</span>
+0
+wait for contfunction () {
+	    											var pos = getElementAbsPos($('#J_showBuyerList')[0]);
+			 	 									window.scroll(pos.left,pos.top);
+
+	    											return $('#J_showBuyerList tr').length > 0;
+
+	    										}
+0
+wait for contfunction () {
+	    											var pos = getElementAbsPos($('#J_showBuyerList')[0]);
+			 	 									window.scroll(pos.left,pos.top);
+
+	    											return $('#J_showBuyerList tr').length > 0;
+
+	    										}
+start page :0
+2014-02-06 12:40:56
+current: 1391661656
+start_time: 1392128961
+start item :35677292297
+pageStart
+loadJs end
+0
+wait for contfunction () {
+
+				 	 			$('#description>div.content img').each(function(index,ele)
+				 	 			{
+
+									if($(ele).attr('data-ks-lazyload'))
+									{
+										return false;
+									}
+				 	 			});
+
+
+				 	 			return $('#J_TabBar li:eq(2) a').html() != undefined && $('#description>div.content').html().trim()!='描述加载中';		
+				 	 		}
+0
+wait for contfunction () {
+
+				 	 			$('#description>div.content img').each(function(index,ele)
+				 	 			{
+
+									if($(ele).attr('data-ks-lazyload'))
+									{
+										return false;
+									}
+				 	 			});
+
+
+				 	 			return $('#J_TabBar li:eq(2) a').html() != undefined && $('#description>div.content').html().trim()!='描述加载中';		
+				 	 		}
+J_showBuyerList is 月成交记录<span class="J_MonSales" style="display: inline; "><em class="J_TDealCount tm-MRswitchRecord">7</em>件</span>
+0
+wait for contfunction () {
+	    											var pos = getElementAbsPos($('#J_showBuyerList')[0]);
+			 	 									window.scroll(pos.left,pos.top);
+
+	    											return $('#J_showBuyerList tr').length > 0;
+
+	    										}
+0
+wait for contfunction () {
+	    											var pos = getElementAbsPos($('#J_showBuyerList')[0]);
+			 	 									window.scroll(pos.left,pos.top);
+
+	    											return $('#J_showBuyerList tr').length > 0;
+
+	    										}
+0
+wait for contfunction () {
+	    											var pos = getElementAbsPos($('#J_showBuyerList')[0]);
+			 	 									window.scroll(pos.left,pos.top);
+
+	    											return $('#J_showBuyerList tr').length > 0;
+
+	    										}
+start page :0
+2014-02-12 12:22:01
+current: 1392178921
+start_time: 1392129170
+2014-02-09 21:53:48
+current: 1391954028
+start_time: 1392129170
+start item :10622433372
+pageStart
+loadJs end
+0
+wait for contfunction () {
+
+				 	 			$('#description>div.content img').each(function(index,ele)
+				 	 			{
+
+									if($(ele).attr('data-ks-lazyload'))
+									{
+										return false;
+									}
+				 	 			});
+
+
+				 	 			return $('#J_TabBar li:eq(2) a').html() != undefined && $('#description>div.content').html().trim()!='描述加载中';		
+				 	 		}
+0
+wait for contfunction () {
+
+				 	 			$('#description>div.content img').each(function(index,ele)
+				 	 			{
+
+									if($(ele).attr('data-ks-lazyload'))
+									{
+										return false;
+									}
+				 	 			});
+
+
+				 	 			return $('#J_TabBar li:eq(2) a').html() != undefined && $('#description>div.content').html().trim()!='描述加载中';		
+				 	 		}
+J_showBuyerList is 月成交记录<span class="J_MonSales" style="display: inline; "><em class="J_TDealCount tm-MRswitchRecord">98</em>件</span>
+0
+wait for contfunction () {
+	    											var pos = getElementAbsPos($('#J_showBuyerList')[0]);
+			 	 									window.scroll(pos.left,pos.top);
+
+	    											return $('#J_showBuyerList tr').length > 0;
+
+	    										}
+0
+wait for contfunction () {
+	    											var pos = getElementAbsPos($('#J_showBuyerList')[0]);
+			 	 									window.scroll(pos.left,pos.top);
+
+	    											return $('#J_showBuyerList tr').length > 0;
+
+	    										}

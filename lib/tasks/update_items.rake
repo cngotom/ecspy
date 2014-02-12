@@ -14,6 +14,22 @@ GetListRes = "log/phantomjs/getlist.res"
 GetSalesLog  = "log/phantomjs/getsales.log"
 GetSalesRes = "log/phantomjs/getsales.res"
 
+
+
+def lock(lockfile)
+	raise 'pid file exist' if File.exists? lockfile
+	f = File.open(lockfile,'w')
+	f.puts Process.pid
+	f.flock(File::LOCK_EX)
+	begin
+		yield if block_given?
+	ensure
+		f.close
+		File.delete lockfile
+	end
+end
+
+
 task :update_shop_items_list => :environment do
   
 
@@ -145,7 +161,7 @@ task :update_shop_item_sales =>:environment do
 	end_time = Time.now
 
 	last_time = end_time - beg_time
-	
+
 	puts "crawl #{item_count} items, last_time: #{last_time} seconds ,per #{last_time / item_count} items/s" if item_count > 0
 
 
@@ -179,4 +195,20 @@ task :content_compare =>:environment do
 		end
 	end
 
+end
+
+
+desc 'unique update item list'
+task :uniq_item_list do
+	lock('update_item_list.pid') do
+		Rake::Task['update_shop_items_list'].invoke
+	end
+end
+
+
+desc 'unique update item sales'
+task :uniq_item_sales do
+	lock('uniq_item_sales.pid') do
+		Rake::Task['update_shop_item_sales'].invoke
+	end
 end
