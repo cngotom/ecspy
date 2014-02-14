@@ -1,0 +1,7 @@
+<%= form_tag({action: :upload}, multipart: true) do %>
+  <%= text_field_tag 'id' %>
+  <%= text_field_tag 'type' %>
+  <%= file_field_tag 'data' %>
+
+  <%= submit_tag %>
+<% end %>

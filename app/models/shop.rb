@@ -11,7 +11,7 @@ class Shop < ActiveRecord::Base
 	has_many :shop_contents, :through => :shop_items,:source => :content
 
 	#not update in 6 hours or created in 6 hours
-	scope :recently_not_updated,where( ["updated_at < ? or ( created_at > ?  and updated_at = created_at )", Time.now - 6.hour, Time.now - 6.hour])
+	scope :recently_not_updated,where( ["updated_at < ? or ( created_at > ?  and updated_at = created_at )", Time.now - 2.hour, Time.now - 2.hour])
 
 	#scope :unwatched, lamda {|user|  self.ALl - User.find(user).followed  }
 
@@ -31,7 +31,7 @@ class Shop < ActiveRecord::Base
 	def today_sales(offset = 0)
 		ItemSale.includes(:shop_item,:shop).where(['shops.id= ? and (buy_time > ? and buy_time < ? )',self.id, Time.new.beginning_of_day-offset*3600*24,Time.now.end_of_day-offset*3600*24])
 	end
-	
+
 
 	# def today_sales(offset = 0)
 	# 	sum = []

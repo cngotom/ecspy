@@ -1,5 +1,17 @@
 <%= render :partial => "/user_center/time_select" %>  
 
+
+<dl class="dl-horizontal">
+
+	<dt> last items: </dt>
+
+	<dd>   <%= Shop.order('updated_at desc').limit(1).first.updated_at %>             </dd>
+
+
+	<dt> last sales: </dt>
+
+	<dd>   <%= ShopItem.order('last_check_time desc').limit(1).first.last_check_time %>             </dd>
+</dl>
 <% @shops.each do |shop| %>
 
 <section>

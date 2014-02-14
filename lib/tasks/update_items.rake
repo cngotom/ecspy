@@ -1,5 +1,7 @@
 require 'json'
 require 'time'
+require 'timeout'
+
 desc 'auto update shop`s items'
 
 Exec = 'phantomjs  --load-images=no'
@@ -14,6 +16,18 @@ GetListRes = "log/phantomjs/getlist.res"
 GetSalesLog  = "log/phantomjs/getsales.log"
 GetSalesRes = "log/phantomjs/getsales.res"
 
+def exec_with_timeout(cmd,timeout = 60)
+	pipe = IO.popen(cmd)
+	begin
+		Timeout.timeout(timeout) do
+			pipe.read
+		end
+	rescue Timeout::Error
+		puts "#{cmd} time out "
+		Process.kill 9, pipe.pid
+		'killed because timeout'
+	end
+end
 
 
 def lock(lockfile)
@@ -21,27 +35,43 @@ def lock(lockfile)
 	f = File.open(lockfile,'w')
 	f.puts Process.pid
 	f.flock(File::LOCK_EX)
+
+	delete_proc =  proc {
+		File.delete lockfile if File.exists? lockfile
+	}
+
+
+	at_exit &delete_proc
+	trap("KILL") &delete_proc
 	begin
 		yield if block_given?
 	ensure
 		f.close
-		File.delete lockfile
+		delete_proc.call
 	end
 end
 
-
+require 'redis'
+require 'redis-lock'
 task :update_shop_items_list => :environment do
   
 
+	$redis  = Redis.new
+
+	
 
 	out_file_ext = Time.new.strftime('.%Y-%m-%d-%H-%M')
 	out_file = GetListRes + out_file_ext
 
+	File.delete out_file if File.exist?(out_file)
+	
 	shops = Shop.recently_not_updated
 	shops.each do |shop|
 		puts "#{shop.title},last_updated: #{ shop.updated_at.strftime('%Y-%m-%d %H:%M:%S') }"
 		puts "#{Exec} #{ScriptDir}/getlist.js #{shop.url} #{shop.id} #{out_file} #{GetListLog}"
-		retn = `#{Exec} #{ScriptDir}/getlist.js #{shop.url} #{shop.id} #{out_file} #{GetListLog}`
+
+
+		retn = exec_with_timeout("#{Exec} #{ScriptDir}/getlist.js #{shop.url} #{shop.id} #{out_file} #{GetListLog}")
 		# => retn = 'ok'
 		if retn.chomp == 'ok'
 
@@ -58,8 +88,9 @@ task :update_shop_items_list => :environment do
 			puts retn
 
 		end
-
+		
 	end
+
 
 	#handle GetListRes outfile
 	if shops.size > 0
@@ -109,12 +140,11 @@ task :update_shop_item_sales =>:environment do
 		File.delete GetSalesRes if File.exist?(GetSalesRes)
 
 		if item.shop.tmall?
-
 			puts "#{Exec} #{ScriptDir}/getitem.js #{item.item_sn} #{timestamp} #{GetSalesRes} #{GetSalesLog}"
-			retn = `#{Exec} #{ScriptDir}/getitem.js #{item.item_sn} #{timestamp} #{GetSalesRes} #{GetSalesLog}`
+			retn = exec_with_timeout("#{Exec} #{ScriptDir}/getitem.js #{item.item_sn} #{timestamp} #{GetSalesRes} #{GetSalesLog}")
 		else
 			puts "#{ExecTB} #{ScriptDir}/getitem_tb.js #{item.item_sn} #{timestamp} #{GetSalesRes} #{GetSalesLog}"
-			retn = `#{ExecTB} #{ScriptDir}/getitem_tb.js #{item.item_sn} #{timestamp} #{GetSalesRes} #{GetSalesLog}`
+			retn = exec_with_timeout "#{ExecTB} #{ScriptDir}/getitem_tb.js #{item.item_sn} #{timestamp} #{GetSalesRes} #{GetSalesLog}"
 		end	
 
 		# => retn = 'ok'

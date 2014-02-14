@@ -79201,3 +79201,204 @@ start_time: 1392112788
 2014-02-09 21:33:44
 current: 1391952824
 start_time: 1392112788
+start item :35018792719
+pageStart
+loadJs end
+0
+wait for contfunction () {
+
+				 	 			$('#description>div.content img').each(function(index,ele)
+				 	 			{
+
+									if($(ele).attr('data-ks-lazyload'))
+									{
+										return false;
+									}
+				 	 			});
+
+
+				 	 			return $('#J_TabBar li:eq(2) a').html() != undefined && $('#description>div.content').html().trim()!='描述加载中';		
+				 	 		}
+0
+wait for contfunction () {
+
+				 	 			$('#description>div.content img').each(function(index,ele)
+				 	 			{
+
+									if($(ele).attr('data-ks-lazyload'))
+									{
+										return false;
+									}
+				 	 			});
+
+
+				 	 			return $('#J_TabBar li:eq(2) a').html() != undefined && $('#description>div.content').html().trim()!='描述加载中';		
+				 	 		}
+J_showBuyerList is 月成交记录<span class="J_MonSales" style="display: inline; "><em class="J_TDealCount tm-MRswitchRecord">173</em>件</span>
+0
+wait for contfunction () {
+	    											var pos = getElementAbsPos($('#J_showBuyerList')[0]);
+			 	 									window.scroll(pos.left,pos.top);
+
+	    											return $('#J_showBuyerList tr').length > 0;
+
+	    										}
+0
+wait for contfunction () {
+	    											var pos = getElementAbsPos($('#J_showBuyerList')[0]);
+			 	 									window.scroll(pos.left,pos.top);
+
+	    											return $('#J_showBuyerList tr').length > 0;
+
+	    										}
+start page :0
+2014-02-14 19:33:22
+current: 1392377602
+start_time: 1392200757
+2014-02-14 15:56:15
+current: 1392364575
+start_time: 1392200757
+2014-02-14 12:31:19
+current: 1392352279
+start_time: 1392200757
+2014-02-14 12:18:43
+current: 1392351523
+start_time: 1392200757
+2014-02-14 08:47:33
+current: 1392338853
+start_time: 1392200757
+2014-02-13 22:46:10
+current: 1392302770
+start_time: 1392200757
+2014-02-13 14:06:13
+current: 1392271573
+start_time: 1392200757
+2014-02-13 13:59:34
+current: 1392271174
+start_time: 1392200757
+2014-02-13 11:33:06
+current: 1392262386
+start_time: 1392200757
+2014-02-12 21:10:31
+current: 1392210631
+start_time: 1392200757
+2014-02-12 18:43:22
+current: 1392201802
+start_time: 1392200757
+2014-02-12 18:23:53
+current: 1392200633
+start_time: 1392200757
+start item :25712504428
+pageStart
+loadJs end
+0
+wait for contfunction () {
+
+				 	 			$('#description>div.content img').each(function(index,ele)
+				 	 			{
+
+									if($(ele).attr('data-ks-lazyload'))
+									{
+										return false;
+									}
+				 	 			});
+
+
+				 	 			return $('#J_TabBar li:eq(2) a').html() != undefined && $('#description>div.content').html().trim()!='描述加载中';		
+				 	 		}
+J_showBuyerList is 月成交记录<span class="J_MonSales" style="display: inline; "><em class="J_TDealCount tm-MRswitchRecord">255</em>件</span>
+0
+wait for contfunction () {
+	    											var pos = getElementAbsPos($('#J_showBuyerList')[0]);
+			 	 									window.scroll(pos.left,pos.top);
+
+	    											return $('#J_showBuyerList tr').length > 0;
+
+	    										}
+0
+wait for contfunction () {
+	    											var pos = getElementAbsPos($('#J_showBuyerList')[0]);
+			 	 									window.scroll(pos.left,pos.top);
+
+	    											return $('#J_showBuyerList tr').length > 0;
+
+	    										}
+start page :0
+2014-02-14 22:33:24
+current: 1392388404
+start_time: 1392200763
+2014-02-14 22:12:39
+current: 1392387159
+start_time: 1392200763
+2014-02-14 20:15:56
+current: 1392380156
+start_time: 1392200763
+2014-02-14 18:40:03
+current: 1392374403
+start_time: 1392200763
+2014-02-14 17:05:22
+current: 1392368722
+start_time: 1392200763
+2014-02-14 15:47:11
+current: 1392364031
+start_time: 1392200763
+2014-02-14 15:43:04
+current: 1392363784
+start_time: 1392200763
+2014-02-14 15:35:11
+current: 1392363311
+start_time: 1392200763
+2014-02-14 10:33:03
+current: 1392345183
+start_time: 1392200763
+2014-02-14 10:25:55
+current: 1392344755
+start_time: 1392200763
+2014-02-14 10:21:43
+current: 1392344503
+start_time: 1392200763
+2014-02-14 09:35:44
+current: 1392341744
+start_time: 1392200763
+2014-02-13 23:30:00
+current: 1392305400
+start_time: 1392200763
+2014-02-13 23:14:03
+current: 1392304443
+start_time: 1392200763
+2014-02-13 21:06:49
+current: 1392296809
+start_time: 1392200763
+16
+wait for contfunction () {
+
+			    									var currentValue = $('#J_showBuyerList tr:eq(1)').html();
+			    									if(nowTrValue == currentValue)
+			    										return false;
+			    									else{
+			    										nowTrValue = currentValue;
+			    										return true;
+			    									}
+
+			    								}
+start page :1
+2014-02-13 15:59:14
+current: 1392278354
+start_time: 1392200763
+2014-02-13 13:57:44
+current: 1392271064
+start_time: 1392200763
+2014-02-13 10:47:24
+current: 1392259644
+start_time: 1392200763
+2014-02-13 10:27:40
+current: 1392258460
+start_time: 1392200763
+2014-02-13 09:26:38
+current: 1392254798
+start_time: 1392200763
+2014-02-12 14:54:18
+current: 1392188058
+start_time: 1392200763
+start item :18204010699
+pageStart

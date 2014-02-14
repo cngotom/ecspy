@@ -56,3 +56,7 @@ gem 'simple_form'
 gem "acts_as_follower", :git => 'git://github.com/tcocca/acts_as_follower.git', :branch => 'rails_3'
 
 gem "wice_grid", '3.2.1'
+
+
+gem 'redis'
+gem 'redis-lock'

@@ -3,6 +3,10 @@ Ecspy::Application.routes.draw do
 
 
 
+  get "file_upload/index"
+
+  post "file_upload/upload"
+
   match "user_center/index" => 'user_center#index' ,:as => :user_root
 
   root to: 'user_center#index'

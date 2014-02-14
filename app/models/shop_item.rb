@@ -28,7 +28,7 @@ class ShopItem < ActiveRecord::Base
 	self.non_versioned_columns << 'last_check_time'
 
 
-	scope :recently_not_check ,where(["last_check_time < ? or ( last_check_time is NULL )", Time.now - 6.hour])
+	scope :recently_not_check ,where(["last_check_time < ? or ( last_check_time is NULL )", Time.now - 2.hour])
 
 
 
