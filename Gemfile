@@ -1,5 +1,8 @@
 source 'http://ruby.taobao.org'
 
+gem 'execjs'
+gem 'therubyracer'
+
 gem 'rails', '3.2.0'
 
 # Bundle edge Rails instead:
