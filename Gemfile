@@ -63,3 +63,5 @@ gem "wice_grid", '3.2.1'
 
 gem 'redis'
 gem 'redis-lock'
+
+gem 'mysql2'

@@ -1,9 +1,104 @@
 // Place all the styles related to the user_center controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-
+//*= require datepicker
 a.cur {
 	color:red;
 }
 
 
+
+#date_box {
+	border: 1px solid #E8E8E8;
+	border-bottom: none;
+}
+
+#date_box .date_d_date_box {
+border-bottom: 3px solid #5EB0E2;
+}
+
+
+.date_d_date_box{height:47px;background-color:#f8f8f8;position:relative;}
+.date_d_quickDate{top:12px;margin-left:10px;position:relative;float:left;}
+.date_d_dateValue{width:112px;text-align:center;margin-left:89px;line-height:25px;font-size:18px;color:#3e3c3c;position:absolute;background-color:#F8F8F8;border:none;}
+.date_d_dateActive{background:url(/assets/di_su.gif) no-repeat scroll -138px 0 transparent;width:88px;height:23px;line-height:23px;font-size:12px;font-weight:bold;text-decoration:none;color:#8d8d8d;text-align:center;display:block;position:absolute;}
+.date_d_dateActive:hover{background:url(/assets/di_su.gif) no-repeat scroll -138px 0 transparent;width:88px;height:23px;line-height:23px;font-size:12px;font-weight:bold;text-decoration:none;color:#000;text-align:center;display:block;position:absolute;}
+.date_d_dateDeactive{background:url(/assets/di_su.gif) no-repeat scroll -276px 0 transparent;width:88px;height:23px;line-height:23px;float:left;font-size:12px;font-weight:bold;text-decoration:none;text-align:center;display:block;color:#cacaca;cursor:default;position:absolute}
+.date_d_dateSpec{position:absolute;margin-left:200px;}
+.date_d_timerBox{right:40px;position:absolute;}
+.date_d_timerBox p{float:left;line-height:47px;font-size:14px;font-weight:bold;color:#000000;}
+.date_d_timerBox select{background-color:#F8F8F8;border:1px solid #E3E3E3;float:left;font-size:14px;height:23px;margin:12px 5px 0 10px;}
+.date_d_timeInput{height:25px;line-height:25px;border:1px solid #e3e3e3;margin:10px 0px 0px 5px;float:left;background:url(/assets/di_su.gif) no-repeat 97px -69px;color:#000000;font-family:Arial;text-indent:0.5em;}
+.date_d_viewBtn{position:absolute;right:20px;cursor:pointer;width:65px;height:27px;float:left;margin:10px 0px 0px 0px;background:url(/assets/di_su.gif) no-repeat scroll 0 -141px transparent;border:none;font-size:14px;font-weight:bold;color:#ffffff;}
+.date_d_timeSearch {
+height: 25px;
+line-height: 25px;
+margin: 10px 0px 0px 5px;
+float: left;
+color: #000000;
+font-family: Arial;
+text-indent: 0.5em;
+}
+
+section h3.title {
+height: 29px;
+color: #15a7dc;
+font-size: 24px;
+font-weight: 100;
+line-height: 26px;
+font-family: "微软雅黑";
+background: url(/assets/ti_bg.jpg) repeat-x top center;
+}
+
+.NHR_b1 {
+width: 121px;
+float: left;
+line-height: 24px;
+font-size: 12px;
+color: #959595;
+text-align: center;
+font-family: "宋体";
+}
+
+.NHR_b2 {
+width: 121px;
+float: left;
+font-weight: 100;
+line-height: 34px;
+font-size: 21px;
+font-family: Arial;
+color: #039fd8;
+text-align: center;
+}
+.NHR_week p {
+color: #959595;
+text-decoration: none;
+cursor: default;
+}
+.NHR_qian p {
+color: #959595;
+text-decoration: none;
+cursor: default;
+}
+.NHR_qian {
+width: 120px;
+height: 12px;
+margin: 8px 3px 0px 3px;
+float: left;
+background: url(/assets/q_day.gif) 0px 0px no-repeat;
+text-align: right;
+overflow: hidden;
+}
+.NHR_week {
+width: 120px;
+height: 12px;
+margin: 8px 3px 0px 3px;
+float: left;
+background: url(/assets/weekday.gif) 0px 0px no-repeat;
+text-align: right;
+display: block;
+overflow: hidden;
+}
+.green{
+	font: 12px/1.231 arial,helvetica,clean,sans-serif;
+}

@@ -16,15 +16,18 @@ GetListRes = "log/phantomjs/getlist.res"
 GetSalesLog  = "log/phantomjs/getsales.log"
 GetSalesRes = "log/phantomjs/getsales.res"
 
-def exec_with_timeout(cmd,timeout = 60)
-	pipe = IO.popen(cmd)
+def exec_with_timeout(cmd,timeout = 60,max_retry = 0)
 	begin
+		pipe = IO.popen(cmd)
 		Timeout.timeout(timeout) do
 			pipe.read
 		end
 	rescue Timeout::Error
 		puts "#{cmd} time out "
 		Process.kill 9, pipe.pid
+		max_retry -= 1
+		retry if max_retry >= 0 
+
 		'killed because timeout'
 	end
 end
@@ -242,3 +245,50 @@ task :uniq_item_sales do
 		Rake::Task['update_shop_item_sales'].invoke
 	end
 end
+
+
+
+
+desc 'render preview'
+task :uniq_render_preview => :environment do
+
+	OutFileDir = File.join(Rails.root,'public','preview')
+
+	lock('uniq_render_preview.pid') do
+
+		today = Time.now.strftime('%Y-%m-%d')
+		Shop.all.each do |shop|
+
+			id = shop.id
+			url = shop.url
+
+			dir =  File.join(OutFileDir,"#{id}")
+
+			FileUtils.mkdir_p(dir) unless File.directory?(dir)
+
+
+			puts "start shop #{shop.id}"
+			outfile = File.join(dir,"#{today}.jpg")
+			height = `#{Exec} #{ScriptDir}/render_preview_h.js #{url} #{outfile}`
+
+			res = exec_with_timeout("#{ExecTB} #{ScriptDir}/render_preview.js #{url} #{outfile} #{height}",60,3)
+
+
+			#with convert
+			if res.chomp == 'ok'
+				outfile_small = outfile.gsub(".jpg","-small.jpg")
+				`convert -resize x800 #{outfile} #{outfile_small}`
+			end
+
+		end
+	end
+end
+
+
+
+task :test_retry do
+	puts exec_with_timeout("sleep 2",1,3)
+
+end
+
+

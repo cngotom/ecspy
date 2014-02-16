@@ -19,7 +19,9 @@ test:
   timeout: 5000
 
 production:
-  adapter: sqlite3
-  database: db/production.sqlite3
-  pool: 5
-  timeout: 5000
+  adapter: mysql2
+  database: ecspy_dev
+  host: 127.0.0.1
+  username: root
+  password: 50942757
+  encoding: utf8

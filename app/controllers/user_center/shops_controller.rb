@@ -23,7 +23,6 @@ class UserCenter::ShopsController < InheritedResources::Base
     end
   end
 
-  CurrentUser = 1
 
 
   def subscribe
@@ -46,6 +45,15 @@ class UserCenter::ShopsController < InheritedResources::Base
   		current_user.stop_following( Shop.find(shop_id)) 
 
   		render text: shop_id.to_s
+
+
+  end
+
+
+
+  def show
+
+    @shop = Shop.find(params['id'])
 
 
   end

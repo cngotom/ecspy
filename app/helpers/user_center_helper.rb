@@ -91,4 +91,12 @@ module UserCenterHelper
 	end
 
 
+	def get_preview(id,time)
+		"/preview/#{id}/#{time.strftime('%Y-%m-%d')}.jpg"
+	end
+
+	def get_preview_small(id,time)
+		"/preview/#{id}/#{time.strftime('%Y-%m-%d')}-small.jpg"
+	end
+
 end

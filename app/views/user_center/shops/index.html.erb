@@ -36,7 +36,7 @@
 
 			<% Shop.unwatched(1).each do |shop| %>
 				<li class="span4" shop-id='<%=shop.id%>'> 
-					标题: <%=shop.title %> <br>
+					标题: <%= link_to shop.title,user_center_shop_path(shop) %> <br>
 					url： <%=shop.url %> <br>
 					产品数: <%=shop.shop_items.count %> <br>
 
@@ -60,7 +60,7 @@
 
 			<% Shop.watched(1).each do |shop| %>
 				<li class="span4" shop-id='<%=shop.id%>'> 
-					标题: <%=shop.title %> <br>
+					标题: <%= link_to shop.title,user_center_shop_path(shop) %><br>
 					url： <%=shop.url %> <br>
 					产品数: <%=shop.shop_items.count %> <br>
 

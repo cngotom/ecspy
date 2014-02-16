@@ -108,6 +108,7 @@ GEM
     mime-types (1.25.1)
     mini_portile (0.5.2)
     multi_json (1.8.4)
+    mysql2 (0.3.15)
     nokogiri (1.6.1)
       mini_portile (~> 0.5.0)
     orm_adapter (0.5.0)
@@ -139,13 +140,10 @@ GEM
     rake (10.1.1)
     rdoc (3.12.2)
       json (~> 1.4)
-<<<<<<< HEAD
     redis (3.0.7)
     redis-lock (0.1.2)
       redis
-=======
     ref (1.0.5)
->>>>>>> 6db54a39c453f280f0ec5992b07ba335f23b7769
     responders (1.0.0)
       railties (>= 3.2, < 5)
     rspec (2.14.1)
@@ -207,6 +205,7 @@ DEPENDENCIES
   jquery-rails
   jquery-ui-rails
   js-routes
+  mysql2
   nokogiri
   rails (= 3.2.0)
   redis
