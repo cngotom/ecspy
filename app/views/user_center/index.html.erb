@@ -15,7 +15,7 @@
 <% @shops.each do |shop| %>
 
 <section>
-	<h3> <%= shop.title %> </h3>
+	<h3> <%= link_to shop.title,user_center_shop_path(shop) %> </h3>
 
 
 	<dl class="dl-horizontal"> 
