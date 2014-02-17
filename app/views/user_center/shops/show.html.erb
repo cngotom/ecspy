@@ -1,6 +1,5 @@
 	
 
-
 	<div id="date_box" class="DI_SU_time span12"> 
 		<div class="date_d_date_box">   
 		<div class="date_d_quickDate">     <a class="date_d_dateActive" href="javascript:void(0)">&lt;&lt;&nbsp;前一天</a>     <input id="J_quick_timer" class="date_d_dateValue" readonly="readonly"  disabled="disabled">     <a class="date_d_dateSpec date_d_dateDeactive" href="javascript:void(0)">后一天&nbsp;&gt;&gt;</a>   
@@ -26,50 +25,8 @@
 
 
 	<div class="clearfix"> </div>
-	<div >
-
-		<section > 
-			<h3 class="title"> 店铺核心数据 </h3>
-
-			<div class="row-fluid">
-				<div class="span2">
-					<p class='NHR_b1'> 浏览量 </p>
-					<p class='NHR_b2'>  1532</p>
-
-					<div class="NHR_qian">         
-						<p class="green">100.00%<img src="http://lz.taobao.com/s/diagnose/images/newHR/jian.gif"></p>     
-					</div>
-					<div class="NHR_week">       
-					  <p class="green">100.00%<img src="http://lz.taobao.com/s/diagnose/images/newHR/jian.gif"></p>   
-					</div>
-				</div>
-				<div class="span2">成交额</div>
-				<div class="span2">成交笔数</div>
-				<div class="span2">动态评分</div>
-				<div class="span2">客单价</div>
-				<div class="span2"> 转化率</div>
-			</div>
-		</section>
-
-
-		<section> 
-			<h3 class="title"> 店铺预览 </h3>
-			<a href="<%=get_preview(@shop.id,Time.now)%>" > <img src="<%=get_preview_small(@shop.id,Time.now)%>" /> </a>
-		</section>
-		<section> 
-			<h3 class="title"> 店铺排名 </h3>
-		</section>
-
-
-		<section> 
-			<h3 class="title"> 商品环节 </h3>
-			<strong> 支付宝成交金额TOP5宝贝 </strong>
-		</section>
-
-		<section> 
-			<h3 class="title"> 买家环节 </h3>
-
-		</section>
+	<div class="sections">
+		<%= render :partial => "/user_center/shops/show_data",:locals => @locals%>  
 
 	</div>
 
@@ -109,6 +66,29 @@
 				{
 					lclick.toggleClass('date_d_dateActive date_d_dateDeactive');
 				}
+				 $('.sections').html('');
+
+
+				 var timeDiff = Math.abs(today.getTime() - current.getTime());
+				 var diffDays = Math.ceil(timeDiff / (1000 * 3600 * 24));
+				 $.ajax({
+		            url: "<%= user_center_shop_path(@shop,:format => 'js')%>",
+		            type: "GET",
+		            data: {
+		            	'offset':  diffDays ,
+		            	'_rdm':Math.random()
+		            },
+		            dataType:"text",
+		            success: function(data) {
+		            	//alert(data);
+		               $('.sections').html(data);
+		            },
+					  error: function(e){
+					   // alert(e);
+					  }
+		          });
+
+
 
 
 			}

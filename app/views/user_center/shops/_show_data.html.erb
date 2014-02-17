@@ -1,0 +1,74 @@
+
+		<section > 
+			<h3 class="title"> 店铺核心数据 </h3>
+
+			<div class="row-fluid">
+				<div class="span2">
+					<p class='NHR_b1'> 成交额 </p>
+					<p class='NHR_b2'>  <%= today[1] %> </p>
+
+					<div class="NHR_qian">         
+						<p class="green"><%=yes_compare[1]%>% <%= get_change_icon(yes_compare[3]) %> </p>     
+					</div>
+					<div class="NHR_week">       
+					  <p class="green"><%=lastweekday_compare[1]%>% <%= get_change_icon(lastweekday_compare[3]) %></p>   
+					</div>
+				</div>
+				<div class="span2">
+					<p class='NHR_b1'> 成交笔数 </p>
+					<p class='NHR_b2'>  <%=  today[0] %></p>
+
+					<div class="NHR_qian">         
+						<p class="green"><%=yes_compare[0]%>% <%= get_change_icon  yes_compare[2]%></p>     
+					</div>
+					<div class="NHR_week">       
+					  <p class="green"><%=lastweekday_compare[0]%>% <%= get_change_icon  lastweekday_compare[2] %></p>   
+					</div>
+	
+
+
+				</div>
+
+
+				<div class="span2">浏览量</div>
+				<div class="span2">客单价</div>
+				<div class="span2">动态评分</div>
+				<div class="span2"> 转化率</div>
+			</div>
+		</section>
+
+
+		<section> 
+			<h3 class="title"> 店铺排名 </h3>
+		</section>
+
+
+		<section> 
+			<h3 class="title"> 商品环节 </h3>
+			<strong> 支付宝成交金额TOP5宝贝 </strong>
+			<ul class="">
+			<% today_sales(shop,offset).first(5).each do |k,sale| %>
+					<li>
+						<%= sale['img'] %> <%= sale['item'] %> &nbsp;&nbsp; 数量：<%= sale['count'] %>&nbsp;&nbsp; 总金额: <%= sale['money'].round(2) %>
+					</li>
+			<% end %>
+
+
+			</ul>
+
+
+		</section>
+
+
+	
+		<section> 
+			<h3 class="title"> 店铺预览 </h3>
+			<a href="<%=get_preview(shop.id,Time.now)%>" > <img src="<%=get_preview_small(shop.id,Time.now)%>" /> </a>
+		</section>
+
+
+
+		<section> 
+			<h3 class="title"> 买家环节 </h3>
+
+		</section>
