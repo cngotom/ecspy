@@ -111,4 +111,9 @@ class ShopItem < ActiveRecord::Base
 	def status_text
 		(status==1)? '下架' : '上架'
 	end
+
+
+	def self.status_text(status)
+		(status==1)? '下架' : '上架'
+	end
 end

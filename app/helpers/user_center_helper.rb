@@ -44,7 +44,7 @@ module UserCenterHelper
 
 				change += " 标题变化 #{prev.title} => #{last.title}" if last.title != prev.title
 				
-				change += " 状态变化 #{prev.status_text} => #{last.status_text}" if last.status != prev.status
+				change += " 状态变化 #{ShopItem.status_text prev.status} => #{ShopItem.status_text last.status}" if last.status != prev.status
 
 				change += " 主图变化 #{image_tag prev.thumb,:class=>'small'} => #{image_tag last.thumb,:class=>'small'}" if last.thumb != prev.thumb
 
@@ -58,7 +58,7 @@ module UserCenterHelper
 		end 
 
 
-		
+
 
 	 	ShopItemContentVersion.today_changes(shop,offset).each do |r|
 	 		item = ShopItemContent.find(r.shop_item_content_id)
