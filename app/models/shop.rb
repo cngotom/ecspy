@@ -1,3 +1,4 @@
+#encoding:utf-8
 class Shop < ActiveRecord::Base
 	attr_accessible :title,:url,:goods_num
 
@@ -67,6 +68,8 @@ class Shop < ActiveRecord::Base
 		watched.each do |w|
 			watched_ids << w
 		end
+		#in case of watche_ids is null
+		watched_ids << -1 
 		where(['id not in (?)', watched_ids ])
 
 	end
@@ -76,6 +79,18 @@ class Shop < ActiveRecord::Base
 		watched = User.find(user).following_by_type(self.name)
 	end
 
+
+	validate :url_validate
+	def url_validate
+	    unless url  =~ /http:\/\/(\w)*.(tmall|taobao).com\// 
+	    	errors[:url] << 'url格式不正确 参考 ： http://slwsp.tmall.com/'
+	    end
+  	end
+
+# 
+	# before save do
+	# 	url << '/' if url.last != '/'
+	# end
 
 
 end

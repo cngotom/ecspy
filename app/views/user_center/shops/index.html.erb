@@ -34,7 +34,7 @@
 		<h3>未订阅</h3>
 		<ul class="thumbnails">
 
-			<% Shop.unwatched(1).each do |shop| %>
+			<% Shop.unwatched(current_user.id).each do |shop| %>
 				<li class="span4" shop-id='<%=shop.id%>'> 
 					标题: <%= link_to shop.title,user_center_shop_path(shop) %> <br>
 					url： <%=shop.url %> <br>
@@ -58,7 +58,7 @@
 		<h3>已订阅</h3>
 		<ul class="thumbnails">
 
-			<% Shop.watched(1).each do |shop| %>
+			<% Shop.watched(current_user.id).each do |shop| %>
 				<li class="span4" shop-id='<%=shop.id%>'> 
 					标题: <%= link_to shop.title,user_center_shop_path(shop) %><br>
 					url： <%=shop.url %> <br>
