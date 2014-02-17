@@ -34,11 +34,11 @@ module UserCenterHelper
 				prev = today_changes_cache["#{r.shop_item_id}_#{r.version-1}"]
 
 				if prev.nil?
-					prev = ShopItemVersion.includes(:shop_item).where(:shop_item_id => r.shop_item_id,:version=>r.version).limit(1).first
+					prev = ShopItemVersion.includes(:shop_item).where(:shop_item_id => r.shop_item_id,:version=>r.version-1).limit(1).first
 				end
 
 
-				change = "［商品］：<a href='#{shop_item_path(item)}' >#{last.title}</a> "
+				change = "［商品］：<a href='#{shop_item_path(item.shop_item)}' >#{last.title}</a> "
 
 				change += " 价格变化 #{prev.price} => #{last.price}" if last.price != prev.price
 
@@ -49,7 +49,7 @@ module UserCenterHelper
 				change += " 主图变化 #{image_tag prev.thumb,:class=>'small'} => #{image_tag last.thumb,:class=>'small'}" if last.thumb != prev.thumb
 
 			else
-				change = "［新品］:<a href='#{shop_item_path(item)}' >#{item.title}</a> 新上架"
+				change = "［新品］:<a href='#{shop_item_path(item.shop_item)}' >#{item.title}</a> 新上架"
 
 			end
 
