@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140211132803) do
+ActiveRecord::Schema.define(:version => 20140218131233) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -68,6 +68,7 @@ ActiveRecord::Schema.define(:version => 20140211132803) do
     t.integer  "shop_item_id"
   end
 
+  add_index "item_sales", ["buy_time"], :name => "index_item_sales_on_buy_time"
   add_index "item_sales", ["shop_item_id"], :name => "index_item_sales_on_shop_item_id"
 
   create_table "shop_item_content_versions", :force => true do |t|
@@ -77,6 +78,9 @@ ActiveRecord::Schema.define(:version => 20140211132803) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "shop_item_content_versions", ["shop_item_content_id"], :name => "index_shop_item_contents_versions_on_shop_item_id"
+  add_index "shop_item_content_versions", ["updated_at"], :name => "index_shop_item_content_versions_on_updated_at"
 
   create_table "shop_item_contents", :force => true do |t|
     t.text     "content"
@@ -102,6 +106,7 @@ ActiveRecord::Schema.define(:version => 20140211132803) do
   end
 
   add_index "shop_item_versions", ["shop_item_id"], :name => "index_shop_item_versions_on_shop_item_id"
+  add_index "shop_item_versions", ["updated_at"], :name => "index_shop_item_versions_on_updated_at"
 
   create_table "shop_items", :force => true do |t|
     t.string   "title"
@@ -121,6 +126,7 @@ ActiveRecord::Schema.define(:version => 20140211132803) do
   end
 
   add_index "shop_items", ["item_sn"], :name => "index_shop_items_on_item_sn", :unique => true
+  add_index "shop_items", ["last_check_time"], :name => "index_shop_items_on_last_check_time"
   add_index "shop_items", ["shop_id"], :name => "index_shop_items_on_shop_id"
 
   create_table "shops", :force => true do |t|
@@ -130,6 +136,9 @@ ActiveRecord::Schema.define(:version => 20140211132803) do
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
+
+  add_index "shops", ["created_at"], :name => "index_shops_on_created_at"
+  add_index "shops", ["updated_at"], :name => "index_shops_on_updated_at"
 
   create_table "users", :force => true do |t|
     t.string   "email",                  :default => "", :null => false
