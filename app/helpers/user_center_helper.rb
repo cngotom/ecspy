@@ -38,7 +38,7 @@ module UserCenterHelper
 				end
 
 
-				change = "［商品］：<a href='#{shop_item_path(item.shop_item)}' >#{last.title}</a> "
+				change = "［商品］：<a href='/shop_items/#{item.shop_item.id}' >#{last.title}</a> "
 
 				change += " 价格变化 #{prev.price} => #{last.price}" if last.price != prev.price
 
@@ -49,7 +49,7 @@ module UserCenterHelper
 				change += " 主图变化 #{image_tag prev.thumb,:class=>'small'} => #{image_tag last.thumb,:class=>'small'}" if last.thumb != prev.thumb
 
 			else
-				change = "［新品］:<a href='#{shop_item_path(item.shop_item)}' >#{item.title}</a> 新上架"
+				change = "［新品］:<a href='/shop_items/#{item.shop_item.id}' >#{item.title}</a> 新上架"
 
 			end
 
@@ -67,12 +67,14 @@ module UserCenterHelper
 				prev = last.previous
 
 
-		 		change = "［内容］:<a href='#{shop_item_path(item.shop_item)}' >#{item.shop_item.title}</a> 内容变化 "
+		 		change = "［内容］:<a href='/shop_items/#{item.shop_item.id}' >#{item.shop_item.title}</a> 内容变化 "
 
-				change +=  " <a href='#{content_compare_path(:id=>item.shop_item.id,:fversion=>last.version,:sversion=>prev.version)}' > 对比 </a>"
+				change +=  " <a href='/shop_items/#{item.shop_item.id}/content/#{last.version}/#{prev.version}' > 对比 </a>"
+
+				#{content_compare_path(:id=>item.shop_item.id,:fversion=>last.version,:sversion=>prev.version)}
 
 			else
-				change = "［内容］:<a href='#{shop_item_path(item.shop_item)}' >#{item.shop_item.title}</a> 内容创建"
+				change = "［内容］:<a href='/shop_items/#{item.shop_item.id}' >#{item.shop_item.title}</a> 内容创建"
 
 			end
 
@@ -92,8 +94,8 @@ module UserCenterHelper
 		sales.each do |s|
 			if !res[s.shop_item.id]
 				row = {}
-				row['item'] = link_to s.shop_item.title,shop_item_path(s.shop_item)
-				row['img'] = link_to image_tag(s.shop_item.thumb),shop_item_path(s.shop_item)
+				row['item'] = link_to s.shop_item.title, "/shop_items/#{s.shop_item.id}"
+				row['img'] = link_to image_tag(s.shop_item.thumb),"/shop_items/#{s.shop_item.id}"
 				row['count'] = s.item_num.to_i
 				row['money'] = s.item_num.to_i * s.item_price.to_f
 				res[s.shop_item.id] = row
