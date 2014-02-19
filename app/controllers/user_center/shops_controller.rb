@@ -2,6 +2,8 @@
 
 class UserCenter::ShopsController < InheritedResources::Base
   include StaticsHelper
+  include UserCenterHelper
+
   before_filter :authenticate_user!
 
   layout 'user_center'
@@ -66,12 +68,15 @@ class UserCenter::ShopsController < InheritedResources::Base
     lastweekday = calc_sales_count_and_money(@shop.today_sales(offset + 7 ))
 
 
+
+    today_changes_sales = today_changes(@shop.id,offset)
+
     @yes_compare = get_compare_rate(@today,yesterday)
 
     @lastweekday_compare = get_compare_rate(@today,lastweekday)
 
     @locals = { :today => @today,:lastweekday_compare => @lastweekday_compare,
-    :yes_compare => @yes_compare ,:shop => @shop ,:offset=>offset}
+    :yes_compare => @yes_compare ,:shop => @shop ,:offset=>offset,:today_changes_sales => today_changes_sales}
 
     #hack ugly?
     respond_to do |format|

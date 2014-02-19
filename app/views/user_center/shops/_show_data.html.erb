@@ -38,10 +38,22 @@
 		</section>
 
 
+		
 		<section> 
-			<h3 class="title"> 店铺排名 </h3>
-		</section>
+			<h3 class="title"> 当日行为 </h3>
 
+			<ul> 
+				<% today_changes_sales.each do |change| %>
+
+					<li>
+						<%= change.html_safe %>
+					</li>
+
+
+				<% end %>
+			
+			</ul>
+		</section>
 
 		<section> 
 			<h3 class="title"> 商品环节 </h3>
@@ -66,7 +78,9 @@
 			<a href="<%=get_preview(shop.id,Time.now)%>" > <img src="<%=get_preview_small(shop.id,Time.now)%>" /> </a>
 		</section>
 
-
+		<section> 
+			<h3 class="title"> 店铺排名 </h3>
+		</section>
 
 		<section> 
 			<h3 class="title"> 买家环节 </h3>
