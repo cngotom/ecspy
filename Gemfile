@@ -65,3 +65,6 @@ gem 'redis'
 gem 'redis-lock'
 
 gem 'mysql2'
+
+gem "resque"
+gem 'resque-job-stats'
