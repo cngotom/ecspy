@@ -3,6 +3,27 @@ require 'tasks/crawler'
 require "resque/tasks"
 
 
+def lock(lockfile)
+	raise 'pid file exist' if File.exists? lockfile
+	f = File.open(lockfile,'w')
+	f.puts Process.pid
+	f.flock(File::LOCK_EX)
+
+	delete_proc =  proc {
+		File.delete lockfile if File.exists? lockfile
+	}
+
+
+	at_exit &delete_proc
+	trap("KILL") &delete_proc
+	begin
+		yield if block_given?
+	ensure
+		f.close
+		delete_proc.call
+	end
+end
+
 desc 'job coordinate'
 
 task "resque:setup" => :environment
@@ -18,26 +39,29 @@ end
 
 task :job_coord => :environment do
 
-	if Resque.info[:pending] == 0 && Crawler::ItemListRedis.merged?
-		puts 'job coord'
-		Shop.recently_not_updated.each do |shop|
-			Resque.enqueue( Crawler::ItemList,shop.id,shop.url )
-			shop.touch
-		end
 
-		ShopItem.select('title,last_check_time,id,item_sn').recently_not_check.each do |item|
-			arr = item.attributes
-			arr['timestamp'] = item.last_check_time ? item.last_check_time.to_i : 0
-
-
-			shop = ShopItem.find(item.id).shop
-
-			if shop
-				arr['tmall?'] = shop.tmall?
-				Resque.enqueue( Crawler::ItemSales,arr) 
+	lock('job_coord.pid') do
+		if Resque.info[:pending] == 0 && Crawler::ItemListRedis.merged?
+			puts 'job coord'
+			Shop.recently_not_updated.each do |shop|
+				Resque.enqueue( Crawler::ItemList,shop.id,shop.url )
+				shop.touch
 			end
-		end
 
+			ShopItem.select('title,last_check_time,id,item_sn').recently_not_check.each do |item|
+				arr = item.attributes
+				arr['timestamp'] = item.last_check_time ? item.last_check_time.to_i : 0
+
+
+				shop = ShopItem.find(item.id).shop
+
+				if shop
+					arr['tmall?'] = shop.tmall?
+					Resque.enqueue( Crawler::ItemSales,arr) 
+				end
+			end
+
+		end
 	end
 
 end
