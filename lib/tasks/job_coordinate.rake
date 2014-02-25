@@ -19,9 +19,11 @@ end
 task :job_coord => :environment do
 
 	if Resque.info[:pending] == 0 && Crawler::ItemListRedis.merged?
-		# Shop.recently_not_updated.each do |shop|
-		# 	Resque.enqueue( Crawler::ItemList,shop.id,shop.url )
-		# end
+		puts 'job coord'
+		Shop.recently_not_updated.each do |shop|
+			Resque.enqueue( Crawler::ItemList,shop.id,shop.url )
+			shop.touch
+		end
 
 		ShopItem.select('title,last_check_time,id,item_sn').recently_not_check.each do |item|
 			arr = item.attributes
@@ -75,7 +77,7 @@ def merge
 			data.delete 'id'
 			data.delete 'last_check_time'
 
-			
+
 			ItemSale.create(data)
 
 
