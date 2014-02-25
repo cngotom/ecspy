@@ -3,9 +3,9 @@ class ShopItem < ActiveRecord::Base
 
 	belongs_to :shop
 
-	has_many :item_sales
+	has_many :item_sales,:dependent => :destroy
 
-	has_one :content,:class_name => ShopItemContent
+	has_one :content,:class_name => ShopItemContent ,:dependent => :destroy
 
 
 

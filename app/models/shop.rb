@@ -1,13 +1,13 @@
 #encoding:utf-8
 class Shop < ActiveRecord::Base
-	attr_accessible :title,:url,:goods_num
+	attr_accessible :title,:url,:goods_num, :disabled
 
 	validates_presence_of :url,:title
 	validates_uniqueness_of :url
 
 	acts_as_followable
 
-	has_many :shop_items
+	has_many :shop_items ,:dependent => :destroy
 
 	has_many :shop_contents, :through => :shop_items,:source => :content
 
@@ -15,6 +15,8 @@ class Shop < ActiveRecord::Base
 	scope :recently_not_updated,where( ["updated_at < ? or ( created_at > ?  and updated_at = created_at )", Time.now - 2.hour, Time.now - 2.hour])
 
 	#scope :unwatched, lamda {|user|  self.ALl - User.find(user).followed  }
+
+	default_scope where(:disabled => 0)
 
 	def touch
 		if !new_record?

@@ -28,8 +28,14 @@ task :job_coord => :environment do
 		ShopItem.select('title,last_check_time,id,item_sn').recently_not_check.each do |item|
 			arr = item.attributes
 			arr['timestamp'] = item.last_check_time ? item.last_check_time.to_i : 0
-			arr['tmall?'] = ShopItem.find(item.id).shop.tmall?
-			Resque.enqueue( Crawler::ItemSales,arr)
+
+
+			shop = ShopItem.find(item.id).shop
+
+			if shop
+				arr['tmall?'] = shop.tmall?
+				Resque.enqueue( Crawler::ItemSales,arr) 
+			end
 		end
 
 	end
