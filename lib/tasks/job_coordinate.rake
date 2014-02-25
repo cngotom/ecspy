@@ -9,31 +9,38 @@ task "resque:setup" => :environment
 
 
 
+task :job_info do
+
+	puts Resque.info[:pending]
+
+	puts  Crawler::ItemListRedis.merged?
+end
+
 task :job_coord => :environment do
 
-	# Shop.all.each do |shop|
-	# 	Resque.enqueue( Crawler::ItemList,shop.id,shop.url )
-	# end
+	if Resque.info[:pending] == 0 && Crawler::ItemListRedis.merged?
+		Shop.recently_not_updated.each do |shop|
+			Resque.enqueue( Crawler::ItemList,shop.id,shop.url )
+		end
 
-	ShopItem.select('title,last_check_time,id,item_sn').recently_not_check.each do |item|
-		arr = item.attributes
-		arr['timestamp'] = item.last_check_time ? item.last_check_time.to_i : 0
-		arr['tmall?'] = true #item.shop.tmall?
-		Resque.enqueue( Crawler::ItemSales,arr)
+		ShopItem.select('title,last_check_time,id,item_sn').recently_not_check.each do |item|
+			arr = item.attributes
+			arr['timestamp'] = item.last_check_time ? item.last_check_time.to_i : 0
+			arr['tmall?'] = ShopItem.find(item.id).shop.tmall?
+			Resque.enqueue( Crawler::ItemSales,arr)
+		end
+
 	end
-
-
 
 end
 
 
 task :merge => :environment do
 
-
+	beg = Time.new
 	#merge item list
 	list_redis_client = Crawler::ItemListRedis.new(:key => 'RedisItemList')
 	while (data = list_redis_client.pop) != nil do
-		puts data
 		data = JSON.parse(data)
 
 		shop = Shop.find(data['shop_id'])
@@ -62,8 +69,12 @@ task :merge => :environment do
 			data =  JSON.parse(data)
 			data['shop_item_id'] = data['id']
 			data['buy_time'] = Time.parse(data['buy_time'])
+			item = ShopItem.find(data['id'])
 			data.delete 'id'
 			ItemSale.create(data)
+
+
+			item.update_attribute(:last_check_time,Time.at(data['last_check_time'].to_i) ) if data['last_check_time']
 	end
 
 
@@ -90,9 +101,11 @@ task :merge => :environment do
 			cont = item.content
 			cont.update_if_changed(data['content'])
 		end
+
+		item.update_attribute(:last_check_time,Time.at(data['last_check_time'].to_i) ) if data['last_check_time']
 	end
 
-
+	puts Time.new - beg
 end
   
 

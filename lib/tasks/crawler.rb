@@ -53,7 +53,7 @@ module Crawler
 				:port => 6379
 			}
 			config.merge! default_config
-			@redis = Redis.new(config[:host] => ResqueAddr, config[:port] => 6380)
+			@redis = Redis.new(:host => ResqueAddr, :port => 6379)
 			@redis_key = config[:key]
 		end
 
@@ -66,6 +66,33 @@ module Crawler
 		def pop()
 			@redis.LPOP  @redis_key
 		end
+
+		def size 
+			@redis.llen @redis_key
+		end
+
+
+
+		def self.merged?
+
+			list_redis_client = Crawler::ItemListRedis.new(:key => 'RedisItemList')
+
+			sales_redis_client = Crawler::ItemListRedis.new(:key => 'RedisItemSales')
+
+			closed_redis_client = Crawler::ItemListRedis.new(:key => 'RedisItemClosed')
+
+			content_redis_client = Crawler::ItemListRedis.new(:key => 'RedisItemContent')
+
+
+			# puts list_redis_client.size
+			# puts sales_redis_client.size 
+			# puts  closed_redis_client.size
+			# puts content_redis_client.size
+			
+			list_redis_client.size == 0 && sales_redis_client.size == 0 && closed_redis_client.size == 0 && content_redis_client.size == 0 
+
+		end
+
 
 	end
 
@@ -133,11 +160,11 @@ module Crawler
 
 			timestamp  = item.timestamp
 			if item.tmall?
-				run_exe  = "#{Exec} #{ScriptDir}/getitem.js #{item.item_sn} #{timestamp} #{GetSalesRes} #{GetSalesLog}"
+				run_exe  = "#{Exec} #{ScriptDir}/getitem.js #{item.item_sn} #{timestamp} #{out_file} #{GetSalesLog}"
 				puts run_exe
 				retn = exec_with_timeout run_exe
 			else
-				run_exe = "#{ExecTB} #{ScriptDir}/getitem_tb.js #{item.item_sn} #{timestamp} #{GetSalesRes} #{GetSalesLog}"
+				run_exe = "#{ExecTB} #{ScriptDir}/getitem_tb.js #{item.item_sn} #{timestamp} #{out_file} #{GetSalesLog}"
 				puts run_exe
 				retn = exec_with_timeout run_exe
 			end	
