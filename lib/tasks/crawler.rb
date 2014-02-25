@@ -200,7 +200,7 @@ module Crawler
 			else
 				puts retn
 				File.delete out_file if File.exist?(out_file)
-				raise 'error'
+				raise retn
 			end
 
 		end

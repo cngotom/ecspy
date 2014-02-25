@@ -19,9 +19,9 @@ end
 task :job_coord => :environment do
 
 	if Resque.info[:pending] == 0 && Crawler::ItemListRedis.merged?
-		Shop.recently_not_updated.each do |shop|
-			Resque.enqueue( Crawler::ItemList,shop.id,shop.url )
-		end
+		# Shop.recently_not_updated.each do |shop|
+		# 	Resque.enqueue( Crawler::ItemList,shop.id,shop.url )
+		# end
 
 		ShopItem.select('title,last_check_time,id,item_sn').recently_not_check.each do |item|
 			arr = item.attributes
@@ -35,8 +35,8 @@ task :job_coord => :environment do
 end
 
 
-task :merge => :environment do
 
+def merge 
 	beg = Time.new
 	#merge item list
 	list_redis_client = Crawler::ItemListRedis.new(:key => 'RedisItemList')
@@ -53,11 +53,9 @@ task :merge => :environment do
 
 		data.delete	"item_sn"
 		item.update_if_changed(data)
-		#item.touch
 
 		#make item open
 		item.update_status(0)
-		shop.touch
 
 		puts "Shop:#{shop.id} item:#{item.id}  merge ok"
 	end
@@ -70,11 +68,17 @@ task :merge => :environment do
 			data['shop_item_id'] = data['id']
 			data['buy_time'] = Time.parse(data['buy_time'])
 			item = ShopItem.find(data['id'])
+
+			item.update_attribute(:last_check_time,Time.at(data['last_check_time'].to_i) ) if data['last_check_time']
+
+
 			data.delete 'id'
+			data.delete 'last_check_time'
+
+			
 			ItemSale.create(data)
 
 
-			item.update_attribute(:last_check_time,Time.at(data['last_check_time'].to_i) ) if data['last_check_time']
 	end
 
 
@@ -106,6 +110,17 @@ task :merge => :environment do
 	end
 
 	puts Time.new - beg
+
+end
+
+task :merge => :environment do
+	merge
 end
   
-
+task :merge_daemon => :environment do 
+	while true do
+		merge
+		sleep 30
+		puts 'sleep'
+	end
+end
