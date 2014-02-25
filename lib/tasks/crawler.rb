@@ -88,7 +88,7 @@ module Crawler
 			# puts sales_redis_client.size 
 			# puts  closed_redis_client.size
 			# puts content_redis_client.size
-			
+
 			list_redis_client.size == 0 && sales_redis_client.size == 0 && closed_redis_client.size == 0 && content_redis_client.size == 0 
 
 		end
@@ -177,7 +177,9 @@ module Crawler
 						index = 0
 						out.each_line do |line|	
 							if index == 0
-								content_redis_client.add({'id' => item.id,'content' => line}.to_json)
+								line = JSON.parse(line)
+								line['id'] = item.id
+								content_redis_client.add line.to_json
 							else
 								#first line is description
 								line = JSON.parse(line)

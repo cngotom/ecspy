@@ -53931,3 +53931,2182 @@ wait for contfunction () {
 				 	 			return $('#J_TabBar li:eq(2) a').html() != undefined && $('#description>div.content').html().trim()!='描述加载中';		
 				 	 		}
 J_showBuyerList is 月成交记录<span class="J_MonSales" style="display: inline; "><em class="J_TDealCount tm-MRswitchRecord">0</em>件</span>
+start item :23751092999
+pageStart
+loadJs end
+0
+wait for contfunction () {
+
+				 	 			$('#description>div.content img').each(function(index,ele)
+				 	 			{
+
+									if($(ele).attr('data-ks-lazyload'))
+									{
+										return false;
+									}
+				 	 			});
+
+
+				 	 			return $('#J_TabBar li:eq(2) a').html() != undefined && $('#description>div.content').html().trim()!='描述加载中';		
+				 	 		}
+0
+wait for contfunction () {
+
+				 	 			$('#description>div.content img').each(function(index,ele)
+				 	 			{
+
+									if($(ele).attr('data-ks-lazyload'))
+									{
+										return false;
+									}
+				 	 			});
+
+
+				 	 			return $('#J_TabBar li:eq(2) a').html() != undefined && $('#description>div.content').html().trim()!='描述加载中';		
+				 	 		}
+J_showBuyerList is 月成交记录<span class="J_MonSales" style="display: inline; "><em class="J_TDealCount tm-MRswitchRecord">33</em>件</span>
+0
+wait for contfunction () {
+	    											var pos = getElementAbsPos($('#J_showBuyerList')[0]);
+			 	 									window.scroll(pos.left,pos.top);
+
+	    											return $('#J_showBuyerList tr').length > 0;
+
+	    										}
+0
+wait for contfunction () {
+	    											var pos = getElementAbsPos($('#J_showBuyerList')[0]);
+			 	 									window.scroll(pos.left,pos.top);
+
+	    											return $('#J_showBuyerList tr').length > 0;
+
+	    										}
+0
+wait for contfunction () {
+	    											var pos = getElementAbsPos($('#J_showBuyerList')[0]);
+			 	 									window.scroll(pos.left,pos.top);
+
+	    											return $('#J_showBuyerList tr').length > 0;
+
+	    										}
+start page :0
+2014-02-22 14:15:55
+current: 1393049755
+start_time: 1393258920
+start item :18912902858
+pageStart
+loadJs end
+0
+wait for contfunction () {
+
+				 	 			$('#description>div.content img').each(function(index,ele)
+				 	 			{
+
+									if($(ele).attr('data-ks-lazyload'))
+									{
+										return false;
+									}
+				 	 			});
+
+
+				 	 			return $('#J_TabBar li:eq(2) a').html() != undefined && $('#description>div.content').html().trim()!='描述加载中';		
+				 	 		}
+0
+wait for contfunction () {
+
+				 	 			$('#description>div.content img').each(function(index,ele)
+				 	 			{
+
+									if($(ele).attr('data-ks-lazyload'))
+									{
+										return false;
+									}
+				 	 			});
+
+
+				 	 			return $('#J_TabBar li:eq(2) a').html() != undefined && $('#description>div.content').html().trim()!='描述加载中';		
+				 	 		}
+J_showBuyerList is 月成交记录<span class="J_MonSales" style="display: inline; "><em class="J_TDealCount tm-MRswitchRecord">6</em>件</span>
+0
+wait for contfunction () {
+	    											var pos = getElementAbsPos($('#J_showBuyerList')[0]);
+			 	 									window.scroll(pos.left,pos.top);
+
+	    											return $('#J_showBuyerList tr').length > 0;
+
+	    										}
+0
+wait for contfunction () {
+	    											var pos = getElementAbsPos($('#J_showBuyerList')[0]);
+			 	 									window.scroll(pos.left,pos.top);
+
+	    											return $('#J_showBuyerList tr').length > 0;
+
+	    										}
+start page :0
+2014-02-06 16:43:47
+current: 1391676227
+start_time: 1393258920
+start item :19650759793
+pageStart
+loadJs end
+0
+wait for contfunction () {
+
+				 	 			$('#description>div.content img').each(function(index,ele)
+				 	 			{
+
+									if($(ele).attr('data-ks-lazyload'))
+									{
+										return false;
+									}
+				 	 			});
+
+
+				 	 			return $('#J_TabBar li:eq(2) a').html() != undefined && $('#description>div.content').html().trim()!='描述加载中';		
+				 	 		}
+J_showBuyerList is 月成交记录<span class="J_MonSales" style="display: inline; "><em class="J_TDealCount tm-MRswitchRecord">2</em>件</span>
+0
+wait for contfunction () {
+	    											var pos = getElementAbsPos($('#J_showBuyerList')[0]);
+			 	 									window.scroll(pos.left,pos.top);
+
+	    											return $('#J_showBuyerList tr').length > 0;
+
+	    										}
+0
+wait for contfunction () {
+	    											var pos = getElementAbsPos($('#J_showBuyerList')[0]);
+			 	 									window.scroll(pos.left,pos.top);
+
+	    											return $('#J_showBuyerList tr').length > 0;
+
+	    										}
+0
+wait for contfunction () {
+	    											var pos = getElementAbsPos($('#J_showBuyerList')[0]);
+			 	 									window.scroll(pos.left,pos.top);
+
+	    											return $('#J_showBuyerList tr').length > 0;
+
+	    										}
+start page :0
+2014-02-10 16:24:45
+current: 1392020685
+start_time: 1393258920
+start item :18731382848
+pageStart
+loadJs end
+0
+wait for contfunction () {
+
+				 	 			$('#description>div.content img').each(function(index,ele)
+				 	 			{
+
+									if($(ele).attr('data-ks-lazyload'))
+									{
+										return false;
+									}
+				 	 			});
+
+
+				 	 			return $('#J_TabBar li:eq(2) a').html() != undefined && $('#description>div.content').html().trim()!='描述加载中';		
+				 	 		}
+0
+wait for contfunction () {
+
+				 	 			$('#description>div.content img').each(function(index,ele)
+				 	 			{
+
+									if($(ele).attr('data-ks-lazyload'))
+									{
+										return false;
+									}
+				 	 			});
+
+
+				 	 			return $('#J_TabBar li:eq(2) a').html() != undefined && $('#description>div.content').html().trim()!='描述加载中';		
+				 	 		}
+J_showBuyerList is 月成交记录<span class="J_MonSales" style="display: inline; "><em class="J_TDealCount tm-MRswitchRecord">4</em>件</span>
+0
+wait for contfunction () {
+	    											var pos = getElementAbsPos($('#J_showBuyerList')[0]);
+			 	 									window.scroll(pos.left,pos.top);
+
+	    											return $('#J_showBuyerList tr').length > 0;
+
+	    										}
+0
+wait for contfunction () {
+	    											var pos = getElementAbsPos($('#J_showBuyerList')[0]);
+			 	 									window.scroll(pos.left,pos.top);
+
+	    											return $('#J_showBuyerList tr').length > 0;
+
+	    										}
+0
+wait for contfunction () {
+	    											var pos = getElementAbsPos($('#J_showBuyerList')[0]);
+			 	 									window.scroll(pos.left,pos.top);
+
+	    											return $('#J_showBuyerList tr').length > 0;
+
+	    										}
+start page :0
+2014-02-19 22:58:45
+current: 1392821925
+start_time: 1393258920
+start item :36789920573
+pageStart
+loadJs end
+0
+wait for contfunction () {
+
+				 	 			$('#description>div.content img').each(function(index,ele)
+				 	 			{
+
+									if($(ele).attr('data-ks-lazyload'))
+									{
+										return false;
+									}
+				 	 			});
+
+
+				 	 			return $('#J_TabBar li:eq(2) a').html() != undefined && $('#description>div.content').html().trim()!='描述加载中';		
+				 	 		}
+J_showBuyerList is 月成交记录<span class="J_MonSales" style="display: inline; "><em class="J_TDealCount tm-MRswitchRecord">2</em>件</span>
+0
+wait for contfunction () {
+	    											var pos = getElementAbsPos($('#J_showBuyerList')[0]);
+			 	 									window.scroll(pos.left,pos.top);
+
+	    											return $('#J_showBuyerList tr').length > 0;
+
+	    										}
+0
+wait for contfunction () {
+	    											var pos = getElementAbsPos($('#J_showBuyerList')[0]);
+			 	 									window.scroll(pos.left,pos.top);
+
+	    											return $('#J_showBuyerList tr').length > 0;
+
+	    										}
+start page :0
+start item :19114477599
+pageStart
+loadJs end
+0
+wait for contfunction () {
+
+				 	 			$('#description>div.content img').each(function(index,ele)
+				 	 			{
+
+									if($(ele).attr('data-ks-lazyload'))
+									{
+										return false;
+									}
+				 	 			});
+
+
+				 	 			return $('#J_TabBar li:eq(2) a').html() != undefined && $('#description>div.content').html().trim()!='描述加载中';		
+				 	 		}
+J_showBuyerList is 月成交记录<span class="J_MonSales" style="display: inline; "><em class="J_TDealCount tm-MRswitchRecord">0</em>件</span>
+start item :35137322913
+pageStart
+loadJs end
+0
+wait for contfunction () {
+
+				 	 			$('#description>div.content img').each(function(index,ele)
+				 	 			{
+
+									if($(ele).attr('data-ks-lazyload'))
+									{
+										return false;
+									}
+				 	 			});
+
+
+				 	 			return $('#J_TabBar li:eq(2) a').html() != undefined && $('#description>div.content').html().trim()!='描述加载中';		
+				 	 		}
+0
+wait for contfunction () {
+
+				 	 			$('#description>div.content img').each(function(index,ele)
+				 	 			{
+
+									if($(ele).attr('data-ks-lazyload'))
+									{
+										return false;
+									}
+				 	 			});
+
+
+				 	 			return $('#J_TabBar li:eq(2) a').html() != undefined && $('#description>div.content').html().trim()!='描述加载中';		
+				 	 		}
+J_showBuyerList is 月成交记录<span class="J_MonSales" style="display: inline; "><em class="J_TDealCount tm-MRswitchRecord">0</em>件</span>
+start item :27492912322
+pageStart
+loadJs end
+0
+wait for contfunction () {
+
+				 	 			$('#description>div.content img').each(function(index,ele)
+				 	 			{
+
+									if($(ele).attr('data-ks-lazyload'))
+									{
+										return false;
+									}
+				 	 			});
+
+
+				 	 			return $('#J_TabBar li:eq(2) a').html() != undefined && $('#description>div.content').html().trim()!='描述加载中';		
+				 	 		}
+J_showBuyerList is 月成交记录<span class="J_MonSales" style="display: inline; "><em class="J_TDealCount tm-MRswitchRecord">0</em>件</span>
+start item :35136198906
+pageStart
+loadJs end
+0
+wait for contfunction () {
+
+				 	 			$('#description>div.content img').each(function(index,ele)
+				 	 			{
+
+									if($(ele).attr('data-ks-lazyload'))
+									{
+										return false;
+									}
+				 	 			});
+
+
+				 	 			return $('#J_TabBar li:eq(2) a').html() != undefined && $('#description>div.content').html().trim()!='描述加载中';		
+				 	 		}
+J_showBuyerList is 月成交记录<span class="J_MonSales" style="display: inline; "><em class="J_TDealCount tm-MRswitchRecord">0</em>件</span>
+start item :16715204270
+pageStart
+loadJs end
+0
+wait for contfunction () {
+
+				 	 			$('#description>div.content img').each(function(index,ele)
+				 	 			{
+
+									if($(ele).attr('data-ks-lazyload'))
+									{
+										return false;
+									}
+				 	 			});
+
+
+				 	 			return $('#J_TabBar li:eq(2) a').html() != undefined && $('#description>div.content').html().trim()!='描述加载中';		
+				 	 		}
+0
+wait for contfunction () {
+
+				 	 			$('#description>div.content img').each(function(index,ele)
+				 	 			{
+
+									if($(ele).attr('data-ks-lazyload'))
+									{
+										return false;
+									}
+				 	 			});
+
+
+				 	 			return $('#J_TabBar li:eq(2) a').html() != undefined && $('#description>div.content').html().trim()!='描述加载中';		
+				 	 		}
+J_showBuyerList is 月成交记录<span class="J_MonSales" style="display: inline; "><em class="J_TDealCount tm-MRswitchRecord">0</em>件</span>
+start item :14379281133
+pageStart
+loadJs end
+0
+wait for contfunction () {
+
+				 	 			$('#description>div.content img').each(function(index,ele)
+				 	 			{
+
+									if($(ele).attr('data-ks-lazyload'))
+									{
+										return false;
+									}
+				 	 			});
+
+
+				 	 			return $('#J_TabBar li:eq(2) a').html() != undefined && $('#description>div.content').html().trim()!='描述加载中';		
+				 	 		}
+0
+wait for contfunction () {
+
+				 	 			$('#description>div.content img').each(function(index,ele)
+				 	 			{
+
+									if($(ele).attr('data-ks-lazyload'))
+									{
+										return false;
+									}
+				 	 			});
+
+
+				 	 			return $('#J_TabBar li:eq(2) a').html() != undefined && $('#description>div.content').html().trim()!='描述加载中';		
+				 	 		}
+J_showBuyerList is 月成交记录<span class="J_MonSales" style="display: inline; "><em class="J_TDealCount tm-MRswitchRecord">3</em>件</span>
+0
+wait for contfunction () {
+	    											var pos = getElementAbsPos($('#J_showBuyerList')[0]);
+			 	 									window.scroll(pos.left,pos.top);
+
+	    											return $('#J_showBuyerList tr').length > 0;
+
+	    										}
+0
+wait for contfunction () {
+	    											var pos = getElementAbsPos($('#J_showBuyerList')[0]);
+			 	 									window.scroll(pos.left,pos.top);
+
+	    											return $('#J_showBuyerList tr').length > 0;
+
+	    										}
+0
+wait for contfunction () {
+	    											var pos = getElementAbsPos($('#J_showBuyerList')[0]);
+			 	 									window.scroll(pos.left,pos.top);
+
+	    											return $('#J_showBuyerList tr').length > 0;
+
+	    										}
+0
+wait for contfunction () {
+	    											var pos = getElementAbsPos($('#J_showBuyerList')[0]);
+			 	 									window.scroll(pos.left,pos.top);
+
+	    											return $('#J_showBuyerList tr').length > 0;
+
+	    										}
+start page :0
+2014-02-20 11:17:02
+current: 1392866222
+start_time: 1393258920
+start item :15805207338
+pageStart
+loadJs end
+0
+wait for contfunction () {
+
+				 	 			$('#description>div.content img').each(function(index,ele)
+				 	 			{
+
+									if($(ele).attr('data-ks-lazyload'))
+									{
+										return false;
+									}
+				 	 			});
+
+
+				 	 			return $('#J_TabBar li:eq(2) a').html() != undefined && $('#description>div.content').html().trim()!='描述加载中';		
+				 	 		}
+0
+wait for contfunction () {
+
+				 	 			$('#description>div.content img').each(function(index,ele)
+				 	 			{
+
+									if($(ele).attr('data-ks-lazyload'))
+									{
+										return false;
+									}
+				 	 			});
+
+
+				 	 			return $('#J_TabBar li:eq(2) a').html() != undefined && $('#description>div.content').html().trim()!='描述加载中';		
+				 	 		}
+J_showBuyerList is 月成交记录<span class="J_MonSales" style="display: inline; "><em class="J_TDealCount tm-MRswitchRecord">6</em>件</span>
+0
+wait for contfunction () {
+	    											var pos = getElementAbsPos($('#J_showBuyerList')[0]);
+			 	 									window.scroll(pos.left,pos.top);
+
+	    											return $('#J_showBuyerList tr').length > 0;
+
+	    										}
+0
+wait for contfunction () {
+	    											var pos = getElementAbsPos($('#J_showBuyerList')[0]);
+			 	 									window.scroll(pos.left,pos.top);
+
+	    											return $('#J_showBuyerList tr').length > 0;
+
+	    										}
+start page :0
+2014-02-20 00:46:29
+current: 1392828389
+start_time: 1393258920
+start item :16700140678
+pageStart
+loadJs end
+0
+wait for contfunction () {
+
+				 	 			$('#description>div.content img').each(function(index,ele)
+				 	 			{
+
+									if($(ele).attr('data-ks-lazyload'))
+									{
+										return false;
+									}
+				 	 			});
+
+
+				 	 			return $('#J_TabBar li:eq(2) a').html() != undefined && $('#description>div.content').html().trim()!='描述加载中';		
+				 	 		}
+0
+wait for contfunction () {
+
+				 	 			$('#description>div.content img').each(function(index,ele)
+				 	 			{
+
+									if($(ele).attr('data-ks-lazyload'))
+									{
+										return false;
+									}
+				 	 			});
+
+
+				 	 			return $('#J_TabBar li:eq(2) a').html() != undefined && $('#description>div.content').html().trim()!='描述加载中';		
+				 	 		}
+J_showBuyerList is 月成交记录<span class="J_MonSales" style="display: inline; "><em class="J_TDealCount tm-MRswitchRecord">10</em>件</span>
+0
+wait for contfunction () {
+	    											var pos = getElementAbsPos($('#J_showBuyerList')[0]);
+			 	 									window.scroll(pos.left,pos.top);
+
+	    											return $('#J_showBuyerList tr').length > 0;
+
+	    										}
+0
+wait for contfunction () {
+	    											var pos = getElementAbsPos($('#J_showBuyerList')[0]);
+			 	 									window.scroll(pos.left,pos.top);
+
+	    											return $('#J_showBuyerList tr').length > 0;
+
+	    										}
+start page :0
+2014-02-22 21:02:42
+current: 1393074162
+start_time: 1393258920
+start item :14379325591
+start item :18288887649
+pageStart
+loadJs end
+0
+wait for contfunction () {
+
+				 	 			$('#description>div.content img').each(function(index,ele)
+				 	 			{
+
+									if($(ele).attr('data-ks-lazyload'))
+									{
+										return false;
+									}
+				 	 			});
+
+
+				 	 			return $('#J_TabBar li:eq(2) a').html() != undefined && $('#description>div.content').html().trim()!='描述加载中';		
+				 	 		}
+0
+wait for contfunction () {
+
+				 	 			$('#description>div.content img').each(function(index,ele)
+				 	 			{
+
+									if($(ele).attr('data-ks-lazyload'))
+									{
+										return false;
+									}
+				 	 			});
+
+
+				 	 			return $('#J_TabBar li:eq(2) a').html() != undefined && $('#description>div.content').html().trim()!='描述加载中';		
+				 	 		}
+J_showBuyerList is 月成交记录<span class="J_MonSales" style="display: inline; "><em class="J_TDealCount tm-MRswitchRecord">14</em>件</span>
+0
+wait for contfunction () {
+	    											var pos = getElementAbsPos($('#J_showBuyerList')[0]);
+			 	 									window.scroll(pos.left,pos.top);
+
+	    											return $('#J_showBuyerList tr').length > 0;
+
+	    										}
+0
+wait for contfunction () {
+	    											var pos = getElementAbsPos($('#J_showBuyerList')[0]);
+			 	 									window.scroll(pos.left,pos.top);
+
+	    											return $('#J_showBuyerList tr').length > 0;
+
+	    										}
+0
+wait for contfunction () {
+	    											var pos = getElementAbsPos($('#J_showBuyerList')[0]);
+			 	 									window.scroll(pos.left,pos.top);
+
+	    											return $('#J_showBuyerList tr').length > 0;
+
+	    										}
+0
+wait for contfunction () {
+	    											var pos = getElementAbsPos($('#J_showBuyerList')[0]);
+			 	 									window.scroll(pos.left,pos.top);
+
+	    											return $('#J_showBuyerList tr').length > 0;
+
+	    										}
+start page :0
+2014-02-17 15:28:32
+current: 1392622112
+start_time: 1393258920
+start item :35509685880
+pageStart
+loadJs end
+0
+wait for contfunction () {
+
+				 	 			$('#description>div.content img').each(function(index,ele)
+				 	 			{
+
+									if($(ele).attr('data-ks-lazyload'))
+									{
+										return false;
+									}
+				 	 			});
+
+
+				 	 			return $('#J_TabBar li:eq(2) a').html() != undefined && $('#description>div.content').html().trim()!='描述加载中';		
+				 	 		}
+0
+wait for contfunction () {
+
+				 	 			$('#description>div.content img').each(function(index,ele)
+				 	 			{
+
+									if($(ele).attr('data-ks-lazyload'))
+									{
+										return false;
+									}
+				 	 			});
+
+
+				 	 			return $('#J_TabBar li:eq(2) a').html() != undefined && $('#description>div.content').html().trim()!='描述加载中';		
+				 	 		}
+J_showBuyerList is 月成交记录<span class="J_MonSales" style="display: inline; "><em class="J_TDealCount tm-MRswitchRecord">8</em>件</span>
+0
+wait for contfunction () {
+	    											var pos = getElementAbsPos($('#J_showBuyerList')[0]);
+			 	 									window.scroll(pos.left,pos.top);
+
+	    											return $('#J_showBuyerList tr').length > 0;
+
+	    										}
+0
+wait for contfunction () {
+	    											var pos = getElementAbsPos($('#J_showBuyerList')[0]);
+			 	 									window.scroll(pos.left,pos.top);
+
+	    											return $('#J_showBuyerList tr').length > 0;
+
+	    										}
+start page :0
+2014-02-25 21:17:38
+current: 1393334258
+start_time: 1393258920
+2014-02-21 22:27:30
+current: 1392992850
+start_time: 1393258920
+start item :17387195465
+pageStart
+loadJs end
+0
+wait for contfunction () {
+
+				 	 			$('#description>div.content img').each(function(index,ele)
+				 	 			{
+
+									if($(ele).attr('data-ks-lazyload'))
+									{
+										return false;
+									}
+				 	 			});
+
+
+				 	 			return $('#J_TabBar li:eq(2) a').html() != undefined && $('#description>div.content').html().trim()!='描述加载中';		
+				 	 		}
+0
+wait for contfunction () {
+
+				 	 			$('#description>div.content img').each(function(index,ele)
+				 	 			{
+
+									if($(ele).attr('data-ks-lazyload'))
+									{
+										return false;
+									}
+				 	 			});
+
+
+				 	 			return $('#J_TabBar li:eq(2) a').html() != undefined && $('#description>div.content').html().trim()!='描述加载中';		
+				 	 		}
+J_showBuyerList is 月成交记录<span class="J_MonSales" style="display: inline; "><em class="J_TDealCount tm-MRswitchRecord">4</em>件</span>
+0
+wait for contfunction () {
+	    											var pos = getElementAbsPos($('#J_showBuyerList')[0]);
+			 	 									window.scroll(pos.left,pos.top);
+
+	    											return $('#J_showBuyerList tr').length > 0;
+
+	    										}
+0
+wait for contfunction () {
+	    											var pos = getElementAbsPos($('#J_showBuyerList')[0]);
+			 	 									window.scroll(pos.left,pos.top);
+
+	    											return $('#J_showBuyerList tr').length > 0;
+
+	    										}
+start page :0
+2014-02-19 09:59:46
+current: 1392775186
+start_time: 1393258920
+start item :15998935920
+pageStart
+loadJs end
+0
+wait for contfunction () {
+
+				 	 			$('#description>div.content img').each(function(index,ele)
+				 	 			{
+
+									if($(ele).attr('data-ks-lazyload'))
+									{
+										return false;
+									}
+				 	 			});
+
+
+				 	 			return $('#J_TabBar li:eq(2) a').html() != undefined && $('#description>div.content').html().trim()!='描述加载中';		
+				 	 		}
+0
+wait for contfunction () {
+
+				 	 			$('#description>div.content img').each(function(index,ele)
+				 	 			{
+
+									if($(ele).attr('data-ks-lazyload'))
+									{
+										return false;
+									}
+				 	 			});
+
+
+				 	 			return $('#J_TabBar li:eq(2) a').html() != undefined && $('#description>div.content').html().trim()!='描述加载中';		
+				 	 		}
+J_showBuyerList is 月成交记录<span class="J_MonSales" style="display: inline; "><em class="J_TDealCount tm-MRswitchRecord">7</em>件</span>
+0
+wait for contfunction () {
+	    											var pos = getElementAbsPos($('#J_showBuyerList')[0]);
+			 	 									window.scroll(pos.left,pos.top);
+
+	    											return $('#J_showBuyerList tr').length > 0;
+
+	    										}
+0
+wait for contfunction () {
+	    											var pos = getElementAbsPos($('#J_showBuyerList')[0]);
+			 	 									window.scroll(pos.left,pos.top);
+
+	    											return $('#J_showBuyerList tr').length > 0;
+
+	    										}
+0
+wait for contfunction () {
+	    											var pos = getElementAbsPos($('#J_showBuyerList')[0]);
+			 	 									window.scroll(pos.left,pos.top);
+
+	    											return $('#J_showBuyerList tr').length > 0;
+
+	    										}
+start page :0
+2014-02-24 20:41:21
+current: 1393245681
+start_time: 1393258920
+start item :20663571178
+pageStart
+loadJs end
+0
+wait for contfunction () {
+
+				 	 			$('#description>div.content img').each(function(index,ele)
+				 	 			{
+
+									if($(ele).attr('data-ks-lazyload'))
+									{
+										return false;
+									}
+				 	 			});
+
+
+				 	 			return $('#J_TabBar li:eq(2) a').html() != undefined && $('#description>div.content').html().trim()!='描述加载中';		
+				 	 		}
+J_showBuyerList is 月成交记录<span class="J_MonSales" style="display: inline; "><em class="J_TDealCount tm-MRswitchRecord">3</em>件</span>
+0
+wait for contfunction () {
+	    											var pos = getElementAbsPos($('#J_showBuyerList')[0]);
+			 	 									window.scroll(pos.left,pos.top);
+
+	    											return $('#J_showBuyerList tr').length > 0;
+
+	    										}
+0
+wait for contfunction () {
+	    											var pos = getElementAbsPos($('#J_showBuyerList')[0]);
+			 	 									window.scroll(pos.left,pos.top);
+
+	    											return $('#J_showBuyerList tr').length > 0;
+
+	    										}
+0
+wait for contfunction () {
+	    											var pos = getElementAbsPos($('#J_showBuyerList')[0]);
+			 	 									window.scroll(pos.left,pos.top);
+
+	    											return $('#J_showBuyerList tr').length > 0;
+
+	    										}
+start page :0
+2014-02-21 15:28:41
+current: 1392967721
+start_time: 1393258920
+start item :20137424555
+pageStart
+loadJs end
+0
+wait for contfunction () {
+
+				 	 			$('#description>div.content img').each(function(index,ele)
+				 	 			{
+
+									if($(ele).attr('data-ks-lazyload'))
+									{
+										return false;
+									}
+				 	 			});
+
+
+				 	 			return $('#J_TabBar li:eq(2) a').html() != undefined && $('#description>div.content').html().trim()!='描述加载中';		
+				 	 		}
+0
+wait for contfunction () {
+
+				 	 			$('#description>div.content img').each(function(index,ele)
+				 	 			{
+
+									if($(ele).attr('data-ks-lazyload'))
+									{
+										return false;
+									}
+				 	 			});
+
+
+				 	 			return $('#J_TabBar li:eq(2) a').html() != undefined && $('#description>div.content').html().trim()!='描述加载中';		
+				 	 		}
+J_showBuyerList is 月成交记录<span class="J_MonSales" style="display: inline; "><em class="J_TDealCount tm-MRswitchRecord">0</em>件</span>
+start item :20218796554
+pageStart
+loadJs end
+0
+wait for contfunction () {
+
+				 	 			$('#description>div.content img').each(function(index,ele)
+				 	 			{
+
+									if($(ele).attr('data-ks-lazyload'))
+									{
+										return false;
+									}
+				 	 			});
+
+
+				 	 			return $('#J_TabBar li:eq(2) a').html() != undefined && $('#description>div.content').html().trim()!='描述加载中';		
+				 	 		}
+J_showBuyerList is 月成交记录<span class="J_MonSales" style="display: inline; "><em class="J_TDealCount tm-MRswitchRecord">0</em>件</span>
+start item :20474108955
+start item :36298226448
+pageStart
+loadJs end
+0
+wait for contfunction () {
+
+				 	 			$('#description>div.content img').each(function(index,ele)
+				 	 			{
+
+									if($(ele).attr('data-ks-lazyload'))
+									{
+										return false;
+									}
+				 	 			});
+
+
+				 	 			return $('#J_TabBar li:eq(2) a').html() != undefined && $('#description>div.content').html().trim()!='描述加载中';		
+				 	 		}
+0
+wait for contfunction () {
+
+				 	 			$('#description>div.content img').each(function(index,ele)
+				 	 			{
+
+									if($(ele).attr('data-ks-lazyload'))
+									{
+										return false;
+									}
+				 	 			});
+
+
+				 	 			return $('#J_TabBar li:eq(2) a').html() != undefined && $('#description>div.content').html().trim()!='描述加载中';		
+				 	 		}
+J_showBuyerList is 月成交记录<span class="J_MonSales" style="display: inline; "><em class="J_TDealCount tm-MRswitchRecord">0</em>件</span>
+start item :17036446759
+pageStart
+loadJs end
+0
+wait for contfunction () {
+
+				 	 			$('#description>div.content img').each(function(index,ele)
+				 	 			{
+
+									if($(ele).attr('data-ks-lazyload'))
+									{
+										return false;
+									}
+				 	 			});
+
+
+				 	 			return $('#J_TabBar li:eq(2) a').html() != undefined && $('#description>div.content').html().trim()!='描述加载中';		
+				 	 		}
+J_showBuyerList is 月成交记录<span class="J_MonSales" style="display: inline; "><em class="J_TDealCount tm-MRswitchRecord">22</em>件</span>
+0
+wait for contfunction () {
+	    											var pos = getElementAbsPos($('#J_showBuyerList')[0]);
+			 	 									window.scroll(pos.left,pos.top);
+
+	    											return $('#J_showBuyerList tr').length > 0;
+
+	    										}
+0
+wait for contfunction () {
+	    											var pos = getElementAbsPos($('#J_showBuyerList')[0]);
+			 	 									window.scroll(pos.left,pos.top);
+
+	    											return $('#J_showBuyerList tr').length > 0;
+
+	    										}
+0
+wait for contfunction () {
+	    											var pos = getElementAbsPos($('#J_showBuyerList')[0]);
+			 	 									window.scroll(pos.left,pos.top);
+
+	    											return $('#J_showBuyerList tr').length > 0;
+
+	    										}
+start page :0
+2014-02-24 15:15:26
+current: 1393226126
+start_time: 1393258920
+start item :15376549556
+pageStart
+loadJs end
+0
+wait for contfunction () {
+
+				 	 			$('#description>div.content img').each(function(index,ele)
+				 	 			{
+
+									if($(ele).attr('data-ks-lazyload'))
+									{
+										return false;
+									}
+				 	 			});
+
+
+				 	 			return $('#J_TabBar li:eq(2) a').html() != undefined && $('#description>div.content').html().trim()!='描述加载中';		
+				 	 		}
+0
+wait for contfunction () {
+
+				 	 			$('#description>div.content img').each(function(index,ele)
+				 	 			{
+
+									if($(ele).attr('data-ks-lazyload'))
+									{
+										return false;
+									}
+				 	 			});
+
+
+				 	 			return $('#J_TabBar li:eq(2) a').html() != undefined && $('#description>div.content').html().trim()!='描述加载中';		
+				 	 		}
+J_showBuyerList is 月成交记录<span class="J_MonSales" style="display: inline; "><em class="J_TDealCount tm-MRswitchRecord">20</em>件</span>
+0
+wait for contfunction () {
+	    											var pos = getElementAbsPos($('#J_showBuyerList')[0]);
+			 	 									window.scroll(pos.left,pos.top);
+
+	    											return $('#J_showBuyerList tr').length > 0;
+
+	    										}
+0
+wait for contfunction () {
+	    											var pos = getElementAbsPos($('#J_showBuyerList')[0]);
+			 	 									window.scroll(pos.left,pos.top);
+
+	    											return $('#J_showBuyerList tr').length > 0;
+
+	    										}
+start page :0
+2014-02-16 10:14:21
+current: 1392516861
+start_time: 1393258920
+start item :15798782151
+pageStart
+loadJs end
+0
+wait for contfunction () {
+
+				 	 			$('#description>div.content img').each(function(index,ele)
+				 	 			{
+
+									if($(ele).attr('data-ks-lazyload'))
+									{
+										return false;
+									}
+				 	 			});
+
+
+				 	 			return $('#J_TabBar li:eq(2) a').html() != undefined && $('#description>div.content').html().trim()!='描述加载中';		
+				 	 		}
+0
+wait for contfunction () {
+
+				 	 			$('#description>div.content img').each(function(index,ele)
+				 	 			{
+
+									if($(ele).attr('data-ks-lazyload'))
+									{
+										return false;
+									}
+				 	 			});
+
+
+				 	 			return $('#J_TabBar li:eq(2) a').html() != undefined && $('#description>div.content').html().trim()!='描述加载中';		
+				 	 		}
+J_showBuyerList is 月成交记录<span class="J_MonSales" style="display: inline; "><em class="J_TDealCount tm-MRswitchRecord">11</em>件</span>
+0
+wait for contfunction () {
+	    											var pos = getElementAbsPos($('#J_showBuyerList')[0]);
+			 	 									window.scroll(pos.left,pos.top);
+
+	    											return $('#J_showBuyerList tr').length > 0;
+
+	    										}
+0
+wait for contfunction () {
+	    											var pos = getElementAbsPos($('#J_showBuyerList')[0]);
+			 	 									window.scroll(pos.left,pos.top);
+
+	    											return $('#J_showBuyerList tr').length > 0;
+
+	    										}
+0
+wait for contfunction () {
+	    											var pos = getElementAbsPos($('#J_showBuyerList')[0]);
+			 	 									window.scroll(pos.left,pos.top);
+
+	    											return $('#J_showBuyerList tr').length > 0;
+
+	    										}
+0
+wait for contfunction () {
+	    											var pos = getElementAbsPos($('#J_showBuyerList')[0]);
+			 	 									window.scroll(pos.left,pos.top);
+
+	    											return $('#J_showBuyerList tr').length > 0;
+
+	    										}
+start page :0
+2014-02-24 17:46:49
+current: 1393235209
+start_time: 1393258920
+start item :35758922931
+pageStart
+loadJs end
+0
+wait for contfunction () {
+
+				 	 			$('#description>div.content img').each(function(index,ele)
+				 	 			{
+
+									if($(ele).attr('data-ks-lazyload'))
+									{
+										return false;
+									}
+				 	 			});
+
+
+				 	 			return $('#J_TabBar li:eq(2) a').html() != undefined && $('#description>div.content').html().trim()!='描述加载中';		
+				 	 		}
+0
+wait for contfunction () {
+
+				 	 			$('#description>div.content img').each(function(index,ele)
+				 	 			{
+
+									if($(ele).attr('data-ks-lazyload'))
+									{
+										return false;
+									}
+				 	 			});
+
+
+				 	 			return $('#J_TabBar li:eq(2) a').html() != undefined && $('#description>div.content').html().trim()!='描述加载中';		
+				 	 		}
+J_showBuyerList is 月成交记录<span class="J_MonSales" style="display: inline; "><em class="J_TDealCount tm-MRswitchRecord">3</em>件</span>
+0
+wait for contfunction () {
+	    											var pos = getElementAbsPos($('#J_showBuyerList')[0]);
+			 	 									window.scroll(pos.left,pos.top);
+
+	    											return $('#J_showBuyerList tr').length > 0;
+
+	    										}
+0
+wait for contfunction () {
+	    											var pos = getElementAbsPos($('#J_showBuyerList')[0]);
+			 	 									window.scroll(pos.left,pos.top);
+
+	    											return $('#J_showBuyerList tr').length > 0;
+
+	    										}
+start page :0
+2014-02-22 19:27:25
+current: 1393068445
+start_time: 1393258920
+start item :15754523948
+pageStart
+loadJs end
+0
+wait for contfunction () {
+
+				 	 			$('#description>div.content img').each(function(index,ele)
+				 	 			{
+
+									if($(ele).attr('data-ks-lazyload'))
+									{
+										return false;
+									}
+				 	 			});
+
+
+				 	 			return $('#J_TabBar li:eq(2) a').html() != undefined && $('#description>div.content').html().trim()!='描述加载中';		
+				 	 		}
+0
+wait for contfunction () {
+
+				 	 			$('#description>div.content img').each(function(index,ele)
+				 	 			{
+
+									if($(ele).attr('data-ks-lazyload'))
+									{
+										return false;
+									}
+				 	 			});
+
+
+				 	 			return $('#J_TabBar li:eq(2) a').html() != undefined && $('#description>div.content').html().trim()!='描述加载中';		
+				 	 		}
+J_showBuyerList is 月成交记录<span class="J_MonSales" style="display: inline; "><em class="J_TDealCount tm-MRswitchRecord">2</em>件</span>
+0
+wait for contfunction () {
+	    											var pos = getElementAbsPos($('#J_showBuyerList')[0]);
+			 	 									window.scroll(pos.left,pos.top);
+
+	    											return $('#J_showBuyerList tr').length > 0;
+
+	    										}
+0
+wait for contfunction () {
+	    											var pos = getElementAbsPos($('#J_showBuyerList')[0]);
+			 	 									window.scroll(pos.left,pos.top);
+
+	    											return $('#J_showBuyerList tr').length > 0;
+
+	    										}
+start page :0
+2014-02-10 12:18:50
+current: 1392005930
+start_time: 1393258920
+start item :17423578187
+pageStart
+loadJs end
+0
+wait for contfunction () {
+
+				 	 			$('#description>div.content img').each(function(index,ele)
+				 	 			{
+
+									if($(ele).attr('data-ks-lazyload'))
+									{
+										return false;
+									}
+				 	 			});
+
+
+				 	 			return $('#J_TabBar li:eq(2) a').html() != undefined && $('#description>div.content').html().trim()!='描述加载中';		
+				 	 		}
+0
+wait for contfunction () {
+
+				 	 			$('#description>div.content img').each(function(index,ele)
+				 	 			{
+
+									if($(ele).attr('data-ks-lazyload'))
+									{
+										return false;
+									}
+				 	 			});
+
+
+				 	 			return $('#J_TabBar li:eq(2) a').html() != undefined && $('#description>div.content').html().trim()!='描述加载中';		
+				 	 		}
+J_showBuyerList is 月成交记录<span class="J_MonSales" style="display: inline; "><em class="J_TDealCount tm-MRswitchRecord">7</em>件</span>
+0
+wait for contfunction () {
+	    											var pos = getElementAbsPos($('#J_showBuyerList')[0]);
+			 	 									window.scroll(pos.left,pos.top);
+
+	    											return $('#J_showBuyerList tr').length > 0;
+
+	    										}
+0
+wait for contfunction () {
+	    											var pos = getElementAbsPos($('#J_showBuyerList')[0]);
+			 	 									window.scroll(pos.left,pos.top);
+
+	    											return $('#J_showBuyerList tr').length > 0;
+
+	    										}
+start page :0
+2014-02-19 16:52:04
+current: 1392799924
+start_time: 1393258920
+start item :19441544920
+pageStart
+loadJs end
+0
+wait for contfunction () {
+
+				 	 			$('#description>div.content img').each(function(index,ele)
+				 	 			{
+
+									if($(ele).attr('data-ks-lazyload'))
+									{
+										return false;
+									}
+				 	 			});
+
+
+				 	 			return $('#J_TabBar li:eq(2) a').html() != undefined && $('#description>div.content').html().trim()!='描述加载中';		
+				 	 		}
+J_showBuyerList is 月成交记录<span class="J_MonSales" style="display: inline; "><em class="J_TDealCount tm-MRswitchRecord">0</em>件</span>
+start item :16067862821
+pageStart
+loadJs end
+0
+wait for contfunction () {
+
+				 	 			$('#description>div.content img').each(function(index,ele)
+				 	 			{
+
+									if($(ele).attr('data-ks-lazyload'))
+									{
+										return false;
+									}
+				 	 			});
+
+
+				 	 			return $('#J_TabBar li:eq(2) a').html() != undefined && $('#description>div.content').html().trim()!='描述加载中';		
+				 	 		}
+0
+wait for contfunction () {
+
+				 	 			$('#description>div.content img').each(function(index,ele)
+				 	 			{
+
+									if($(ele).attr('data-ks-lazyload'))
+									{
+										return false;
+									}
+				 	 			});
+
+
+				 	 			return $('#J_TabBar li:eq(2) a').html() != undefined && $('#description>div.content').html().trim()!='描述加载中';		
+				 	 		}
+J_showBuyerList is 月成交记录<span class="J_MonSales" style="display: inline; "><em class="J_TDealCount tm-MRswitchRecord">0</em>件</span>
+start item :15808431459
+pageStart
+loadJs end
+0
+wait for contfunction () {
+
+				 	 			$('#description>div.content img').each(function(index,ele)
+				 	 			{
+
+									if($(ele).attr('data-ks-lazyload'))
+									{
+										return false;
+									}
+				 	 			});
+
+
+				 	 			return $('#J_TabBar li:eq(2) a').html() != undefined && $('#description>div.content').html().trim()!='描述加载中';		
+				 	 		}
+J_showBuyerList is 月成交记录<span class="J_MonSales" style="display: inline; "><em class="J_TDealCount tm-MRswitchRecord">2</em>件</span>
+0
+wait for contfunction () {
+	    											var pos = getElementAbsPos($('#J_showBuyerList')[0]);
+			 	 									window.scroll(pos.left,pos.top);
+
+	    											return $('#J_showBuyerList tr').length > 0;
+
+	    										}
+0
+wait for contfunction () {
+	    											var pos = getElementAbsPos($('#J_showBuyerList')[0]);
+			 	 									window.scroll(pos.left,pos.top);
+
+	    											return $('#J_showBuyerList tr').length > 0;
+
+	    										}
+start page :0
+2014-02-24 15:17:44
+current: 1393226264
+start_time: 1393258920
+start item :19542121643
+pageStart
+loadJs end
+0
+wait for contfunction () {
+
+				 	 			$('#description>div.content img').each(function(index,ele)
+				 	 			{
+
+									if($(ele).attr('data-ks-lazyload'))
+									{
+										return false;
+									}
+				 	 			});
+
+
+				 	 			return $('#J_TabBar li:eq(2) a').html() != undefined && $('#description>div.content').html().trim()!='描述加载中';		
+				 	 		}
+0
+wait for contfunction () {
+
+				 	 			$('#description>div.content img').each(function(index,ele)
+				 	 			{
+
+									if($(ele).attr('data-ks-lazyload'))
+									{
+										return false;
+									}
+				 	 			});
+
+
+				 	 			return $('#J_TabBar li:eq(2) a').html() != undefined && $('#description>div.content').html().trim()!='描述加载中';		
+				 	 		}
+0
+wait for contfunction () {
+
+				 	 			$('#description>div.content img').each(function(index,ele)
+				 	 			{
+
+									if($(ele).attr('data-ks-lazyload'))
+									{
+										return false;
+									}
+				 	 			});
+
+
+				 	 			return $('#J_TabBar li:eq(2) a').html() != undefined && $('#description>div.content').html().trim()!='描述加载中';		
+				 	 		}
+0
+wait for contfunction () {
+
+				 	 			$('#description>div.content img').each(function(index,ele)
+				 	 			{
+
+									if($(ele).attr('data-ks-lazyload'))
+									{
+										return false;
+									}
+				 	 			});
+
+
+				 	 			return $('#J_TabBar li:eq(2) a').html() != undefined && $('#description>div.content').html().trim()!='描述加载中';		
+				 	 		}
+J_showBuyerList is 月成交记录<span class="J_MonSales" style="display: inline; "><em class="J_TDealCount tm-MRswitchRecord">50</em>件</span>
+0
+wait for contfunction () {
+	    											var pos = getElementAbsPos($('#J_showBuyerList')[0]);
+			 	 									window.scroll(pos.left,pos.top);
+
+	    											return $('#J_showBuyerList tr').length > 0;
+
+	    										}
+0
+wait for contfunction () {
+	    											var pos = getElementAbsPos($('#J_showBuyerList')[0]);
+			 	 									window.scroll(pos.left,pos.top);
+
+	    											return $('#J_showBuyerList tr').length > 0;
+
+	    										}
+start page :0
+2014-02-08 22:31:42
+current: 1391869902
+start_time: 1393258920
+start item :13887045336
+pageStart
+loadJs end
+0
+wait for contfunction () {
+
+				 	 			$('#description>div.content img').each(function(index,ele)
+				 	 			{
+
+									if($(ele).attr('data-ks-lazyload'))
+									{
+										return false;
+									}
+				 	 			});
+
+
+				 	 			return $('#J_TabBar li:eq(2) a').html() != undefined && $('#description>div.content').html().trim()!='描述加载中';		
+				 	 		}
+start item :17929814985
+pageStart
+loadJs end
+0
+wait for contfunction () {
+
+				 	 			$('#description>div.content img').each(function(index,ele)
+				 	 			{
+
+									if($(ele).attr('data-ks-lazyload'))
+									{
+										return false;
+									}
+				 	 			});
+
+
+				 	 			return $('#J_TabBar li:eq(2) a').html() != undefined && $('#description>div.content').html().trim()!='描述加载中';		
+				 	 		}
+0
+wait for contfunction () {
+
+				 	 			$('#description>div.content img').each(function(index,ele)
+				 	 			{
+
+									if($(ele).attr('data-ks-lazyload'))
+									{
+										return false;
+									}
+				 	 			});
+
+
+				 	 			return $('#J_TabBar li:eq(2) a').html() != undefined && $('#description>div.content').html().trim()!='描述加载中';		
+				 	 		}
+J_showBuyerList is 月成交记录<span class="J_MonSales" style="display: inline; "><em class="J_TDealCount tm-MRswitchRecord">1</em>件</span>
+0
+wait for contfunction () {
+	    											var pos = getElementAbsPos($('#J_showBuyerList')[0]);
+			 	 									window.scroll(pos.left,pos.top);
+
+	    											return $('#J_showBuyerList tr').length > 0;
+
+	    										}
+0
+wait for contfunction () {
+	    											var pos = getElementAbsPos($('#J_showBuyerList')[0]);
+			 	 									window.scroll(pos.left,pos.top);
+
+	    											return $('#J_showBuyerList tr').length > 0;
+
+	    										}
+start page :0
+2014-02-20 20:32:20
+current: 1392899540
+start_time: 1393258920
+start item :19528062197
+start item :16296935378
+pageStart
+loadJs end
+0
+wait for contfunction () {
+
+				 	 			$('#description>div.content img').each(function(index,ele)
+				 	 			{
+
+									if($(ele).attr('data-ks-lazyload'))
+									{
+										return false;
+									}
+				 	 			});
+
+
+				 	 			return $('#J_TabBar li:eq(2) a').html() != undefined && $('#description>div.content').html().trim()!='描述加载中';		
+				 	 		}
+J_showBuyerList is 月成交记录<span class="J_MonSales" style="display: inline; "><em class="J_TDealCount tm-MRswitchRecord">12</em>件</span>
+0
+wait for contfunction () {
+	    											var pos = getElementAbsPos($('#J_showBuyerList')[0]);
+			 	 									window.scroll(pos.left,pos.top);
+
+	    											return $('#J_showBuyerList tr').length > 0;
+
+	    										}
+0
+wait for contfunction () {
+	    											var pos = getElementAbsPos($('#J_showBuyerList')[0]);
+			 	 									window.scroll(pos.left,pos.top);
+
+	    											return $('#J_showBuyerList tr').length > 0;
+
+	    										}
+0
+wait for contfunction () {
+	    											var pos = getElementAbsPos($('#J_showBuyerList')[0]);
+			 	 									window.scroll(pos.left,pos.top);
+
+	    											return $('#J_showBuyerList tr').length > 0;
+
+	    										}
+0
+wait for contfunction () {
+	    											var pos = getElementAbsPos($('#J_showBuyerList')[0]);
+			 	 									window.scroll(pos.left,pos.top);
+
+	    											return $('#J_showBuyerList tr').length > 0;
+
+	    										}
+0
+wait for contfunction () {
+	    											var pos = getElementAbsPos($('#J_showBuyerList')[0]);
+			 	 									window.scroll(pos.left,pos.top);
+
+	    											return $('#J_showBuyerList tr').length > 0;
+
+	    										}
+0
+wait for contfunction () {
+	    											var pos = getElementAbsPos($('#J_showBuyerList')[0]);
+			 	 									window.scroll(pos.left,pos.top);
+
+	    											return $('#J_showBuyerList tr').length > 0;
+
+	    										}
+0
+wait for contfunction () {
+	    											var pos = getElementAbsPos($('#J_showBuyerList')[0]);
+			 	 									window.scroll(pos.left,pos.top);
+
+	    											return $('#J_showBuyerList tr').length > 0;
+
+	    										}
+0
+wait for contfunction () {
+	    											var pos = getElementAbsPos($('#J_showBuyerList')[0]);
+			 	 									window.scroll(pos.left,pos.top);
+
+	    											return $('#J_showBuyerList tr').length > 0;
+
+	    										}
+0
+wait for contfunction () {
+	    											var pos = getElementAbsPos($('#J_showBuyerList')[0]);
+			 	 									window.scroll(pos.left,pos.top);
+
+	    											return $('#J_showBuyerList tr').length > 0;
+
+	    										}
+start item :36639698187
+pageStart
+loadJs end
+0
+wait for contfunction () {
+
+				 	 			$('#description>div.content img').each(function(index,ele)
+				 	 			{
+
+									if($(ele).attr('data-ks-lazyload'))
+									{
+										return false;
+									}
+				 	 			});
+
+
+				 	 			return $('#J_TabBar li:eq(2) a').html() != undefined && $('#description>div.content').html().trim()!='描述加载中';		
+				 	 		}
+0
+wait for contfunction () {
+
+				 	 			$('#description>div.content img').each(function(index,ele)
+				 	 			{
+
+									if($(ele).attr('data-ks-lazyload'))
+									{
+										return false;
+									}
+				 	 			});
+
+
+				 	 			return $('#J_TabBar li:eq(2) a').html() != undefined && $('#description>div.content').html().trim()!='描述加载中';		
+				 	 		}
+J_showBuyerList is 月成交记录<span class="J_MonSales" style="display: inline; "><em class="J_TDealCount tm-MRswitchRecord">2</em>件</span>
+0
+wait for contfunction () {
+	    											var pos = getElementAbsPos($('#J_showBuyerList')[0]);
+			 	 									window.scroll(pos.left,pos.top);
+
+	    											return $('#J_showBuyerList tr').length > 0;
+
+	    										}
+0
+wait for contfunction () {
+	    											var pos = getElementAbsPos($('#J_showBuyerList')[0]);
+			 	 									window.scroll(pos.left,pos.top);
+
+	    											return $('#J_showBuyerList tr').length > 0;
+
+	    										}
+start page :0
+2014-02-20 21:41:40
+current: 1392903700
+start_time: 1393258920
+start item :10811874610
+pageStart
+loadJs end
+0
+wait for contfunction () {
+
+				 	 			$('#description>div.content img').each(function(index,ele)
+				 	 			{
+
+									if($(ele).attr('data-ks-lazyload'))
+									{
+										return false;
+									}
+				 	 			});
+
+
+				 	 			return $('#J_TabBar li:eq(2) a').html() != undefined && $('#description>div.content').html().trim()!='描述加载中';		
+				 	 		}
+J_showBuyerList is 月成交记录<span class="J_MonSales" style="display: inline; "><em class="J_TDealCount tm-MRswitchRecord">7</em>件</span>
+0
+wait for contfunction () {
+	    											var pos = getElementAbsPos($('#J_showBuyerList')[0]);
+			 	 									window.scroll(pos.left,pos.top);
+
+	    											return $('#J_showBuyerList tr').length > 0;
+
+	    										}
+0
+wait for contfunction () {
+	    											var pos = getElementAbsPos($('#J_showBuyerList')[0]);
+			 	 									window.scroll(pos.left,pos.top);
+
+	    											return $('#J_showBuyerList tr').length > 0;
+
+	    										}
+start page :0
+2014-02-13 19:57:16
+current: 1392292636
+start_time: 1393258920
+start item :14163557326
+pageStart
+loadJs end
+0
+wait for contfunction () {
+
+				 	 			$('#description>div.content img').each(function(index,ele)
+				 	 			{
+
+									if($(ele).attr('data-ks-lazyload'))
+									{
+										return false;
+									}
+				 	 			});
+
+
+				 	 			return $('#J_TabBar li:eq(2) a').html() != undefined && $('#description>div.content').html().trim()!='描述加载中';		
+				 	 		}
+0
+wait for contfunction () {
+
+				 	 			$('#description>div.content img').each(function(index,ele)
+				 	 			{
+
+									if($(ele).attr('data-ks-lazyload'))
+									{
+										return false;
+									}
+				 	 			});
+
+
+				 	 			return $('#J_TabBar li:eq(2) a').html() != undefined && $('#description>div.content').html().trim()!='描述加载中';		
+				 	 		}
+J_showBuyerList is 月成交记录<span class="J_MonSales" style="display: inline; "><em class="J_TDealCount tm-MRswitchRecord">157</em>件</span>
+0
+wait for contfunction () {
+	    											var pos = getElementAbsPos($('#J_showBuyerList')[0]);
+			 	 									window.scroll(pos.left,pos.top);
+
+	    											return $('#J_showBuyerList tr').length > 0;
+
+	    										}
+0
+wait for contfunction () {
+	    											var pos = getElementAbsPos($('#J_showBuyerList')[0]);
+			 	 									window.scroll(pos.left,pos.top);
+
+	    											return $('#J_showBuyerList tr').length > 0;
+
+	    										}
+start page :0
+2014-02-25 21:10:54
+current: 1393333854
+start_time: 1393258920
+2014-02-24 20:10:56
+current: 1393243856
+start_time: 1393258920
+start item :26593464961
+pageStart
+loadJs end
+0
+wait for contfunction () {
+
+				 	 			$('#description>div.content img').each(function(index,ele)
+				 	 			{
+
+									if($(ele).attr('data-ks-lazyload'))
+									{
+										return false;
+									}
+				 	 			});
+
+
+				 	 			return $('#J_TabBar li:eq(2) a').html() != undefined && $('#description>div.content').html().trim()!='描述加载中';		
+				 	 		}
+0
+wait for contfunction () {
+
+				 	 			$('#description>div.content img').each(function(index,ele)
+				 	 			{
+
+									if($(ele).attr('data-ks-lazyload'))
+									{
+										return false;
+									}
+				 	 			});
+
+
+				 	 			return $('#J_TabBar li:eq(2) a').html() != undefined && $('#description>div.content').html().trim()!='描述加载中';		
+				 	 		}
+J_showBuyerList is 月成交记录<span class="J_MonSales" style="display: inline; "><em class="J_TDealCount tm-MRswitchRecord">16</em>件</span>
+0
+wait for contfunction () {
+	    											var pos = getElementAbsPos($('#J_showBuyerList')[0]);
+			 	 									window.scroll(pos.left,pos.top);
+
+	    											return $('#J_showBuyerList tr').length > 0;
+
+	    										}
+0
+wait for contfunction () {
+	    											var pos = getElementAbsPos($('#J_showBuyerList')[0]);
+			 	 									window.scroll(pos.left,pos.top);
+
+	    											return $('#J_showBuyerList tr').length > 0;
+
+	    										}
+0
+wait for contfunction () {
+	    											var pos = getElementAbsPos($('#J_showBuyerList')[0]);
+			 	 									window.scroll(pos.left,pos.top);
+
+	    											return $('#J_showBuyerList tr').length > 0;
+
+	    										}
+0
+wait for contfunction () {
+	    											var pos = getElementAbsPos($('#J_showBuyerList')[0]);
+			 	 									window.scroll(pos.left,pos.top);
+
+	    											return $('#J_showBuyerList tr').length > 0;
+
+	    										}
+0
+wait for contfunction () {
+	    											var pos = getElementAbsPos($('#J_showBuyerList')[0]);
+			 	 									window.scroll(pos.left,pos.top);
+
+	    											return $('#J_showBuyerList tr').length > 0;
+
+	    										}
+0
+wait for contfunction () {
+	    											var pos = getElementAbsPos($('#J_showBuyerList')[0]);
+			 	 									window.scroll(pos.left,pos.top);
+
+	    											return $('#J_showBuyerList tr').length > 0;
+
+	    										}
+0
+wait for contfunction () {
+	    											var pos = getElementAbsPos($('#J_showBuyerList')[0]);
+			 	 									window.scroll(pos.left,pos.top);
+
+	    											return $('#J_showBuyerList tr').length > 0;
+
+	    										}
+0
+wait for contfunction () {
+	    											var pos = getElementAbsPos($('#J_showBuyerList')[0]);
+			 	 									window.scroll(pos.left,pos.top);
+
+	    											return $('#J_showBuyerList tr').length > 0;
+
+	    										}
+0
+wait for contfunction () {
+	    											var pos = getElementAbsPos($('#J_showBuyerList')[0]);
+			 	 									window.scroll(pos.left,pos.top);
+
+	    											return $('#J_showBuyerList tr').length > 0;
+
+	    										}
+start item :36563457052
+pageStart
+loadJs end
+0
+wait for contfunction () {
+
+				 	 			$('#description>div.content img').each(function(index,ele)
+				 	 			{
+
+									if($(ele).attr('data-ks-lazyload'))
+									{
+										return false;
+									}
+				 	 			});
+
+
+				 	 			return $('#J_TabBar li:eq(2) a').html() != undefined && $('#description>div.content').html().trim()!='描述加载中';		
+				 	 		}
+0
+wait for contfunction () {
+
+				 	 			$('#description>div.content img').each(function(index,ele)
+				 	 			{
+
+									if($(ele).attr('data-ks-lazyload'))
+									{
+										return false;
+									}
+				 	 			});
+
+
+				 	 			return $('#J_TabBar li:eq(2) a').html() != undefined && $('#description>div.content').html().trim()!='描述加载中';		
+				 	 		}
+J_showBuyerList is 月成交记录<span class="J_MonSales" style="display: inline; "><em class="J_TDealCount tm-MRswitchRecord">834</em>件</span>
+0
+wait for contfunction () {
+	    											var pos = getElementAbsPos($('#J_showBuyerList')[0]);
+			 	 									window.scroll(pos.left,pos.top);
+
+	    											return $('#J_showBuyerList tr').length > 0;
+
+	    										}
+0
+wait for contfunction () {
+	    											var pos = getElementAbsPos($('#J_showBuyerList')[0]);
+			 	 									window.scroll(pos.left,pos.top);
+
+	    											return $('#J_showBuyerList tr').length > 0;
+
+	    										}
+start page :0
+2014-02-20 21:21:31
+current: 1392902491
+start_time: 1393258920
+start item :7980319196
+start item :36339296714
+pageStart
+loadJs end
+0
+wait for contfunction () {
+
+				 	 			$('#description>div.content img').each(function(index,ele)
+				 	 			{
+
+									if($(ele).attr('data-ks-lazyload'))
+									{
+										return false;
+									}
+				 	 			});
+
+
+				 	 			return $('#J_TabBar li:eq(2) a').html() != undefined && $('#description>div.content').html().trim()!='描述加载中';		
+				 	 		}
+0
+wait for contfunction () {
+
+				 	 			$('#description>div.content img').each(function(index,ele)
+				 	 			{
+
+									if($(ele).attr('data-ks-lazyload'))
+									{
+										return false;
+									}
+				 	 			});
+
+
+				 	 			return $('#J_TabBar li:eq(2) a').html() != undefined && $('#description>div.content').html().trim()!='描述加载中';		
+				 	 		}
+J_showBuyerList is 月成交记录<span class="J_MonSales" style="display: inline; "><em class="J_TDealCount tm-MRswitchRecord">3</em>件</span>
+0
+wait for contfunction () {
+	    											var pos = getElementAbsPos($('#J_showBuyerList')[0]);
+			 	 									window.scroll(pos.left,pos.top);
+
+	    											return $('#J_showBuyerList tr').length > 0;
+
+	    										}
+0
+wait for contfunction () {
+	    											var pos = getElementAbsPos($('#J_showBuyerList')[0]);
+			 	 									window.scroll(pos.left,pos.top);
+
+	    											return $('#J_showBuyerList tr').length > 0;
+
+	    										}
+0
+wait for contfunction () {
+	    											var pos = getElementAbsPos($('#J_showBuyerList')[0]);
+			 	 									window.scroll(pos.left,pos.top);
+
+	    											return $('#J_showBuyerList tr').length > 0;
+
+	    										}
+0
+wait for contfunction () {
+	    											var pos = getElementAbsPos($('#J_showBuyerList')[0]);
+			 	 									window.scroll(pos.left,pos.top);
+
+	    											return $('#J_showBuyerList tr').length > 0;
+
+	    										}
+start page :0
+2014-02-10 19:28:46
+current: 1392031726
+start_time: 1393258921
+start item :21269963352
+pageStart
+loadJs end
+0
+wait for contfunction () {
+
+				 	 			$('#description>div.content img').each(function(index,ele)
+				 	 			{
+
+									if($(ele).attr('data-ks-lazyload'))
+									{
+										return false;
+									}
+				 	 			});
+
+
+				 	 			return $('#J_TabBar li:eq(2) a').html() != undefined && $('#description>div.content').html().trim()!='描述加载中';		
+				 	 		}
+0
+wait for contfunction () {
+
+				 	 			$('#description>div.content img').each(function(index,ele)
+				 	 			{
+
+									if($(ele).attr('data-ks-lazyload'))
+									{
+										return false;
+									}
+				 	 			});
+
+
+				 	 			return $('#J_TabBar li:eq(2) a').html() != undefined && $('#description>div.content').html().trim()!='描述加载中';		
+				 	 		}
+J_showBuyerList is 月成交记录<span class="J_MonSales" style="display: inline; "><em class="J_TDealCount tm-MRswitchRecord">4</em>件</span>
+0
+wait for contfunction () {
+	    											var pos = getElementAbsPos($('#J_showBuyerList')[0]);
+			 	 									window.scroll(pos.left,pos.top);
+
+	    											return $('#J_showBuyerList tr').length > 0;
+
+	    										}
+0
+wait for contfunction () {
+	    											var pos = getElementAbsPos($('#J_showBuyerList')[0]);
+			 	 									window.scroll(pos.left,pos.top);
+
+	    											return $('#J_showBuyerList tr').length > 0;
+
+	    										}
+start page :0
+2014-02-24 08:06:42
+current: 1393200402
+start_time: 1393258921
+start item :14692762142
+pageStart
+loadJs end
+0
+wait for contfunction () {
+
+				 	 			$('#description>div.content img').each(function(index,ele)
+				 	 			{
+
+									if($(ele).attr('data-ks-lazyload'))
+									{
+										return false;
+									}
+				 	 			});
+
+
+				 	 			return $('#J_TabBar li:eq(2) a').html() != undefined && $('#description>div.content').html().trim()!='描述加载中';		
+				 	 		}
+0
+wait for contfunction () {
+
+				 	 			$('#description>div.content img').each(function(index,ele)
+				 	 			{
+
+									if($(ele).attr('data-ks-lazyload'))
+									{
+										return false;
+									}
+				 	 			});
+
+
+				 	 			return $('#J_TabBar li:eq(2) a').html() != undefined && $('#description>div.content').html().trim()!='描述加载中';		
+				 	 		}
+J_showBuyerList is 月成交记录<span class="J_MonSales" style="display: inline; "><em class="J_TDealCount tm-MRswitchRecord">2</em>件</span>
+0
+wait for contfunction () {
+	    											var pos = getElementAbsPos($('#J_showBuyerList')[0]);
+			 	 									window.scroll(pos.left,pos.top);
+
+	    											return $('#J_showBuyerList tr').length > 0;
+
+	    										}
+0
+wait for contfunction () {
+	    											var pos = getElementAbsPos($('#J_showBuyerList')[0]);
+			 	 									window.scroll(pos.left,pos.top);
+
+	    											return $('#J_showBuyerList tr').length > 0;
+
+	    										}
+start page :0
+2014-02-16 11:26:33
+current: 1392521193
+start_time: 1393258921
+start item :36345570286
+pageStart
+loadJs end
+0
+wait for contfunction () {
+
+				 	 			$('#description>div.content img').each(function(index,ele)
+				 	 			{
+
+									if($(ele).attr('data-ks-lazyload'))
+									{
+										return false;
+									}
+				 	 			});
+
+
+				 	 			return $('#J_TabBar li:eq(2) a').html() != undefined && $('#description>div.content').html().trim()!='描述加载中';		
+				 	 		}
+J_showBuyerList is 月成交记录<span class="J_MonSales" style="display: inline; "><em class="J_TDealCount tm-MRswitchRecord">1</em>件</span>
+0
+wait for contfunction () {
+	    											var pos = getElementAbsPos($('#J_showBuyerList')[0]);
+			 	 									window.scroll(pos.left,pos.top);
+
+	    											return $('#J_showBuyerList tr').length > 0;
+
+	    										}
+0
+wait for contfunction () {
+	    											var pos = getElementAbsPos($('#J_showBuyerList')[0]);
+			 	 									window.scroll(pos.left,pos.top);
+
+	    											return $('#J_showBuyerList tr').length > 0;
+
+	    										}
+start page :0
+2014-02-19 22:21:34
+current: 1392819694
+start_time: 1393258921
+start item :36348067507
+pageStart
+loadJs end
+0
+wait for contfunction () {
+
+				 	 			$('#description>div.content img').each(function(index,ele)
+				 	 			{
+
+									if($(ele).attr('data-ks-lazyload'))
+									{
+										return false;
+									}
+				 	 			});
+
+
+				 	 			return $('#J_TabBar li:eq(2) a').html() != undefined && $('#description>div.content').html().trim()!='描述加载中';		
+				 	 		}
+0
+wait for contfunction () {
+
+				 	 			$('#description>div.content img').each(function(index,ele)
+				 	 			{
+
+									if($(ele).attr('data-ks-lazyload'))
+									{
+										return false;
+									}
+				 	 			});
+
+
+				 	 			return $('#J_TabBar li:eq(2) a').html() != undefined && $('#description>div.content').html().trim()!='描述加载中';		
+				 	 		}
+J_showBuyerList is 月成交记录<span class="J_MonSales" style="display: inline; "><em class="J_TDealCount tm-MRswitchRecord">0</em>件</span>
+start item :19722193504

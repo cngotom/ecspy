@@ -108,6 +108,7 @@ def merge
 			cont.update_if_changed(data['content'])
 		end
 
+
 		item.update_attribute(:last_check_time,Time.at(data['last_check_time'].to_i) ) if data['last_check_time']
 	end
 
