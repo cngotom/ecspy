@@ -71,7 +71,17 @@ module Crawler
 			@redis.llen @redis_key
 		end
 
+		 def self.size
+                list_redis_client = Crawler::ItemListRedis.new(:key => 'RedisItemList')
 
+                sales_redis_client = Crawler::ItemListRedis.new(:key => 'RedisItemSales')
+
+                closed_redis_client = Crawler::ItemListRedis.new(:key => 'RedisItemClosed')
+
+                content_redis_client = Crawler::ItemListRedis.new(:key => 'RedisItemContent')
+
+                list_redis_client.size + sales_redis_client.size + closed_redis_client.size+ content_redis_client.size
+        end
 
 		def self.merged?
 

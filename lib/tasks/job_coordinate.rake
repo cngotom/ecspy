@@ -35,6 +35,8 @@ task :job_info do
 	puts Resque.info[:pending]
 
 	puts  Crawler::ItemListRedis.merged?
+
+	puts  Crawler::ItemListRedis.size
 end
 
 task :job_coord => :environment do
@@ -151,9 +153,18 @@ task :merge => :environment do
 end
   
 task :merge_daemon => :environment do 
-	while true do
-		merge
-		sleep 30
-		puts 'sleep'
-	end
+	    lock('merge_daemon.pid') do
+        	while true do
+            	begin
+                    merge
+                rescue Timeout::Error
+                    puts 'time out'
+                rescue
+                    puts $!
+                    puts $@
+	            end
+                sleep 30
+                puts 'sleep'
+        	end
+       end
 end
