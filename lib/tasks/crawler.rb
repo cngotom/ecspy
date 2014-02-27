@@ -22,7 +22,7 @@ module Crawler
 	GetListRes = "log/phantomjs/getlist.res"
 
 
-	GetSalesLog  = "log/phantomjs/getsales.log"
+	GetSalesLog  = "log/phantomjs/getsales_#{Process.pid}.log"
 	GetSalesRes = "log/phantomjs/getsales.res"
 
 	def exec_with_timeout(cmd,timeout = 60,max_retry = 0)
