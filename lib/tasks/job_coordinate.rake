@@ -168,3 +168,13 @@ task :merge_daemon => :environment do
         	end
        end
 end
+
+task :resque_work do 
+	while true do
+		Rake::Task['resque:work'].invoke rescue puts $!
+		Rake::Task['resque:work'].reenable
+		puts 'retry'
+		sleep 60
+	end
+
+end

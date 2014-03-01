@@ -65,7 +65,7 @@ class ShopItem < ActiveRecord::Base
 
 	def update_if_changed(data)
 		data = data.clone
-		is_titile_or_price_changed = ( title != data['title'] ||  price != data['price'] || thumb != data['thumb']) 
+		is_titile_or_price_changed = ( title != data['title'] ||  price.to_f.round(1) != data['price'].to_f.round(1) || thumb != data['thumb']) 
 		if is_titile_or_price_changed
 			@changed = true
 			assign_attributes(data)

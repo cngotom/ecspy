@@ -282,3 +282,7 @@ select @ids:=id from temp;
 delete from item_sales where id in(  select id from temp);
 
 mysqldump -u root -p ecspy_dev >ecspy_dev.sql
+
+
+scp transform file using ssh
+scp ./ecspy_dev.sql.gz root@117.121.25.135:/root/rails

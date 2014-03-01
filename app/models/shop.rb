@@ -84,7 +84,7 @@ class Shop < ActiveRecord::Base
 
 	validate :url_validate
 	def url_validate
-	    unless url  =~ /http:\/\/(\w)*.(tmall|taobao).com\// 
+	    unless url  =~ /^http:\/\/(\w)*.(tmall|taobao).com\/$/ 
 	    	errors[:url] << 'url格式不正确 参考 ： http://slwsp.tmall.com/'
 	    end
   	end

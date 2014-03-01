@@ -2,7 +2,7 @@ require 'redis'
 require 'ostruct'
 
 
-ResqueAddr = "117.121.25.135"
+ResqueAddr = "127.0.0.1"
 Resque.redis = "#{ResqueAddr}:6379"
 
 module Crawler

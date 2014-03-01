@@ -8,8 +8,8 @@
 	  <% end %>
 
 
-	  <%= f.input :title ,:input_html => { :class => "span6" }, :hint => "add your title here" %>
-	  <%= f.input :url, :input_html => { :class => "span6" }, :hint => "add your url here" %>
+	  <%= f.input :title ,:input_html => { :class => "span6" }, :hint => "店铺名称 请用汉语标示" %>
+	  <%= f.input :url, :input_html => { :class => "span6" }, :hint => "店铺地址 （http://slwsp.tmall.com/)" %>
 
 
 	  <div class="text-center">
@@ -18,3 +18,23 @@
 
 
 <% end %>
+
+
+<script type="text/javascript">
+	
+	$(function(){
+
+		$('#shop_url').blur(function(){
+
+			if( /^http:\/\/\w*\.(tmall|taobao)\.com\//i.test($(this).val()))
+			{
+				modify_val = $(this).val().substr(0,  $(this).val().indexOf("com/") + 4 );
+
+				$(this).val(modify_val);
+			}
+
+		})
+
+	})
+
+</script>

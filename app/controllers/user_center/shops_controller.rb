@@ -75,7 +75,9 @@ class UserCenter::ShopsController < InheritedResources::Base
 
     @lastweekday_compare = get_compare_rate(@today,lastweekday)
 
-    @locals = { :today => @today,:lastweekday_compare => @lastweekday_compare,
+    sales_history = get_sales_history(@shop,offset)
+
+    @locals = { :today => @today,:lastweekday_compare => @lastweekday_compare, :sales_history=>sales_history,
     :yes_compare => @yes_compare ,:shop => @shop ,:offset=>offset,:today_changes_sales => today_changes_sales}
 
     #hack ugly?

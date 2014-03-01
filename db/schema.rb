@@ -142,6 +142,12 @@ ActiveRecord::Schema.define(:version => 20140225144306) do
   add_index "shops", ["disabled"], :name => "index_shops_on_disabled"
   add_index "shops", ["updated_at"], :name => "index_shops_on_updated_at"
 
+  create_table "temp", :id => false, :force => true do |t|
+    t.integer "id"
+  end
+
+  add_index "temp", ["id"], :name => "ids"
+
   create_table "users", :force => true do |t|
     t.string   "email",                  :default => "", :null => false
     t.string   "name",                   :default => "", :null => false

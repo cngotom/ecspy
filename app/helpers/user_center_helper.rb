@@ -129,4 +129,33 @@ module UserCenterHelper
 
 	end
 
+	def get_sales_history(shop,offset)
+		start_time = Time.now.end_of_day-30*24*3600 -offset*24*3600 
+		end_time = Time.now.end_of_day-offset*24*3600
+		#ShopItem.includes(:shop_item).
+		#ItemSale.joins(:shop_item).select('date_format(buy_time,"%y-%m-%d") as time ,sum(item_price * item_num) as total').where(['shop_id = 1 and buy_time between ? and ?',Time.now-3*24*3600 , Time.now]).group('time')
+		sales = ItemSale.joins(:shop_item).select(' date_format(buy_time,"%y-%m-%d") as time, sum(item_price * item_num) as total').where(['shop_id = ? and buy_time between ? and ?',shop.id,start_time,end_time]).group('time').order('time asc')
+		
+		res = []
+		start_time_stamp = start_time.beginning_of_day.to_i
+		end_time_stamp = end_time.beginning_of_day.to_i
+		current_time_stamp = start_time_stamp
+		one_day_sec = 3600*24
+		
+		sales_index = 0
+		31.times do |i|
+			if Time.at(current_time_stamp).strftime('%y-%m-%d') == sales[sales_index].time
+				res << sales[sales_index].total.round(2)
+				sales_index += 1
+				sales_index = 0 if sales_index >= sales.size
+			else
+				res << 0
+			end
+
+			current_time_stamp += one_day_sec
+		end
+		res
+	end
+	#sales_history = get_sales_histroy(@shop,offset)
+
 end

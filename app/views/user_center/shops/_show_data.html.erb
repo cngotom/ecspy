@@ -38,6 +38,15 @@
 		</section>
 
 
+
+		<section>
+			<div class="row-fluid" id="sales_chart">
+					
+			</div>
+	
+		</section>
+
+
 		
 		<section> 
 			<h3 class="title"> 当日行为 </h3>
@@ -86,3 +95,69 @@
 			<h3 class="title"> 买家环节 </h3>
 
 		</section>
+
+
+
+		<script type="text/javascript">
+			$(function(){
+ 				$('#sales_chart').highcharts({
+			 		 	chart: {
+			                zoomType: 'x',
+			                spacingRight: 20
+			            },
+			            title: {
+			                text: '30天销售统计',
+			                x: -20 //center
+			            },
+			            subtitle: {
+			                x: -20
+			            },
+			            xAxis: {
+			            	 type: 'datetime',
+			            	 tickPixelInterval : 130,
+			            	  labels: {
+			                    align: 'left',
+			                    formatter: function() {
+			                        return Highcharts.dateFormat('%y-%m-%d', this.value);
+			                    }
+			                }
+			            },
+			            yAxis: {
+
+			                title: {
+			                    text: '订单金额(元)'
+			                },
+			                plotLines: [{
+			                    value: 1,
+			                    width: 1,
+			                    color: '#808080'
+			                }]
+			            },
+			            tooltip: {
+			                valueSuffix: '元',
+			                xDateFormat: '%Y-%m-%d %A',
+			            },
+			            legend: {
+			                layout: 'vertical',
+			                align: 'right',
+			                verticalAlign: 'middle',
+			                borderWidth: 0
+			            },
+			            series: [	
+			            	{
+					   				pointStart: <%= (Time.now.end_of_day - offset*24*3600  - 30*24*3600).to_i*1000 %>,
+					   				pointInterval: 1 * 24 * 3600 * 1000,
+					                data: [
+					                	<%= sales_history.join ',' %>
+					                ]
+					        }
+
+					    ]
+				});
+
+
+			});
+
+		</script>
+
+		
