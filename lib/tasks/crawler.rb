@@ -71,6 +71,12 @@ module Crawler
 			@redis.llen @redis_key
 		end
 
+
+		def close
+
+			@redis.quit
+		end
+
 		 def self.size
                 list_redis_client = Crawler::ItemListRedis.new(:key => 'RedisItemList')
 
@@ -140,6 +146,7 @@ module Crawler
 				end
 			end
 			File.delete out_file if File.exist?(out_file)
+			list_redis_client.close
 			if retn.chomp != 'ok'
 				raise 'error'
 			end
@@ -201,19 +208,26 @@ module Crawler
 					end
 				end
 
-				File.delete out_file if File.exist?(out_file)
 			elsif retn.chomp == 'closed'
 
 				puts "item: #{item.id} closed"
 
 				closed_redis_client.add ({'id' => item.id }.to_json)
 
-				File.delete out_file if File.exist?(out_file)
-			else
+			end
+
+
+			File.delete out_file if File.exist?(out_file)
+			sales_redis_client.close
+			content_redis_client.close
+			closed_redis_client.close
+
+			if retn.chomp != 'closed' && retn.chomp != 'ok'
 				puts retn
-				File.delete out_file if File.exist?(out_file)
 				raise retn
 			end
+
+			
 
 		end
 

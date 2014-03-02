@@ -93,7 +93,7 @@ def merge
 
 		puts "Shop:#{shop.id} item:#{item.id}  merge ok"
 	end
-
+	list_redis_client.close
 
 	#merge items
 	sales_redis_client = Crawler::ItemListRedis.new(:key => 'RedisItemSales')
@@ -114,7 +114,7 @@ def merge
 
 
 	end
-
+	sales_redis_client.close
 
 
 
@@ -125,7 +125,7 @@ def merge
 		item = ShopItem.find(data['id'])
 		item.update_status(1)
 	end
-
+	closed_redis_client.close
 
 
 	#merge  item contents
@@ -143,6 +143,7 @@ def merge
 
 		item.update_attribute(:last_check_time,Time.at(data['last_check_time'].to_i) ) if data['last_check_time']
 	end
+	content_redis_client.close
 
 	puts Time.new - beg
 
@@ -174,7 +175,7 @@ task :resque_work do
 		Rake::Task['resque:work'].invoke rescue puts $!
 		Rake::Task['resque:work'].reenable
 		puts 'retry'
-		sleep 60
+		sleep 30
 	end
 
 end
