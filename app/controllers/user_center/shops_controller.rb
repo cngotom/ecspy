@@ -54,6 +54,29 @@ class UserCenter::ShopsController < InheritedResources::Base
 
 
 
+  def compare
+
+    @offset = params['offset'].to_i
+    @offset ||= 0
+    shops = params['id'].split(',')
+    shops.collect! &:to_i
+
+
+
+    @res = []
+
+    shops.each do |s|
+      shop = Shop.find(s)
+      row = {'title' => shop.title,'id'=>shop.id}
+      row['sales'] = get_sales_history(shop,@offset)
+
+      
+      @res << row
+    end
+
+  end
+
+
   def show
     #time = Time.now.beginning_of_day
     offset = params['offset'].to_i
@@ -75,10 +98,18 @@ class UserCenter::ShopsController < InheritedResources::Base
 
     @lastweekday_compare = get_compare_rate(@today,lastweekday)
 
-    sales_history = get_sales_history(@shop,offset)
+    sales_history = get_sales_money_history(@shop,offset)
+    count_history = get_sales_count_history(@shop,offset)
 
-    @locals = { :today => @today,:lastweekday_compare => @lastweekday_compare, :sales_history=>sales_history,
-    :yes_compare => @yes_compare ,:shop => @shop ,:offset=>offset,:today_changes_sales => today_changes_sales}
+    sales_total = sales_history.inject(0) {|sum,i| sum + i} 
+    count_total= count_history.inject(0) {|sum,i| sum + i} 
+
+
+    @locals = { :today => @today,:lastweekday_compare => @lastweekday_compare, :sales_history=>sales_history,:count_history => count_history,
+    :yes_compare => @yes_compare ,:shop => @shop ,:offset=>offset,:today_changes_sales => today_changes_sales,
+    :sales_total =>sales_total,:count_total=>count_total
+
+    }
 
     #hack ugly?
     respond_to do |format|

@@ -21,6 +21,7 @@ Ecspy::Application.routes.draw do
   match 'shop_items/:id/content/:fversion/:sversion' => 'shop_items#content_compare', :as => :content_compare
 
 
+
   resources :shop_items do
     member do
       #get  'content/:fversion/:sversion' => 'shop_items#content_compare', :as => :content_compare
@@ -36,6 +37,8 @@ Ecspy::Application.routes.draw do
         post 'subscribe'
 
         post 'unsubscribe'
+
+        get 'compare'
       end
 
     end

@@ -15,16 +15,16 @@
 <% @shops.each do |shop| %>
 
 <section>
-	<h3> <%= link_to shop.title,user_center_shop_path(shop) %> </h3>
+	<h3> <%= link_to shop.title,user_center_shop_path(shop) %> <small> <a class='btn btn-small compare_btn' data-id="<%=shop.id%>" data-title="<%=shop.title%>" > <i class="icon-plus"></i> 加入对比 </a>  </small> </h3>
 
 
 	<dl class="dl-horizontal"> 
-		<dt>今日订单：</dt>
+		<dt>当日订单：</dt>
 
 		<% today_sales = calc_sales_count_and_money(shop.today_sales(@offset)) %>
 		<dd><%= today_sales[0] %> 个 </dd>
 
-		<dt>今日金额： </dt>
+		<dt>当日金额： </dt>
 		<dd> <%= today_sales[1] %> 元 </dd>
 	</dl>
 	
@@ -36,7 +36,7 @@
 	    	<div class="accordion-heading">
 	      		<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion<%=shop.id%>" href="#collapse<%=shop.id%>">
 	      			<% today_changes_sales = today_changes(shop,@offset) %>
-	       	 		今日行为（<%= today_changes_sales.count %>）
+	       	 		当日行为（<%= today_changes_sales.count %>）
 	      		</a>
 	    	</div>
 	    	<div id="collapse<%=shop.id%>" class="accordion-body collapse ">
@@ -94,3 +94,123 @@
 	
 
 <% end %>
+
+
+<div class="compare_list span2 text-center hide" >
+	<h4> 店铺对比  </h4>
+	<ul id="compare_list" class="text-left"> 
+	</ul>
+	<hr>
+	<div>
+
+		<button class="btn-info" id="do_compare" > 开始对比 </button>
+		
+		<small> <a class="clear" href="javascript:void(0)"> 清空 </a> </small>
+	</div>
+
+	<p class="text-center">  <a href="javascript:void(0)" class="collapse"> <i class="icon-eject "> </i> </a> </p>
+</div>
+
+
+
+<script type="text/javascript">
+	
+	$(function(){
+
+		$('.compare_btn').click(function(){
+			compare_list.ele.show();
+			compare_list.append(this);
+		});
+
+		$(document).on("click","#compare_list li i",function(){ compare_list.remove(  $(this).closest('li')) });
+
+
+
+
+
+		var compare_list = {
+			ele : $('.compare_list'),
+			cell: $('#compare_list'),
+			clearBtn : $('.compare_list .clear'),
+			collapseBtn: $('.compare_list .collapse'),
+			keys_hash : {},
+			bindCancel:function(ele){
+				ele.click(function(){
+					
+				})
+			},
+			ids:function()
+			{	
+				var ids = [];
+				for(var i in this.keys_hash)
+				{
+					ids.push(i);
+				}
+
+				ids.join(',');
+				return ids;
+			},
+			append:function(shop)
+			{
+
+				var id = $(shop).attr('data-id');
+				var title =  $(shop).attr('data-title');
+				if(this.keys_hash[id] == undefined)
+				{
+					if(this.cell.find('li').size() <4)
+					{
+
+						var html = '<li data-id="' +  id + '"><small> '  + title + '</small> <i class="icon-remove "> </i> </li>';
+						//this.bindCancel($(html).find('i'));
+
+						this.cell.append( html);
+
+						this.keys_hash[id] = title;
+					}
+					else{
+						alert('最大支持4个商店')
+					}
+				}
+			},
+			remove:function(ele)
+			{
+
+				id = ele.attr('data-id');
+				this.keys_hash[id] = undefined;
+				ele.remove();
+			},
+
+			init:function()
+			{
+				this.clearBtn.click($.proxy(function(){
+
+					this.keys_hash = {};
+					this.cell.html('');
+
+				}, this));
+
+				this.collapseBtn.click($.proxy(function(){
+
+					this.ele.hide();
+
+				}, this));
+			}
+
+		}
+
+		compare_list.init();
+
+
+		$('#do_compare').click(function(){
+
+			var url = "<%=compare_user_center_shops_path%>";
+
+			url = url +'?id=' + compare_list.ids();
+
+			window.location.href=url;
+
+		});
+	});
+
+
+</script>

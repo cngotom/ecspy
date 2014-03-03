@@ -134,7 +134,7 @@ module UserCenterHelper
 		end_time = Time.now.end_of_day-offset*24*3600
 		#ShopItem.includes(:shop_item).
 		#ItemSale.joins(:shop_item).select('date_format(buy_time,"%y-%m-%d") as time ,sum(item_price * item_num) as total').where(['shop_id = 1 and buy_time between ? and ?',Time.now-3*24*3600 , Time.now]).group('time')
-		sales = ItemSale.joins(:shop_item).select(' date_format(buy_time,"%y-%m-%d") as time, sum(item_price * item_num) as total').where(['shop_id = ? and buy_time between ? and ?',shop.id,start_time,end_time]).group('time').order('time asc')
+		sales = ItemSale.joins(:shop_item).select(' date_format(buy_time,"%y-%m-%d") as time,sum(item_num) as item_count, sum(item_price * item_num) as total').where(['shop_id = ? and buy_time between ? and ?',shop.id,start_time,end_time]).group('time').order('time asc')
 		
 		res = []
 		start_time_stamp = start_time.beginning_of_day.to_i
@@ -145,16 +145,28 @@ module UserCenterHelper
 		sales_index = 0
 		31.times do |i|
 			if Time.at(current_time_stamp).strftime('%y-%m-%d') == sales[sales_index].time
-				res << sales[sales_index].total.round(2)
+				res << [ sales[sales_index].item_count.to_i,sales[sales_index].total.round(2)]
 				sales_index += 1
 				sales_index = 0 if sales_index >= sales.size
 			else
-				res << 0
+				res << [0,0]
 			end
 
 			current_time_stamp += one_day_sec
 		end
 		res
+	end
+
+
+	def get_sales_money_history(shop,offset)
+		res = get_sales_history(shop,offset)
+		res.collect &:second
+	end
+
+
+	def get_sales_count_history(shop,offset)
+		res = get_sales_history(shop,offset)
+		res.collect &:first
 	end
 	#sales_history = get_sales_histroy(@shop,offset)
 

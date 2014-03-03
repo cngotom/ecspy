@@ -103,6 +103,9 @@ def merge
 			data['buy_time'] = Time.parse(data['buy_time'])
 			item = ShopItem.find(data['id'])
 
+
+			data['item_price'] = item.price unless data['item_price']
+			
 			item.update_attribute(:last_check_time,Time.at(data['last_check_time'].to_i) ) if data['last_check_time']
 
 

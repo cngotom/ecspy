@@ -1,0 +1,236 @@
+	
+
+
+	<div class="clearfix"> </div>
+	<div class="sections">
+		
+		<section >
+			<h3 class="title"> 最近30天销售金额对比 </h3>
+
+			<div class="row-fluid" style="height:500px;" id="sales_chart">
+					
+			</div>
+
+		</section>
+
+		<section >
+			<h3 class="title"> 最近30天销售数量对比 </h3>
+
+			<div class="row-fluid" style="height:500px;" id="count_chart">
+
+			</div>
+
+		</section>
+
+
+
+	</div>
+
+<script type="text/javascript">
+	$(function(){
+		
+
+		function datapick_init()
+		{
+
+			var datapicker = $('.input-append.date');
+			var today = new Date(); 
+			today = new Date(today.getFullYear(),(today.getMonth()),today.getDate());
+			var current = today;
+			var fclick = $('.date_d_quickDate a:first');
+			var lclick = $('.date_d_quickDate a:last');
+
+
+			function fmtdate(d)
+			{
+				return d.getFullYear()+"-"+(d.getMonth()+1)+"-"+d.getDate();
+			}
+
+			function setDate(date)
+			{
+
+				current = date;
+				$('#J_quick_timer').val(fmtdate(date));
+
+				if(current.valueOf() === today.valueOf())
+				{
+
+					lclick.toggleClass('date_d_dateActive date_d_dateDeactive');
+
+				}
+				else if(lclick.hasClass('date_d_dateDeactive'))
+				{
+					lclick.toggleClass('date_d_dateActive date_d_dateDeactive');
+				}
+				 $('.sections').html('');
+
+
+				 var timeDiff = Math.abs(today.getTime() - current.getTime());
+				 var diffDays = Math.ceil(timeDiff / (1000 * 3600 * 24));
+				
+
+
+
+			}
+
+			datapicker.datepicker({
+				language: 'zh-CN',
+				endDate: today,
+			});
+
+		
+
+			
+			$('#J_quick_timer').val(fmtdate(current))
+
+			$('#search').click(function(){
+
+				
+				var date = $('.input-append.date').datepicker('getDate');
+				setDate(date);
+			})
+
+
+
+			//previous day
+			fclick.click(function(){
+				setDate(new Date(current.valueOf()-24*60*60*1000));
+			})
+
+			lclick.click(function(){
+				t_time = new Date(current.valueOf()+24*60*60*1000);
+				if(t_time.valueOf()<= today.valueOf())
+				{
+					setDate(t_time);
+
+				}
+			});
+
+		};
+
+		//datapick_init();
+
+
+
+		$('#sales_chart').highcharts({
+			 		 	chart: {
+			                zoomType: 'x',
+			                spacingRight: 20
+			            },
+			            title: {
+			                text: '金额统计',
+			                x: -20 //center
+			            },
+			            subtitle: {
+			                x: -20
+			            },
+			            xAxis: {
+			            	 type: 'datetime',
+			            	 tickPixelInterval : 130,
+			            	  labels: {
+			                    align: 'left',
+			                    formatter: function() {
+			                        return Highcharts.dateFormat('%y-%m-%d', this.value);
+			                    }
+			                }
+			            },
+			            yAxis: {
+
+			                title: {
+			                    text: '订单金额(元)'
+			                },
+			                plotLines: [{
+			                    value: 1,
+			                    width: 1,
+			                    color: '#808080'
+			                }]
+			            },
+			            tooltip: {
+			                valueSuffix: '元',
+			                xDateFormat: '%Y-%m-%d %A',
+			            },
+			            legend: {
+			                layout: 'vertical',
+			                align: 'right',
+			                verticalAlign: 'middle',
+			                borderWidth: 0
+			            },
+			            series: [	
+
+			            	<% @res.each do |row| %>
+				            	{
+				            			name:"<%= row['title']%>",
+						   				pointStart: <%= (Time.now.end_of_day - @offset*24*3600  - 30*24*3600).to_i*1000 %>,
+						   				pointInterval: 1 * 24 * 3600 * 1000,
+						                data: [
+						                	<%= row['sales'].collect(&:second).join ',' %>
+						                ]
+						        },
+						    <% end %>
+
+					    ]
+		});
+
+
+
+		$('#count_chart').highcharts({
+			 		 	chart: {
+			                zoomType: 'x',
+			                spacingRight: 20
+			            },
+			            title: {
+			                text: '数量统计',
+			                x: -20 //center
+			            },
+			            subtitle: {
+			                x: -20
+			            },
+			            xAxis: {
+			            	 type: 'datetime',
+			            	 tickPixelInterval : 130,
+			            	  labels: {
+			                    align: 'left',
+			                    formatter: function() {
+			                        return Highcharts.dateFormat('%y-%m-%d', this.value);
+			                    }
+			                }
+			            },
+			            yAxis: {
+
+			                title: {
+			                    text: '订单数量(个)'
+			                },
+			                plotLines: [{
+			                    value: 1,
+			                    width: 1,
+			                    color: '#808080'
+			                }]
+			            },
+			            tooltip: {
+			                valueSuffix: '个',
+			                xDateFormat: '%Y-%m-%d %A',
+			            },
+			            legend: {
+			                layout: 'vertical',
+			                align: 'right',
+			                verticalAlign: 'middle',
+			                borderWidth: 0
+			            },
+			            series: [	
+			            	<% @res.each do |row| %>
+				            	{
+				            			name:"<%= row['title']%>",
+						   				pointStart: <%= (Time.now.end_of_day - @offset*24*3600  - 30*24*3600).to_i*1000 %>,
+						   				pointInterval: 1 * 24 * 3600 * 1000,
+						                data: [
+						                	<%= row['sales'].collect(&:first).join ',' %>
+						                ]
+						        },
+						    <% end %>
+					    ]
+		});
+
+	})
+
+
+</script>

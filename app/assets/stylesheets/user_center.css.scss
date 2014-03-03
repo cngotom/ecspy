@@ -102,3 +102,15 @@ overflow: hidden;
 .green{
 	font: 12px/1.231 arial,helvetica,clean,sans-serif;
 }
+
+.compare_list{
+	position:fixed;
+	top :200px;
+	right:400px;
+	background: rgb(255, 255, 255);
+	border: 2px solid rgb(224, 224, 224);
+}
+#compare_list li small{
+	width:120px;
+	display:inline-block;
+}
