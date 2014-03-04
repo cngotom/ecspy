@@ -65,7 +65,7 @@ class ShopItem < ActiveRecord::Base
 
 	def update_if_changed(data)
 		data = data.clone
-		is_titile_or_price_changed = ( title != data['title'] ||  price.to_f.round(1) != data['price'].to_f.round(1) || thumb != data['thumb']) 
+		is_titile_or_price_changed = ( title != data['title'] ||  price.to_f.round(1) != data['price'].to_f.round(1) ||  ShopItem.thumb_changed?(thumb,data['thumb'])    ) 
 		if is_titile_or_price_changed
 			@changed = true
 			assign_attributes(data)
@@ -116,4 +116,14 @@ class ShopItem < ActiveRecord::Base
 	def self.status_text(status)
 		(status==1)? '下架' : '上架'
 	end
+
+	def self.thumb_changed?(fthumb,sthumb)
+
+		fthumb ||= ''
+		sthumb ||= ''
+		fmat_reg = /_\d+x\d+\.\w*/
+		fthumb.sub(fmat_reg,'') != sthumb.sub(fmat_reg,'')
+	end
 end
+
+
