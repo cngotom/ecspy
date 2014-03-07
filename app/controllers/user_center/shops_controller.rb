@@ -4,6 +4,7 @@ class UserCenter::ShopsController < InheritedResources::Base
   include StaticsHelper
   include UserCenterHelper
 
+  
   before_filter :authenticate_user!
 
   layout 'user_center'

@@ -14,6 +14,11 @@ module UserCenterHelper
 			 ShopItemContentVersion.today_changes(shop,offset).size
 	end
 	
+
+	def my_img_tag(thumb,css_class)
+		"<img  class='#{css_class}' src='#{thumb}'>"
+	end
+
 	def today_changes(shop,offset=0)
 
 
@@ -46,7 +51,7 @@ module UserCenterHelper
 				
 				change += " 状态变化 #{ShopItem.status_text prev.status} => #{ShopItem.status_text last.status}" if last.status != prev.status
 
-				change += " 主图变化 #{image_tag prev.thumb,:class=>'small'} => #{image_tag last.thumb,:class=>'small'}" if last.thumb != prev.thumb
+				change += " 主图变化 #{my_img_tag prev.thumb,'small'} => #{my_img_tag last.thumb,'small'}" if last.thumb != prev.thumb
 
 			else
 				change = "［新品］:<a href='/shop_items/#{item.shop_item.id}' >#{item.title}</a> 新上架"
