@@ -40,8 +40,6 @@ task :job_info do
 end
 
 task :job_coord => :environment do
-
-
 	lock('job_coord.pid') do
 		if Resque.info[:pending] == 0 && Crawler::ItemListRedis.merged?
 			puts 'job coord'
@@ -65,7 +63,19 @@ task :job_coord => :environment do
 
 		end
 	end
+end
 
+
+task :job_keyword => :environment do
+
+	ShopKeyword.all.each do |keyword|
+
+		key = keyword.keyword
+		id = keyword.id
+
+		Resque.enqueue( Crawler::Keyword,id,key) 
+	
+	end
 end
 
 
@@ -147,6 +157,42 @@ def merge
 		item.update_attribute(:last_check_time,Time.at(data['last_check_time'].to_i) ) if data['last_check_time']
 	end
 	content_redis_client.close
+
+
+
+	#merge keyword
+	keyword_redis_client =  Crawler::ItemListRedis.new(:key => 'RedisKeyword')
+	while (data = keyword_redis_client.pop) != nil do
+		content = JSON.parse(data)
+		keyid = content.shift
+
+		shopkeyword = ShopKeyword.find(keyid)
+
+		#get rank map
+		rank_map = {}
+		content.each_with_index do |item_id,index|
+			rank_map[item_id] = index + 1 
+		end
+
+		#get all shop
+		shops_ids = shopkeyword.shops
+
+		shops_ids.split(',').map(&:to_i).each do |shopid|
+
+			ShopItem.select('id,item_sn').where("shop_id = #{shopid}").each do |shopitem|
+				#if shop item is find in rank_map
+				if rank = rank_map[shopitem.item_sn]
+					ShopKeywordRecord.create :shop_keyword_id => keyid ,:item_id => shopitem.id,:rank =>rank,:shop_id =>shopid
+				end
+
+			end
+
+		end
+
+	end
+	keyword_redis_client.close
+
+	
 
 	puts Time.new - beg
 

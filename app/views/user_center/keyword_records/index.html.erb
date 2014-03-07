@@ -1,0 +1,131 @@
+<%= grid(@records, show_filters: true) do |g|
+
+  g.column name:  '关键字',attribute: 'keyword',model: ShopKeyword,auto_reload: true ,custom_filter: User.first.keywords.select('distinct keyword').map{|pr| [pr.keyword,pr.keyword]}  do |r|
+    	r.shop_keyword.keyword
+  end
+
+  g.column name:  '店铺' ,attribute: 'title',model: Shop ,auto_reload: true ,custom_filter: current_user.following_by_type('Shop').map {|pr| [pr.title, pr.title]} do |r|
+    	r.shop.title
+  end
+
+
+  g.column name:  '产品名称' ,attribute: 'title',model: ShopItem,auto_reload: true ,filter: false do |r|
+    	r.shop_item.title
+  end
+
+
+  g.column name:  '排名',attribute: 'rank' ,filter: false do |r|
+    	r.rank
+  end
+
+
+
+
+  g.column name:  '操作'  do |r|
+    link_to('趋势', trend_user_center_keyword_record_path(r) ,:class=>'do_trend')
+  end
+
+
+end -%>
+
+<div id="trendModal" class="modal hide " tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+    <h3 id="myModalLabel">排名趋势</h3>
+  </div>
+  <div class="modal-body">
+    <p>
+    	<div class="chart"> </div>
+    </p>
+  </div>
+  <div class="modal-footer">
+    <button class="btn" data-dismiss="modal" aria-hidden="true">关闭</button>
+  </div>
+</div>
+
+
+
+<script type="text/javascript">
+	
+	$(function(){
+		var $chart = $('#trendModal .chart');
+		$('.do_trend').click(function(event){
+
+
+			$chart.html('');
+			$.ajax({
+					'type':'get',
+					'url':$(this).attr('href'),
+					'success':function(resdata){
+
+							$chart.highcharts({
+					 		 	chart: {
+					                zoomType: 'x',
+					                spacingRight: 20
+					            },
+					            title: {
+					                text: '排名趋势',
+					                x: -20 //center
+					            },
+					            subtitle: {
+					                x: -20
+					            },
+					            xAxis: {
+					            	 type: 'datetime',
+					            	 tickPixelInterval : 130,
+					            	  labels: {
+					                    align: 'left',
+					                    formatter: function() {
+					                        return Highcharts.dateFormat('%y-%m-%d', this.value);
+					                    }
+					                }
+					            },
+					            yAxis: {
+
+					                title: {
+					                    text: '名次'
+					                },
+					                plotLines: [{
+					                    value: 1,
+					                    width: 1,
+					                    color: '#808080'
+					                }]
+					            },
+					            tooltip: {
+					                valueSuffix: '名',
+					                xDateFormat: '%Y-%m-%d %A',
+					            },
+					            legend: {
+					                layout: 'vertical',
+					                align: 'right',
+					                verticalAlign: 'middle',
+					                borderWidth: 0
+					            },
+					            series: [	
+					            	{
+							   				pointStart: <%= (Time.now.end_of_day - 30.day).to_i*1000 %>,
+							   				pointInterval: 1 * 24 * 3600 * 1000,
+							                data: resdata,
+							        }
+
+							    ]
+							});
+
+						//$('#trendModal .modal-body').html(data.length);
+
+						$('#trendModal').modal();
+
+
+					}
+			});
+			event.preventDefault();
+
+
+
+		});
+
+
+	})
+
+
+</script>

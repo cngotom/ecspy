@@ -25,6 +25,10 @@ module Crawler
 	GetSalesLog  = "log/phantomjs/getsales_#{Process.pid}.log"
 	GetSalesRes = "log/phantomjs/getsales.res"
 
+
+	GetKeywordRes = "log/phantomjs/getkeyword.res"
+	GetKeywordLog = "log/phantomjs/getkeyword.log"
+
 	def exec_with_timeout(cmd,timeout = 60,max_retry = 0)
 		begin
 			pipe = IO.popen(cmd)
@@ -86,7 +90,9 @@ module Crawler
 
                 content_redis_client = Crawler::ItemListRedis.new(:key => 'RedisItemContent')
 
-                list_redis_client.size + sales_redis_client.size + closed_redis_client.size+ content_redis_client.size
+                keyword_redis_client =  Crawler::ItemListRedis.new(:key => 'RedisKeyword')
+
+                list_redis_client.size + sales_redis_client.size + closed_redis_client.size+ content_redis_client.size + keyword_redis_client.size
         end
 
 		def self.merged?
@@ -228,6 +234,57 @@ module Crawler
 			end
 
 			
+
+		end
+
+	end
+
+
+
+	module GBKConvert
+		def to_gbk
+			gbk = self.encode("GBK","utf-8")
+			s = ''
+			gbk.bytes.each {|b|
+				s << "%#{b.to_s(16).upcase}"
+			}
+			s
+		end
+	end
+
+
+	class Keyword
+		extend Resque::Plugins::JobStats
+		@queue = 'keyword'
+
+		def self.perform(id,keyword)
+			out_file_ext = Time.new.strftime('.%Y-%m-%d-%H-%M')
+
+			#process-safe file
+			out_file = "#{GetKeywordRes}-#{Process.pid}#{out_file_ext}"
+
+			File.delete out_file if File.exist?(out_file)
+
+			keyword.extend GBKConvert
+
+			run_exe = "#{Exec} #{ScriptDir}/getsearch.js #{id} #{keyword.to_gbk} #{out_file} #{GetKeywordLog}"
+
+			puts run_exe
+			retn = exec_with_timeout(run_exe)
+			# => retn = 'ok'
+			if retn.chomp == 'ok'
+				puts 'execute ok'
+
+				keyword_redis_client = ItemListRedis.new(:key => 'RedisKeyword')
+				open(out_file) do |out|
+					keyword_redis_client.add out.read
+				end
+			end
+			File.delete out_file if File.exist?(out_file)
+			keyword_redis_client.close
+			if retn.chomp != 'ok'
+				raise 'error'
+			end
 
 		end
 

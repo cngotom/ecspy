@@ -1,0 +1,65 @@
+<style type="text/css">
+
+	.checkbox_container {
+		width: 300px;
+		float: left;
+	}
+	.checkbox_container label{
+		display: inline-block;
+	}
+
+</style>
+<%= simple_form_for @keyword, :url => user_center_keywords_path,:methos=>'create', :html => { :class => 'form-horizontal' } do |f| %>
+
+	 <% if notification = f.error_notification %>
+	    <div class="alert alert-error fade in">
+	      <a class="close" data-dismiss="alert" href="#">&times;</a>
+	      至少应选择一个店铺
+	    </div>
+	  <% end %>
+
+
+	  <h3> 输入要监视的搜索词 </h3>
+	  <%= f.input :keyword ,:label=>'搜索词',:input_html => { :class => "span6" } %>
+
+
+	  <h3> 选择要监视的店铺 </h3>
+	
+	  <%= f.collection_check_boxes :shops, Shop.watched(current_user.id), :id, :title ,{:item_wrapper_class => 'checkbox_container'}  %>
+
+
+
+	  
+
+	  <div class="clearfix" > </div>
+	
+	  <hr /> 
+	  <div> 
+		<input id="select_all" name="select_all" type="checkbox" value="30">全选
+	  </div>
+
+	  <div class="text-center">
+	  	<%= f.button :submit ,:value=>'提交'%>
+	  </div>
+
+
+<% end %>
+
+
+<script type="text/javascript">
+	
+	$(function(){
+
+		//select all
+		$('#select_all').click(function(){
+			if ($(this).is(":checked")) { // 全选
+				$('input[name="shop_keyword[shops][]"]').prop('checked',true);
+			}
+			else
+				$('input[name="shop_keyword[shops][]"]').prop('checked',false);
+
+		})
+
+	})
+
+</script>

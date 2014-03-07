@@ -48,6 +48,16 @@ Ecspy::Application.routes.draw do
 
 
     resources :sales
+
+
+    resources :keywords
+
+    resources :keyword_records do
+      member do 
+        get 'trend'
+      end
+    end
+
   end 
 
   # The priority is based upon order of creation:

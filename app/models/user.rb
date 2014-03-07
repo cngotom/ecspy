@@ -12,4 +12,8 @@ class User < ActiveRecord::Base
   acts_as_follower
 
 
+  has_many :keywords,:class_name => ShopKeyword,:dependent => :destroy
+
+
+  #has_many :keyword_records, through: :keywords, :source => :records ,select: 'keyword,user_id,rank,item_id,shop_id,shop_keyword_records.created_at as created_at'
 end

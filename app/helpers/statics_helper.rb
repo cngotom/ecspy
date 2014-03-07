@@ -4,8 +4,16 @@ module StaticsHelper
 	def calc_sales_count_and_money(sales)
 		sale_count = 0
 	    sale_money = 0
+
+	    uniq_sales = {}
+
 	    sales.each do |sale|
-	       sale_count += 1
+
+	       key = "#{sale.user_name}#{sale.buy_time}"
+	       unless uniq_sales[key]
+	       		sale_count += 1
+	       		uniq_sales[key] = true
+	       end
 	       sale_money += sale.item_num.to_i* sale.item_price.to_f
 	    end
 	    [sale_count,sale_money.round(2)]

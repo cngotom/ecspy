@@ -1,0 +1,2 @@
+module UserCenter::KeywordRecordsHelper
+end

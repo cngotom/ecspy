@@ -205,6 +205,81 @@ end
 
 
 
+module GBKConvert
+	def to_gbk
+		gbk = self.encode("GBK","utf-8")
+		s = ''
+		gbk.bytes.each {|b|
+			s << "%#{b.to_s(16).upcase}"
+		}
+		s
+	end
+	
+end
+
+
+
+desc "update ranks"
+task :update_ranks => :environment do
+
+
+	ShopKeyword.all.each do |keyword|
+
+		key = keyword.keyword
+		key.extend GBKConvert
+
+		File.delete GetSalesRes if File.exist?(GetSalesRes)
+
+		puts "#{Exec} #{ScriptDir}/getsearch.js #{keyword.id} #{key.to_gbk} #{GetSalesRes} #{GetSalesLog}"
+		retn = exec_with_timeout "#{Exec} #{ScriptDir}/getsearch.js #{keyword.id} #{key.to_gbk} #{GetSalesRes} #{GetSalesLog}"
+		# => retn = 'ok'
+		if retn.chomp == 'ok'
+
+			#merge
+			if File.exist?(GetSalesRes)
+				open(GetSalesRes) do |out|
+					index = 0
+
+
+					content = JSON.parse(out.read)
+					keyid = content.shift
+
+					shopkeyword = ShopKeyword.find(keyid)
+
+					#get rank map
+					rank_map = {}
+					content.each_with_index do |item_id,index|
+						rank_map[item_id] = index + 1 
+					end
+
+					#get all shop
+					shops_ids = shopkeyword.shops
+
+					shops_ids.split(',').map(&:to_i).each do |shopid|
+
+						ShopItem.select('id,item_sn').where("shop_id = #{shopid}").each do |shopitem|
+							#if shop item is find in rank_map
+							if rank = rank_map[shopitem.item_sn]
+								ShopKeywordRecord.create :shop_keyword_id => keyid ,:item_id => shopitem.id,:rank =>rank,:shop_id =>shopid
+							end
+
+						end
+
+					end
+			
+				end
+			end
+
+
+		end
+
+	end
+
+end
+
+
+
+
 desc "pre compare test"
 task :pre_content_compare do 
 

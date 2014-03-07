@@ -267,10 +267,12 @@ delete from item_sales  where (user_name,buy_time,shop_item_id,item_num) in (sel
 select * from item_sales where (user_name,buy_time,shop_item_id,item_num) in (select user_name,buy_time,shop_item_id,item_num from item_sales group by buy_time,shop_item_id,item_num having count(*) >1) and id not in (select min(id) from item_sales group by buy_time,shop_item_id,item_num having count(*) >1)
 
 
-create table temp(id integer ) primary key;
+create table temp(id integer ) primary key id;
+
+create table temp(id interger , primary key);
 
 explain 
-insert into temp (select id from item_sales where (user_name,buy_time,shop_item_id,item_num) in (select user_name,buy_time,shop_item_id,item_num from item_sales group by buy_time,shop_item_id,item_num having count(*) >1) and id not in (select min(id) from item_sales group by buy_time,shop_item_id,item_num having count(*) >1) )
+insert into temp (select id from item_sales where buy_time > '2014-04-03'  and (user_name,buy_time,shop_item_id,item_num) in (select user_name,buy_time,shop_item_id,item_num from item_sales group by buy_time,shop_item_id,item_num having count(*) >1) and id not in (select min(id) from item_sales group by buy_time,shop_item_id,item_num having count(*) >1) )
 
 delete from item_sales  where  id in( select id from temp)
 

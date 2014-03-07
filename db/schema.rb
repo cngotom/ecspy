@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140225144306) do
+ActiveRecord::Schema.define(:version => 20140306132202) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -128,6 +128,31 @@ ActiveRecord::Schema.define(:version => 20140225144306) do
   add_index "shop_items", ["item_sn"], :name => "index_shop_items_on_item_sn", :unique => true
   add_index "shop_items", ["last_check_time"], :name => "index_shop_items_on_last_check_time"
   add_index "shop_items", ["shop_id"], :name => "index_shop_items_on_shop_id"
+
+  create_table "shop_keyword_records", :force => true do |t|
+    t.integer  "shop_keyword_id"
+    t.integer  "item_id"
+    t.integer  "shop_id"
+    t.integer  "rank"
+    t.datetime "created_at"
+  end
+
+  add_index "shop_keyword_records", ["created_at"], :name => "index_shop_keyword_records_on_created_at"
+  add_index "shop_keyword_records", ["item_id"], :name => "index_shop_keyword_records_on_item_id"
+  add_index "shop_keyword_records", ["rank"], :name => "index_shop_keyword_records_on_rank"
+  add_index "shop_keyword_records", ["shop_id"], :name => "index_shop_keyword_records_on_shop_id"
+  add_index "shop_keyword_records", ["shop_keyword_id"], :name => "index_shop_keyword_records_on_shop_keyword_id"
+
+  create_table "shop_keywords", :force => true do |t|
+    t.string   "keyword"
+    t.string   "shops"
+    t.integer  "user_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "shop_keywords", ["keyword"], :name => "index_shop_keywords_on_keyword"
+  add_index "shop_keywords", ["user_id"], :name => "index_shop_keywords_on_user_id"
 
   create_table "shops", :force => true do |t|
     t.string   "title"

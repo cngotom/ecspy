@@ -1,0 +1,45 @@
+<% if flash[:notice] %>
+	<div class="alert">
+		<strong><%= flash[:notice] %></strong>
+	</div>
+<% end %>
+
+
+<div class="span3 offset3">
+		<i class="icon-plus"></i>
+		<%= link_to '新增', new_user_center_keyword_path %>
+</div>
+
+
+
+<div class="row-fluid" >
+
+	
+	<table class="table">
+		<tr> 
+			<Th> 关键字</th>
+
+			<th> 店铺 </th>
+
+			<th> 添加时间 </th>
+
+			<th> 操作 </th>
+		</tr>
+
+
+		<% @keywords.each do |keyword | %>
+		
+			<tr>	
+				<td><%= keyword.keyword%></td>
+				<td><%= shopids_to_titles(keyword.shops,@shops_map).html_safe%></td>
+				<td><%= keyword.created_at%></td>
+				<td><%= link_to '删除', user_center_keyword_path(keyword),:confirm => "确定要删除关键字 #{keyword.keyword}?", :method => :delete %> </td>
+			</tr>
+
+		<% end %>
+
+	</table>
+
+
+
+</div>

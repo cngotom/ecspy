@@ -1,7 +1,7 @@
 require 'resque/plugins/job_stats'
 require 'resque-job-stats/server'
 
-ResqueAddr = "117.121.25.135"
+ResqueAddr = "127.0.0.1"
 Resque.redis = "#{ResqueAddr}:6379"
 
 module Crawler
@@ -12,5 +12,13 @@ end
 class ItemSales
 	extend Resque::Plugins::JobStats
 end
+
+
+
+class Keyword
+	extend Resque::Plugins::JobStats
+end
+
+
 end
 
