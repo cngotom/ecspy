@@ -67,5 +67,6 @@ module Ecspy
       Devise::UnlocksController.layout "devise"            
       Devise::PasswordsController.layout "devise"        
     end
+    config.middleware.use Rack::Deflater
   end
 end
