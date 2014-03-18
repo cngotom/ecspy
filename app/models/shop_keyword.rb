@@ -18,9 +18,7 @@ class ShopKeyword < ActiveRecord::Base
 
 	private 
 	def enque_job
-
-		Resque.enqueue( Crawler::Keyword,id,keyword) 
-	
+		Resque.enqueue( Crawler::Keyword,id,keyword)  rescue nil
 	end
 
 

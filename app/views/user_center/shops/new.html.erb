@@ -1,4 +1,37 @@
-<%= simple_form_for @shop, :url => user_center_shops_path,:methos=>'create', :html => { :class => 'form-horizontal' } do |f| %>
+<section id="widget-grid" class="">
+	
+	<!-- row -->
+	<div class="row">
+	
+		<!-- NEW WIDGET START -->
+		<article class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+	
+
+			
+		<div class="jarviswidget" id="wid-id-0" data-widget-colorbutton="false" data-widget-editbutton="false">
+			
+			<header>
+				<span class="widget-icon"> <i class="fa fa-eye"></i> </span>
+				<h2>新增店铺</h2>
+
+			</header>
+
+			<!-- widget div-->
+			<div>
+
+				<!-- widget edit box -->
+				<div class="jarviswidget-editbox">
+					<!-- This area used as dropdown edit box -->
+
+				</div>
+				<!-- end widget edit box -->
+
+				<!-- widget content -->
+				<div class="widget-body">
+
+						
+
+<%= simple_form_for @shop, :url => user_center_shops_path,:methos=>'create' do |f| %>
 
 	 <% if notification = f.error_notification %>
 	    <div class="alert alert-error fade in">
@@ -8,18 +41,28 @@
 	  <% end %>
 
 
-	  <%= f.input :title ,:input_html => { :class => "span6" }, :hint => "店铺名称 请用汉语标示" %>
-	  <%= f.input :url, :input_html => { :class => "span6" }, :hint => "店铺地址 （http://slwsp.tmall.com/)" %>
+	  <%= f.input :title,:label=>'店铺名称',:input_html => { :class => "span6" }, :hint => "请用汉语标示 示例:三六五食品专营店" %>
+	  <%= f.input :url,:label=>'店铺链接', :input_html => { :class => "span6" }, :hint => "请输入首页地址 示例: http://slwsp.tmall.com/" %>
 
 
 	  <div class="text-center">
-	  	<%= f.button :submit %>
+	  	<%= f.button :submit ,:class=>'btn btn-primary'%>
 	  </div>
 
 
 <% end %>
 
 
+	</div>
+			</div>
+		</div>
+
+
+		</article>
+</div>
+</section>
+
+<%= content_for :script do %>
 <script type="text/javascript">
 	
 	$(function(){
@@ -38,3 +81,4 @@
 	})
 
 </script>
+<% end %>

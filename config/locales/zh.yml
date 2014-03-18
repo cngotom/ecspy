@@ -1,0 +1,263 @@
+# Sample localization file for English. Add more files in this directory for other locales.
+# See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
+
+zh:
+  date:
+    weekstart: '1'
+    formats:
+      datepicker: 'yyyy-mm-dd'
+  time:
+    formats:
+      time: '%I:%M'
+      noon_time: '%p %I:%M'
+      stamp: '%b%d日(%a) %p %I:%M'
+      stamp_with_year: '%Y年%b%d日(%a) %p %I:%M'
+
+  19wu: "19屋"
+
+  layout:
+    sponsors:
+      title: 感谢19屋的赞助商：
+      sms: 本站免费短信由推立方赞助
+    opensource: 源代码@GitHub
+    contact_us: "联系我们"
+    feedback: "反馈问题"
+    title: "19屋－让活动更好"
+    copyright: "版权所有"
+
+    account: "注册信息"
+    profile: "个人资料"
+    user_phone: 绑定手机
+
+  slogan:
+    title: "让活动更好"
+    description: "19屋致力于为活动组织者提供功能简洁、完全免费的服务"
+
+  features:
+    follow:
+      title: "让活动参与者越来越多"
+      subtitle1: "提高重复参加率"
+      description1: "参与者报名时会默认关注活动，以后每次举办新活动时，他都能得到及时通知"
+      subtitle2: "提升品牌价值"
+      description2: "随着举办次数的增加，关注者会随之增加；关注者越多，表示活动越吸引人"
+    slug:
+      title: "让活动更好推广"
+      subtitle1: "简短的活动地址"
+      description1: "参与者更容易记忆，可以随时使用手机查看活动时间、地址等信息"
+      subtitle2: "只记一个地址"
+      description2: "不管活动举办多少次，参与者都只需记住一个活动永久地址"
+    notification:
+      title: 及时通知参与者
+      subtitle1: 时间地点变了？
+      description1: 当活动时间、地点发送变化时可以向参与者发送邮件和短信通知
+      subtitle2: 免费发送短信
+      description2: 此项服务完全免费
+
+  home:
+    menu:
+      activities: 最新动态
+      created_events: 发起的活动
+      ordered_events: 参加的活动
+    body:
+      empty: 暂时没有内容
+
+  helpers:
+    submit:
+      add: "增加"
+      event:
+        create: "新活动"
+      profile:
+        create: "保存%{model}"
+
+  labels:
+    sign_in: "登录"
+    sign_up: "注册"
+    need_upgrade_invitation: "需要发起活动?"
+    apply_sign_up: "申请注册"
+    sign_up_to_launch_event: "注册，发起活动"
+    invitations: "邀请列表"
+    admin_orders: "管理订单"
+    invoice_orders: "发票订单"
+    launch_event: "发起活动"
+    show_event: "查看活动"
+    cancel: "取消"
+    markdown_guide: "Markdown 格式说明"
+    checked_in_event: "签到"
+    check_in_button: "签到"
+    has_checked_in_button: "已签到"
+    invite_button: "邀请"
+    my_orders: "我的订单"
+
+  confirmation:
+    destroy: 您确定要删除吗？
+    orders:
+      pay: 您确认已经收到款项了吗?
+
+  buttons:
+    search: 查询
+    user_phone:
+      get_code: 获取短信校验码
+      get_code_until: 重新获取短信校验码（等待 {{timeleft}} 秒）
+    event_ticket:
+      new: 新增
+    orders:
+      submit_refund: 退款
+      confirm_pay: 确认收款
+
+  flash:
+    created: "新增成功!"
+    updated: "更新成功!"
+    destroyed: "删除成功!"
+    events:
+      created: "活动已经发布"
+      updated: "活动已经更新"
+    user_phones:
+      here: 这里
+      blank: 建议您绑定手机，以便活动时间、地点等信息发生变化时，及时收到短信通知；点击 %{here} 绑定 。
+      updated: 手机已经绑定！
+    profiles:
+      updated: "个人资料已经更新"
+    participants:
+      checked_in: "%{name}已签到"
+      checkin_welcome: "您已成功签到!"
+      checkin_need_join_first: "您还没有报名哦，先去报名吧!"
+      checkin_in_need_the_same_day_of_event_starttime: "此活动尚未开放签到，请于活动当天签到!"
+      checkin_wrong_checkin_code: "您的签到码不正确，请联系现场工作人员!"
+      checkin_more_than_1_time: "您已签到，请勿重复签到!"
+      joined: "您已经报名参与此活动"
+      quited: "您已经取消参与此活动"
+    my_orders:
+      canceled: '你已经成功取消订单。'
+      request_refund: '请等待管理员处理您的退款请求.'
+
+  confirmations:
+    my_orders:
+      cancel: '确定要取消订单么？'
+      refund: '确定要退款么？该操作无法撤销！'
+
+  menus:
+    submenu:
+      participants:
+        checkin: 签到
+        index: 列表
+      orders:
+        pending: '未支付'
+        paid: '已支付'
+        canceled: '已取消'
+        closed: '已关闭'
+        refund_pending: '等待处理退款'
+        all: '全部'
+
+  views:
+    edit: "修改"
+    destroy: "删除"
+    ticket: "门票"
+    change: "变更"
+    sell: '销售'
+    summary: "总结"
+    previous_summary: "往期活动总结"
+    check_in: "签到"
+    map_preview: "地图预览"
+    events:
+      new:
+        title: "发起活动"
+        copy: "复制"
+      edit:
+        title: "修改活动"
+      slug:
+        hint: '相同链接的活动组成系列活动，访问此链接时显示最近一个活动'
+      followers:
+        title: "关注者列表"
+      topics:
+        title: 迷你论坛
+        new:
+          button: 发起新贴
+    groups:
+      collaborators: 协办者
+    profiles:
+      show:
+        title: "个人资料"
+    user_phones:
+      edit:
+        title: 绑定手机
+    users:
+      apply_sign_up: "普通参与者可以直接在这里或者活动报名页面注册，发起活动需要在注册成功登录后申请。"
+      upgrade_invitation: "申请审核通过后即可发起活动，普通参与者无需申请，只需在活动报名页面注册或报名参加即可。"
+    follow:
+      state:
+        false: 关注
+        true: 已关注
+    order:
+      labels:
+        false: "购买"
+        true: "已结束"
+    history:
+      title: "往期活动"
+      participants: "%{number}人参加"
+    export:
+      export_link: "导出"
+      event_time: "活动时间"
+    my_orders:
+      event: '活动'
+      user: '用户'
+      items: '票种'
+      price: '价格（￥）'
+      paid_amount: '已支付（￥）'
+      status: '状态'
+      operation: '操作'
+      trade_no: '订单编号'
+      created_at: '下单时间'
+      checkin_code: '签到码'
+      operations: '操作'
+      pay: '支付'
+      cancel: '取消'
+      request_refund: '退款'
+      orders_filtered: '结果已被过滤'
+      view_all_orders: '查看全部订单'
+
+  sms:
+    event:
+      change: 活动通知：%{content}【19屋】
+      order:
+        checkin_code: '%{event_title} 签到验证码：%{checkin_code}。请您于%{event_start_time}前到达现场并出示签到码。谢谢。【19屋】'
+    user:
+      phone_code: 尊敬的用户,您的手机绑定验证码是%{code},谢谢【19屋】
+  email:
+    welcome:
+      subject: "欢迎来到19屋"
+    invited:
+      subject: "%{login}, 您现在可以发起活动了"
+    notify:
+      subject: "19屋新活动 - %{title}"
+    reminder:
+      subject: "19屋活动提醒"
+    profiles:
+      show:
+        title: "个人资料"
+    event:
+      change:
+        subject: "「重要」%{title} 变更通知"
+    order:
+      user:
+        created:
+          subject: "您在19屋的订单下单成功"
+        paid:
+          subject: "订单 %{number} 完成支付"
+        checkin_code:
+          subject: "订单 %{number} 活动签到码 %{code}"
+        refund:
+          subject: "%{title} 订单 %{number}，已退款 %{amount} 元"
+        fulfilled:
+          subject: "%{title} 订单 %{number}，已经向您快递发票"
+      organizer:
+        created:
+          subject: "%{title} 订单 %{number}，%{login} 下单"
+        paid:
+          subject: "%{title} 订单 %{number}，%{login} 完成支付"
+        refund:
+          subject: "%{title} 订单 %{number}，已向 %{login} 退款 %{amount} 元"
+        fulfilled:
+          subject: "%{title} 订单 %{number}，已经向用户快递发票"
+      support:
+        refund:
+          subject: "%{title} 订单 %{number}，主办方申请退款"

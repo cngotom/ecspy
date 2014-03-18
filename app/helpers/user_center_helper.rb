@@ -134,43 +134,59 @@ module UserCenterHelper
 
 	end
 
-	def get_sales_history(shop,offset)
+	def get_sales_history(id,offset,search_way = :by_shop)
 		start_time = Time.now.end_of_day-30*24*3600 -offset*24*3600 
 		end_time = Time.now.end_of_day-offset*24*3600
 		#ShopItem.includes(:shop_item).
 		#ItemSale.joins(:shop_item).select('date_format(buy_time,"%y-%m-%d") as time ,sum(item_price * item_num) as total').where(['shop_id = 1 and buy_time between ? and ?',Time.now-3*24*3600 , Time.now]).group('time')
-		sales = ItemSale.joins(:shop_item).select(' date_format(buy_time,"%y-%m-%d") as time,count(DISTINCT buy_time,user_name) as item_count, sum(item_price * item_num) as total').where(['shop_id = ? and buy_time between ? and ?',shop.id,start_time,end_time]).group('time').order('time asc')
 		
+		conditions = nil
+		if search_way === :by_shop
+			conditions = ['shop_id = ? and buy_time between ? and ?',id,start_time,end_time]
+		else #by_item
+			conditions = ['shop_items.id = ? and buy_time between ? and ?',id,start_time,end_time]
+		end
+
+
+		sales = ItemSale.joins(:shop_item).select(' date_format(buy_time,"%y-%m-%d") as time,count(DISTINCT buy_time,user_name) as item_count, sum(item_price * item_num) as total').where(conditions).group('time').order('time asc')
+		
+
 		res = []
 		start_time_stamp = start_time.beginning_of_day.to_i
 		end_time_stamp = end_time.beginning_of_day.to_i
 		current_time_stamp = start_time_stamp
 		one_day_sec = 3600*24
-		
 		sales_index = 0
-		31.times do |i|
-			if Time.at(current_time_stamp).strftime('%y-%m-%d') == sales[sales_index].time
-				res << [ sales[sales_index].item_count.to_i,sales[sales_index].total.round(2)]
-				sales_index += 1
-				sales_index = 0 if sales_index >= sales.size
-			else
+
+		if sales[0]
+			31.times do |i|
+				if Time.at(current_time_stamp).strftime('%y-%m-%d') == sales[sales_index].time
+					res << [ sales[sales_index].item_count.to_i,sales[sales_index].total.round(2)]
+					sales_index += 1
+					sales_index = 0 if sales_index >= sales.size
+				else
+					res << [0,0]
+				end
+
+				current_time_stamp += one_day_sec
+			end
+		else
+			31.times do |i|
 				res << [0,0]
 			end
-
-			current_time_stamp += one_day_sec
 		end
 		res
 	end
 
 
-	def get_sales_money_history(shop,offset)
-		res = get_sales_history(shop,offset)
+	def get_sales_money_history(id,offset,search_way = :by_shop)
+		res = get_sales_history(id,offset,search_way)
 		res.collect &:second
 	end
 
 
-	def get_sales_count_history(shop,offset)
-		res = get_sales_history(shop,offset)
+	def get_sales_count_history(id,offset,search_way = :by_shop)
+		res = get_sales_history(id,offset,search_way)
 		res.collect &:first
 	end
 	#sales_history = get_sales_histroy(@shop,offset)

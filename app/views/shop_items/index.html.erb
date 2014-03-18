@@ -9,7 +9,7 @@
 
 <%= button_tag "Compare", data: { 'id' => "compare"},type:'button',id:'compare_btn' %>
 
-
+<%= content_for :script do %>
 <script type="text/javascript">
 	
 	$(function(){
@@ -37,3 +37,4 @@
 
 
 </script>
+<% end %>

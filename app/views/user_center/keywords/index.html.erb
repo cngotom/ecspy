@@ -1,45 +1,125 @@
-<% if flash[:notice] %>
-	<div class="alert">
-		<strong><%= flash[:notice] %></strong>
+
+<section id="widget-grid" class="">
+	
+	<!-- row -->
+	<div class="row">
+	
+		<!-- NEW WIDGET START -->
+		<article class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+	
+
+			<% if flash[:notice] %>
+				<div class="alert alert-notice">
+					<strong><%= flash[:notice] %></strong>
+				</div>
+			<% end %>
+
+
+			
+
+
+			
+
+			<div class="jarviswidget jarviswidget-color-darken" id="wid-id-1" data-widget-editbutton="false">
+				<header>
+					<span class="widget-icon"> <i class="fa fa-table"></i> </span>
+					<h2> 店铺关键字 
+						
+					</h2>
+				</header>
+				<div>
+				
+					<!-- widget edit box -->
+					<div class="jarviswidget-editbox">
+						<!-- This area used as dropdown edit box -->
+
+					</div>
+					<!-- end widget edit box -->
+
+					<!-- widget content -->
+					<div class="widget-body no-padding">
+									
+						<div class="widget-body-toolbar">
+								<div class="text-right">
+									<%= link_to new_user_center_keyword_path ,class:'btn btn-primary',id:'add_keyword_btn' do%>
+										<i class="fa fa-plus"></i>新增
+									<% end %> 
+						 		</div> 
+							</div>	
+						<table class="table" id="shop_keyword_tabel" class="table table-striped table-bordered smart-form">
+							<thead>
+								<tr> 
+									<Th> 关键字</th>
+
+									<th> 店铺 </th>
+
+									<th> 添加时间 </th>
+
+									<th> 操作 </th>
+								</tr>
+							</thred>
+
+							<tbody>
+								<% @keywords.each do |keyword | %>
+								
+									<tr>	
+										<td><%= keyword.keyword%></td>
+										<td><%= shopids_to_titles(keyword.shops,@shops_map).html_safe%></td>
+										<td><%= keyword.created_at%></td>
+										<td><%= link_to '删除', user_center_keyword_path(keyword),:confirm => "确定要删除关键字 #{keyword.keyword}?", :method => :delete %> </td>
+									</tr>
+
+								<% end %>
+							</tbody>
+
+						</table>
+					</div>
+										<!-- end widget content -->
+					
+				</div>
+					<!-- end widget div -->
+
+			</div>
+			<!-- end widget -->
+
+
+		</article>
+
 	</div>
-<% end %>
 
-
-<div class="span3 offset3">
-		<i class="icon-plus"></i>
-		<%= link_to '新增', new_user_center_keyword_path %>
-</div>
+</section>
 
 
 
-<div class="row-fluid" >
+
+
+<%= content_for :script do %>
+<script type="text/javascript">
+
+/* TABLE TOOLS */
+	$(function() {
 
 	
-	<table class="table">
-		<tr> 
-			<Th> 关键字</th>
+		//$('#shop_keyword_tabel').dataTable({});
 
-			<th> 店铺 </th>
+		// $('#keyword_tabel').dataTable({
+		// 	"sDom" : "<'dt-top-row'Tlf>r<'dt-wrapper't><'dt-row dt-bottom-row'<'row'<'col-sm-6'i><'col-sm-6 text-right'p>>",
+		// 	"oTableTools" : {
+		// 		"aButtons" : [ {
+		// 			"sExtends" : "collection",
+		// 			"sButtonText" : 'Save <span class="caret" />',
+		// 			"aButtons" : ["csv", "xls", "pdf"]
+		// 		}],
+		// 		"sSwfPath" : "/swf/copy_csv_xls_pdf.swf"
+		// 	},
+		// 	"fnInitComplete" : function(oSettings, json) {
+		// 		$(this).closest('#dt_table_tools_wrapper').find('.DTTT.btn-group').addClass('table_tools_group').children('a.btn').each(function() {
+		// 			$(this).addClass('btn-sm btn-default');
+		// 		});
+		// 	}
+		// });
+	});
 
-			<th> 添加时间 </th>
+</script>
+<% end %>
 
-			<th> 操作 </th>
-		</tr>
-
-
-		<% @keywords.each do |keyword | %>
-		
-			<tr>	
-				<td><%= keyword.keyword%></td>
-				<td><%= shopids_to_titles(keyword.shops,@shops_map).html_safe%></td>
-				<td><%= keyword.created_at%></td>
-				<td><%= link_to '删除', user_center_keyword_path(keyword),:confirm => "确定要删除关键字 #{keyword.keyword}?", :method => :delete %> </td>
-			</tr>
-
-		<% end %>
-
-	</table>
-
-
-
-</div>

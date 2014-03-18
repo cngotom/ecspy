@@ -1,7 +1,7 @@
 #encoding:utf-8
 class UserCenter::KeywordsController < ApplicationController
 	before_filter :authenticate_user!
-	layout 'user_center'
+	layout 'smart_admin'
 
 	def index
 		@shops_map ={}
@@ -14,6 +14,10 @@ class UserCenter::KeywordsController < ApplicationController
 
 	def new
 	  	@keyword = ShopKeyword.new
+	  	# respond_to do |format|
+	   #    format.html { render :layout => false }
+	   #  end
+
 	end
 
 

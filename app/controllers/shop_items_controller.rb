@@ -1,6 +1,8 @@
 class ShopItemsController < InheritedResources::Base
+  	include UserCenterHelper
+
 	before_filter :authenticate_user!
-  	layout 'user_center'
+  	layout 'smart_admin'
 
 	def content_compare
 
@@ -31,6 +33,19 @@ class ShopItemsController < InheritedResources::Base
 
 
 
+	def show
+
+		id = params[:id].to_i
+		@shop_item = ShopItem.find(id)
+	
+
+		@sales_history = get_sales_money_history(id,0,:by_item)
+	    @count_history = get_sales_count_history(id,0,:by_item)
+
+	    @sales_total = @sales_history.inject(0) {|sum,i| sum + i} 
+	    @count_total= @count_history.inject(0) {|sum,i| sum + i} 
+
+	end
 
 
 

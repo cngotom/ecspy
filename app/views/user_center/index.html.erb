@@ -1,3 +1,4 @@
+<div class="row">
 <%= render :partial => "/user_center/time_select" %>  
 
 
@@ -15,80 +16,81 @@
 <% @shops.each do |shop| %>
 
 <section>
-	<h3> <%= link_to shop.title,user_center_shop_path(shop) %> <small> <a class='btn btn-small compare_btn' data-id="<%=shop.id%>" data-title="<%=shop.title%>" > <i class="icon-plus"></i> 加入对比 </a>  </small> </h3>
+	<div class="col-xs-12 col-sm-6 col-md-6">
+		<h3> <%= link_to shop.title,user_center_shop_path(shop) %> <small> <a class='btn btn-success btn-small compare_btn' data-id="<%=shop.id%>" data-title="<%=shop.title%>" > <i class="icon-plus"></i> 加入对比 </a>  </small> </h3>
 
 
-	<dl class="dl-horizontal"> 
-		<dt>当日订单：</dt>
+		<dl class="dl-horizontal"> 
+			<dt>当日订单：</dt>
 
-		<% today_sales = calc_sales_count_and_money(shop.today_sales(@offset)) %>
-		<dd><%= today_sales[0] %> 个 </dd>
+			<% today_sales = calc_sales_count_and_money(shop.today_sales(@offset)) %>
+			<dd><%= today_sales[0] %> 个 </dd>
 
-		<dt>当日金额： </dt>
-		<dd> <%= today_sales[1] %> 元 </dd>
-	</dl>
-	
-	<div class="accordion" id="accordion<%=shop.id%>">
-		<div class="accordion-group">
-
-
-
-	    	<div class="accordion-heading">
-	      		<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion<%=shop.id%>" href="#collapse<%=shop.id%>">
-	      			<% today_changes_sales = today_changes(shop,@offset) %>
-	       	 		当日行为（<%= today_changes_sales.count %>）
-	      		</a>
-	    	</div>
-	    	<div id="collapse<%=shop.id%>" class="accordion-body collapse ">
-	      		<div class="accordion-inner">
-					<ul> 
-						<% today_changes_sales.each do |change| %>
-
-							<li>
-								<%= change.html_safe %>
-							</li>
+			<dt>当日金额： </dt>
+			<dd> <%= today_sales[1] %> 元 </dd>
+		</dl>
+		
+		<div class="accordion" id="accordion<%=shop.id%>">
+			<div class="accordion-group">
 
 
-						<% end %>
-					
-					</ul>
 
-	      		</div>
-	    	</div>
+		    	<div class="accordion-heading">
+		      		<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion<%=shop.id%>" href="#collapse<%=shop.id%>">
+		      			<% today_changes_sales = today_changes(shop,@offset) %>
+		       	 		当日行为（<%= today_changes_sales.count %>）
+		      		</a>
+		    	</div>
+		    	<div id="collapse<%=shop.id%>" class="accordion-body collapse ">
+		      		<div class="accordion-inner">
+						<ul> 
+							<% today_changes_sales.each do |change| %>
+
+								<li>
+									<%= change.html_safe %>
+								</li>
+
+
+							<% end %>
+						
+						</ul>
+
+		      		</div>
+		    	</div>
+		   </div>
 	   </div>
-   </div>
 
 
-	<div class="accordion" id="accordion_sale<%=shop.id%>">
-		<div class="accordion-group">
-
-
-
-	    	<div class="accordion-heading">
-	      		<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion_sale<%=shop.id%>" href="#collapse_sale<%=shop.id%>">
-	       	 		具体销售
-	      		</a>
-	    	</div>
-	    	<div id="collapse_sale<%=shop.id%>" class="accordion-body collapse ">
-	      		<div class="accordion-inner">
-					<ul> 
-						<% today_sales(shop,@offset).each do |k,sale| %>
-							<li>
-								<%= sale['item'] %> &nbsp;&nbsp; 数量：<%= sale['count'] %>&nbsp;&nbsp; 总金额: <%= sale['money'].round(2) %>
-							</li>
+		<div class="accordion" id="accordion_sale<%=shop.id%>">
+			<div class="accordion-group">
 
 
 
+		    	<div class="accordion-heading">
+		      		<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion_sale<%=shop.id%>" href="#collapse_sale<%=shop.id%>">
+		       	 		具体销售
+		      		</a>
+		    	</div>
+		    	<div id="collapse_sale<%=shop.id%>" class="accordion-body collapse ">
+		      		<div class="accordion-inner">
+						<ul> 
+							<% today_sales(shop,@offset).each do |k,sale| %>
+								<li>
+									<%= sale['item'] %> &nbsp;&nbsp; 数量：<%= sale['count'] %>&nbsp;&nbsp; 总金额: <%= sale['money'].round(2) %>
+								</li>
 
-						<% end %>
-					
-					</ul>
 
-	      		</div>
-	    	</div>
+
+
+							<% end %>
+						
+						</ul>
+
+		      		</div>
+		    	</div>
+		   </div>
 	   </div>
-   </div>
-
+	</div>
 
 </section>
 	
@@ -96,14 +98,14 @@
 <% end %>
 
 
-<div class="compare_list span2 text-center hide" >
+<div class="compare_list span2 text-center" style="display:none" >
 	<h4> 店铺对比  </h4>
 	<ul id="compare_list" class="text-left"> 
 	</ul>
 	<hr>
 	<div>
 
-		<button class="btn-info" id="do_compare" > 开始对比 </button>
+		<button class="btn-primary" id="do_compare" > 开始对比 </button>
 		
 		<small> <a class="clear" href="javascript:void(0)"> 清空 </a> </small>
 	</div>
@@ -112,7 +114,8 @@
 </div>
 
 
-
+</div>
+<%= content_for :script do %>
 <script type="text/javascript">
 	
 	$(function(){
@@ -214,3 +217,4 @@
 
 
 </script>
+<% end %>

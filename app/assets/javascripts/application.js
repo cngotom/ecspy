@@ -18,3 +18,4 @@
 //= require wice_grid
 //= require highcharts
 //= require exporting
+//= require smart_admin

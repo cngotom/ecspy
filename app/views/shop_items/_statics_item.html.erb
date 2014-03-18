@@ -1,0 +1,142 @@
+<div class="row">
+	<div class="col-sm-12">
+		<div class="well well-light">
+			<section >
+				<h3 class="title"> <%= shop_item.title %>最近30天统计数据 </h3>
+
+				<div class="row-fluid">
+					<div class="span6" style="height:300px;" id="sales_chart">
+							
+					</div>
+
+					<div class="span6" style="height:300px;" id="count_chart">
+
+					</div>
+				</div>
+			
+			</section>
+
+
+		</div>
+	</div>
+</div>
+<%= content_for :script do %>
+		<script type="text/javascript">
+			$(function(){
+ 				$('#sales_chart').highcharts({
+			 		 	chart: {
+			                zoomType: 'x',
+			                spacingRight: 20
+			            },
+			            title: {
+			                text: '金额统计 总计<%=sales_total.round(2)%>元',
+			                x: -20 //center
+			            },
+			            subtitle: {
+			                x: -20
+			            },
+			            xAxis: {
+			            	 type: 'datetime',
+			            	 tickPixelInterval : 130,
+			            	  labels: {
+			                    align: 'left',
+			                    formatter: function() {
+			                        return Highcharts.dateFormat('%y-%m-%d', this.value);
+			                    }
+			                }
+			            },
+			            yAxis: {
+
+			                title: {
+			                    text: '订单金额(元)'
+			                },
+			                plotLines: [{
+			                    value: 1,
+			                    width: 1,
+			                    color: '#808080'
+			                }]
+			            },
+			            tooltip: {
+			                valueSuffix: '元',
+			                xDateFormat: '%Y-%m-%d %A',
+			            },
+			            legend: {
+			                layout: 'vertical',
+			                align: 'right',
+			                verticalAlign: 'middle',
+			                borderWidth: 0
+			            },
+			            series: [	
+			            	{
+					   				pointStart: <%= (Time.now.end_of_day - offset*24*3600  - 30*24*3600).to_i*1000 %>,
+					   				pointInterval: 1 * 24 * 3600 * 1000,
+					                data: [
+					                	<%= sales_history.join ',' %>
+					                ]
+					        }
+
+					    ]
+				});
+
+
+
+				$('#count_chart').highcharts({
+			 		 	chart: {
+			                zoomType: 'x',
+			                spacingRight: 20
+			            },
+			            title: {
+			                text: '数量统计  总计 <%=count_total%>个',
+			                x: -20 //center
+			            },
+			            subtitle: {
+			                x: -20
+			            },
+			            xAxis: {
+			            	 type: 'datetime',
+			            	 tickPixelInterval : 130,
+			            	  labels: {
+			                    align: 'left',
+			                    formatter: function() {
+			                        return Highcharts.dateFormat('%y-%m-%d', this.value);
+			                    }
+			                }
+			            },
+			            yAxis: {
+
+			                title: {
+			                    text: '订单数量(个)'
+			                },
+			                plotLines: [{
+			                    value: 1,
+			                    width: 1,
+			                    color: '#808080'
+			                }]
+			            },
+			            tooltip: {
+			                valueSuffix: '个',
+			                xDateFormat: '%Y-%m-%d %A',
+			            },
+			            legend: {
+			                layout: 'vertical',
+			                align: 'right',
+			                verticalAlign: 'middle',
+			                borderWidth: 0
+			            },
+			            series: [	
+			            	{
+					   				pointStart: <%= (Time.now.end_of_day - offset*24*3600  - 30*24*3600).to_i*1000 %>,
+					   				pointInterval: 1 * 24 * 3600 * 1000,
+					                data: [
+					                	<%= count_history.join ',' %>
+					                ]
+					        }
+
+					    ]
+				});
+			});
+
+		</script>
+
+<% end %>
+<%= yield :script if request.xhr? %>

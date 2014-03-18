@@ -1,3 +1,6 @@
+
+
+
 <%= grid(@records, show_filters: true) do |g|
 
   g.column name:  '关键字',attribute: 'keyword',model: ShopKeyword,auto_reload: true ,custom_filter: User.first.keywords.select('distinct keyword').map{|pr| [pr.keyword,pr.keyword]}  do |r|
@@ -28,23 +31,44 @@
 
 end -%>
 
-<div id="trendModal" class="modal hide " tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-  <div class="modal-header">
-    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-    <h3 id="myModalLabel">排名趋势</h3>
-  </div>
-  <div class="modal-body">
-    <p>
-    	<div class="chart"> </div>
-    </p>
-  </div>
-  <div class="modal-footer">
-    <button class="btn" data-dismiss="modal" aria-hidden="true">关闭</button>
-  </div>
-</div>
+<style type="text/css">
+	
+
+
+.modal-dialog {
+    width: 640px;
+    margin: 30px auto;
+  }
+</style>
+<!-- Modal -->
+		<div class="modal fade" id="trendModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+							&times;
+						</button>
+						<h4 class="modal-title" id="myModalLabel">排名趋势</h4>
+					</div>
+					<div class="modal-body">
+							<div class="chart" style="width:600px"> </div>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">
+							Cancel
+						</button>
+						
+					</div>
+				</div><!-- /.modal-content -->
+			</div><!-- /.modal-dialog -->
+		</div><!-- /.modal -->
 
 
 
+
+
+
+<%= content_for :script do %>
 <script type="text/javascript">
 	
 	$(function(){
@@ -130,3 +154,4 @@ end -%>
 
 
 </script>
+<% end %>

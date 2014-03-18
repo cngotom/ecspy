@@ -25,6 +25,9 @@ end
 
 gem 'jquery-rails'
 
+gem 'devise' , '>= 3.0'
+
+
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
@@ -53,7 +56,7 @@ gem 'inherited_resources'
 gem "js-routes"
 #gem 'acts_as_versioned', :git => 'https://github.com/jwhitehorn/acts_as_versioned.git'
 
-gem 'bootstrap-sass', '2.3.2.2'
+gem 'bootstrap-sass', '~> 3.1.1'
 gem 'simple_form'
 
 gem "acts_as_follower", :git => 'git://github.com/tcocca/acts_as_follower.git', :branch => 'rails_3'
@@ -68,3 +71,4 @@ gem 'mysql2'
 
 gem "resque"
 gem 'resque-job-stats'
+

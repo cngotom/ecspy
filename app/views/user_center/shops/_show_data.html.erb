@@ -2,8 +2,8 @@
 		<section > 
 			<h3 class="title"> 店铺核心数据 </h3>
 
-			<div class="row-fluid">
-				<div class="span2">
+			<div class="row">
+				<div class="col-xs-12 col-sm-6 col-md-6">
 					<p class='NHR_b1'> 成交额 </p>
 					<p class='NHR_b2'>  <%= today[1] %> </p>
 
@@ -14,7 +14,7 @@
 					  <p class="green"><%=lastweekday_compare[1]%>% <%= get_change_icon(lastweekday_compare[3]) %></p>   
 					</div>
 				</div>
-				<div class="span2">
+				<div class="col-xs-12 col-sm-6 col-md-6">
 					<p class='NHR_b1'> 成交笔数 </p>
 					<p class='NHR_b2'>  <%=  today[0] %></p>
 
@@ -29,11 +29,11 @@
 
 				</div>
 
-
+<!-- 
 				<div class="span2">浏览量</div>
 				<div class="span2">客单价</div>
 				<div class="span2">动态评分</div>
-				<div class="span2"> 转化率</div>
+				<div class="span2"> 转化率</div> -->
 			</div>
 		</section>
 
@@ -96,7 +96,7 @@
 		</section>
 
 
-	
+	<!-- 
 		<section> 
 			<h3 class="title"> 店铺预览 </h3>
 			<a href="<%=get_preview(shop.id,Time.now)%>" > <img src="<%=get_preview_small(shop.id,Time.now)%>" /> </a>
@@ -109,10 +109,10 @@
 		<section> 
 			<h3 class="title"> 买家环节 </h3>
 
-		</section>
+		</section> -->
 
 
-
+<%= content_for :script do %>
 		<script type="text/javascript">
 			$(function(){
  				$('#sales_chart').highcharts({
@@ -230,4 +230,6 @@
 
 		</script>
 
-		
+<% end %>
+
+<%= yield :script if request.xhr? %>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en-us">
+	<head>
+		<meta charset="utf-8">
+		<!--<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">-->
+
+		<title> SmartAdmin </title>
+		<meta name="description" content="">
+		<meta name="author" content="">
+
+		<!-- Use the correct meta names below for your web application
+			 Ref: http://davidbcalhoun.com/2010/viewport-metatag 
+			 
+		<meta name="HandheldFriendly" content="True">
+		<meta name="MobileOptimized" content="320">-->
+		
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<%= stylesheet_link_tag    "application", :media => "all" %>
+  		<%= csrf_meta_tags %>
+
+		
+		<!-- SmartAdmin RTL Support is under construction
+			<link rel="stylesheet" type="text/css" media="screen" href="css/smartadmin-rtl.css"> -->
+		
+		<!-- Demo purpose only: goes with demo.js, you can delete this css when designing your own WebApp -->
+
+		<!-- FAVICONS -->
+		<link rel="shortcut icon" href="/img/favicon/favicon.ico" type="image/x-icon">
+		<link rel="icon" href="/img/favicon/favicon.ico" type="image/x-icon">
+
+		<!-- GOOGLE FONT -->
+		<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,300,400,700">
+
+	</head>
+	<body id="login" class="animated fadeInDown">
+		<!-- possible classes: minified, no-right-panel, fixed-ribbon, fixed-header, fixed-width-->
+
+	<header id="header">
+		<!--<span id="logo"></span>-->
+		<div id="logo-group">
+			<span id="logo"> <img src="/img/logo.png" alt="SmartAdmin"> </span>
+
+			<!-- END AJAX-DROPDOWN -->
+		</div>
+		<span id="login-header-space"> <span class="hidden-mobile">Need an account?</span>
+
+		<% if request.fullpath !=  new_registration_path(resource_name)  %>
+			<%= link_to "Creat account", new_registration_path(resource_name) ,class:'btn btn-danger' %>
+		<% else %>
+			<%= link_to "Sign in", new_session_path(resource_name) ,class:'btn btn-danger' %>
+		<% end %>
+	</header>
+
+
+
+	<div id="main" role="main">
+
+				<!-- MAIN CONTENT -->
+				<div id="content" class="container">
+
+					<div class="row">
+			
+				<% if notice %>
+					<div class="alert  alert-info">
+					  <button type="button" class="close" data-dismiss="notice">&times;</button>
+					  <strong>notice!</strong> <%= notice %>
+					</div>
+				<% end %>
+
+				<% if alert %>
+					<div class="alert alert-danger">
+					  <button type="button" class="close" data-dismiss="alert">&times;</button>
+					  <strong>alert!</strong> <%= alert %>
+					</div>
+				<% end %>
+
+
+
+
+						
+						<%= yield %>
+
+					</div>
+				</div>
+
+	</div>
+
+
+
+
+
+
+		
+		
+
+	 	<%= javascript_include_tag "application" %>
+  
+		
+
+		<!-- MAIN APP JS FILE -->
+		<script src="/assets/app.js"></script>
+		<%= yield :script %>
+
+	</body>
+</html>

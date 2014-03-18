@@ -1,7 +1,7 @@
 class UserCenter::KeywordRecordsController < ApplicationController
 
 	before_filter :authenticate_user!
- 	layout 'user_center'
+ 	layout 'smart_admin'
 
 
 	def index
@@ -24,7 +24,7 @@ class UserCenter::KeywordRecordsController < ApplicationController
 			last_time = last_time - 1.day
 		end
 		@records = initialize_grid(
-		  ShopKeywordRecord.includes(:shop,:shop_item,:shop_keyword).select('t3.user_id').where("user_id = 1 ").where(['
+		  ShopKeywordRecord.includes(:shop,:shop_item,:shop_keyword).select('shop_keywords.user_id').where("user_id = 1 ").where(['
 
 		  	shop_keyword_records.created_at >=?',last_time]),
 

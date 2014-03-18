@@ -9,43 +9,90 @@
 	}
 
 </style>
-<%= simple_form_for @keyword, :url => user_center_keywords_path,:methos=>'create', :html => { :class => 'form-horizontal' } do |f| %>
 
-	 <% if notification = f.error_notification %>
-	    <div class="alert alert-error fade in">
-	      <a class="close" data-dismiss="alert" href="#">&times;</a>
-	      至少应选择一个店铺
-	    </div>
-	  <% end %>
-
-
-	  <h3> 输入要监视的搜索词 </h3>
-	  <%= f.input :keyword ,:label=>'搜索词',:input_html => { :class => "span6" } %>
-
-
-	  <h3> 选择要监视的店铺 </h3>
+<section id="widget-grid" class="">
 	
-	  <%= f.collection_check_boxes :shops, Shop.watched(current_user.id), :id, :title ,{:item_wrapper_class => 'checkbox_container'}  %>
-
-
-
-	  
-
-	  <div class="clearfix" > </div>
+	<!-- row -->
+	<div class="row">
 	
-	  <hr /> 
-	  <div> 
-		<input id="select_all" name="select_all" type="checkbox" value="30">全选
-	  </div>
+		<!-- NEW WIDGET START -->
+		<article class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+	
 
-	  <div class="text-center">
-	  	<%= f.button :submit ,:value=>'提交'%>
-	  </div>
+			
+		<div class="jarviswidget" id="wid-id-0" data-widget-colorbutton="false" data-widget-editbutton="false">
+			
+			<header>
+				<span class="widget-icon"> <i class="fa fa-eye"></i> </span>
+				<h2>店铺关键字</h2>
+
+			</header>
+
+			<!-- widget div-->
+			<div>
+
+				<!-- widget edit box -->
+				<div class="jarviswidget-editbox">
+					<!-- This area used as dropdown edit box -->
+
+				</div>
+				<!-- end widget edit box -->
+
+				<!-- widget content -->
+				<div class="widget-body">
+
+									
+								
 
 
-<% end %>
+					<%= simple_form_for @keyword, :url => user_center_keywords_path,:methos=>'create' do |f| %>
+
+						 <% if notification = f.error_notification %>
+						    <div class="alert alert-danger fade in">
+						      <a class="close" data-dismiss="alert" href="#">&times;</a>
+						      至少应选择一个店铺
+						    </div>
+						  <% end %>
 
 
+						  <h3> 输入要监视的搜索词 </h3>
+						  <%= f.input :keyword ,:label=>false%>
+
+
+						  <h3> 选择要监视的店铺 </h3>
+						
+						  <%= f.collection_check_boxes :shops, Shop.watched(current_user.id), :id, :title ,{:item_wrapper_class => 'checkbox_container'}  %>
+
+
+
+						  
+
+						  <div class="clearfix" > </div>
+						
+						  <hr /> 
+						  <div> 
+							<input id="select_all" name="select_all" type="checkbox" value="30">全选
+						  </div>
+
+						  <div class="text-center">
+						  	<%= f.button :submit ,:value=>'提交'%>
+						  </div>
+
+
+					<% end %>
+
+				</div>
+			</div>
+		</div>
+
+
+		</article>
+</div>
+</section>
+
+
+
+<%= content_for :script do %>
 <script type="text/javascript">
 	
 	$(function(){
@@ -63,3 +110,4 @@
 	})
 
 </script>
+<% end %>

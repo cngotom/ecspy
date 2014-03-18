@@ -2,6 +2,7 @@
 <input type="hidden" name="c" value="order">
 <input type="hidden" name="a" value="order_overview">
 <a href="" time="today">今天</a>&nbsp;&nbsp;<a href="" time="yesterday">昨天</a>&nbsp;&nbsp;<a href="" time="yyday">前天</a>&nbsp;&nbsp;
+<%= content_for :script do %>
 <script type="text/javascript">
 
 
@@ -44,6 +45,7 @@ $(function()
 
 });
 </script> 
+<% end %>
 <!-- <input type="button" id="searchBtn" class="button" value="搜索" title="提示：由于系统限制，您目前只能查询最近三个月数据"> -->
 <style type="text/css">
 .table-list td,.table-list th{padding:3px;padding-left:3px;}

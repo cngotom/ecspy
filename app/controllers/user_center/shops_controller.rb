@@ -1,5 +1,4 @@
-
-
+#encoding:utf-8
 class UserCenter::ShopsController < InheritedResources::Base
   include StaticsHelper
   include UserCenterHelper
@@ -7,7 +6,7 @@ class UserCenter::ShopsController < InheritedResources::Base
   
   before_filter :authenticate_user!
 
-  layout 'user_center'
+  layout 'smart_admin'
 
   def index
 
@@ -23,7 +22,11 @@ class UserCenter::ShopsController < InheritedResources::Base
 
   def create
     create! do |success, failure|
-      success.html { redirect_to user_center_shops_path,:notice=>'create successful'}
+      
+      success.html { 
+        current_user.follow(@shop)
+        redirect_to user_center_shops_path,:notice=>'创建成功'
+      }
     end
   end
 
@@ -69,7 +72,7 @@ class UserCenter::ShopsController < InheritedResources::Base
     shops.each do |s|
       shop = Shop.find(s)
       row = {'title' => shop.title,'id'=>shop.id}
-      row['sales'] = get_sales_history(shop,@offset)
+      row['sales'] = get_sales_history(shop.id,@offset)
 
       
       @res << row
@@ -99,8 +102,8 @@ class UserCenter::ShopsController < InheritedResources::Base
 
     @lastweekday_compare = get_compare_rate(@today,lastweekday)
 
-    sales_history = get_sales_money_history(@shop,offset)
-    count_history = get_sales_count_history(@shop,offset)
+    sales_history = get_sales_money_history(@shop.id,offset)
+    count_history = get_sales_count_history(@shop.id,offset)
 
     sales_total = sales_history.inject(0) {|sum,i| sum + i} 
     count_total= count_history.inject(0) {|sum,i| sum + i} 

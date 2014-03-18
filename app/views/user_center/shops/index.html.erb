@@ -1,21 +1,6 @@
-<style type="text/css">
-	
-	ul.thumbnails li{
-		margin-top:30px;
-	}
-
-	.thumbnails.row-fluid [class*="span"]:first-child, .row-fluid [class*="span"]:nth-child(4),
-	.row-fluid [class*="span"]:nth-child(7),.row-fluid [class*="span"]:nth-child(10),.row-fluid [class*="span"]:nth-child(13),
-	.row-fluid [class*="span"]:nth-child(16),.row-fluid [class*="span"]:nth-child(19),.row-fluid [class*="span"]:nth-child(22)
-
-	{
-    	margin-left: 0;
-	}
-</style>
-
 
 <% if notice %>
-<div class="alert">
+<div class="alert alert-success">
 	<strong><%= notice %></strong>
 </div>
 <% end %>
@@ -32,12 +17,12 @@
 <section id="unwatched_list">
 	<div >
 		<h3>未订阅</h3>
-		<ul class="thumbnails">
+		<div class="row">
 
 			<% Shop.unwatched(current_user.id).each do |shop| %>
-				<li class="span4" shop-id='<%=shop.id%>'> 
+				<li class="col-xs-12 col-sm-6 col-md-3 " shop-id='<%=shop.id%>'> 
 					标题: <%= link_to shop.title,user_center_shop_path(shop) %> <br>
-					url： <%=shop.url %> <br>
+					地址： <%= link_to shop.url.first(30),shop.url  %> <br>
 					产品数: <%=shop.shop_items.count %> <br>
 
 					<a class="btn btn-info scribe" > 订阅 </a>
@@ -46,22 +31,23 @@
 			<% end %>
 
 
-		</ul>
+		</div>
 		
 
 	</div>
 </section>
 
+<hr>
 
 <section id="watched_list">
 	<div >
 		<h3>已订阅</h3>
-		<ul class="thumbnails">
+		<div class="row">
 
 			<% Shop.watched(current_user.id).each do |shop| %>
-				<li class="span4" shop-id='<%=shop.id%>'> 
+				<li class="col-xs-12 col-sm-6 col-md-3 " shop-id='<%=shop.id%>'> 
 					标题: <%= link_to shop.title,user_center_shop_path(shop) %><br>
-					url： <%=shop.url %> <br>
+					地址： <%= link_to shop.url.first(30),shop.url  %><br>
 					产品数: <%=shop.shop_items.count %> <br>
 
 					<a class="btn btn-info scribe" > 取消订阅 </a>
@@ -69,13 +55,13 @@
 			<% end %>
 
 
-		</ul>
+		</div>
 		
 
 	</div>
 </section>
 
-
+<%= content_for :script do %>
 <script type="text/javascript">
 	$(function(){
 
@@ -84,7 +70,7 @@
 			var li = $(this).closest('li');
 			var ul = $(li).parent();
 
-			var another_ul = $('section#watched_list ul');
+			var another_ul = $('section#watched_list div.row');
 			//animate
 			$(li).hide('normal',function(){
 
@@ -113,7 +99,7 @@
 			var li = $(this).closest('li');
 			var ul = $(li).parent();
 
-			var another_ul = $('section#unwatched_list ul');
+			var another_ul = $('section#unwatched_list div.row');
 			//animate
 			$(li).hide('normal',function(){
 				//ajax
@@ -137,10 +123,10 @@
 		};
 
 
-		$('section#unwatched_list .thumbnails li a.scribe').click(unwatched_func);
+		$('section#unwatched_list .row li a.scribe').click(unwatched_func);
 
 
-		$('section#watched_list .thumbnails li a.scribe').click(watched_func);
+		$('section#watched_list .row li a.scribe').click(watched_func);
 
 
 	});
@@ -148,7 +134,7 @@
 	
 </script>
 
-
+<% end %>
 
 
 

@@ -1,18 +1,178 @@
-<h2>Sign up</h2>
 
-<%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
-  <%= devise_error_messages! %>
+<div class="col-xs-12 col-sm-12 col-md-7 col-lg-7 hidden-xs hidden-sm">
+	<h1 class="txt-color-red login-header-big">SmartAdmin</h1>
+	<div class="hero">
 
-  <div><%= f.label :email %><br />
-  <%= f.email_field :email, :autofocus => true %></div>
+		<div class="pull-left login-desc-box-l">
+			<h4 class="paragraph-header">It's Okay to be Smart. Experience the simplicity of SmartAdmin, everywhere you go!</h4>
+			<div class="login-app-icons">
+				<a href="javascript:void(0);" class="btn btn-danger btn-sm">Frontend Template</a>
+				<a href="javascript:void(0);" class="btn btn-danger btn-sm">Find out more</a>
+			</div>
+		</div>
+		
+		<img src="/img/demo/iphoneview.png" alt="" class="pull-right display-image" style="width:210px">
+		
+	</div>
 
-  <div><%= f.label :password %><br />
-  <%= f.password_field :password %></div>
+	<div class="row">
+		<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+			<h5 class="about-heading">About SmartAdmin - Are you up to date?</h5>
+			<p>
+				Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa.
+			</p>
+		</div>
+		<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+			<h5 class="about-heading">Not just your average template!</h5>
+			<p>
+				Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi voluptatem accusantium!
+			</p>
+		</div>
+	</div>
 
-  <div><%= f.label :password_confirmation %><br />
-  <%= f.password_field :password_confirmation %></div>
+</div>
 
-  <div><%= f.submit "Sign up" %></div>
+<div class="col-xs-12 col-sm-12 col-md-5 col-lg-5">
+						<div class="well no-padding">
+
+
+	<%= form_for(resource, :as => resource_name, :url => registration_path(resource_name),:html => {:class =>'smart-form client-form',:id=>'smart-form-register',:novalidate=>'novalidate'}) do |f| %>
+		
+								<header>
+									Registration is FREE*
+								</header>
+								<fieldset>
+								
+									<section>
+										
+
+										<%= devise_error_messages! %>
+
+									</section>
+					
+									<section>
+										<label class="input"> <i class="icon-append fa fa-envelope"></i>
+											<%= f.email_field :email %>
+
+											<b class="tooltip tooltip-bottom-right">Needed to verify your account</b> </label>
+									</section>
+
+									<section>
+										<label class="input"> <i class="icon-append fa fa-lock"></i>
+											<%= f.password_field :password ,'id'=>'password'%>
+											<b class="tooltip tooltip-bottom-right">Don't forget your password</b> </label>
+									</section>
+
+									<section>
+										<label class="input"> <i class="icon-append fa fa-lock"></i>
+											<%= f.password_field :password_confirmation %>
+											<b class="tooltip tooltip-bottom-right">Don't forget your password</b> </label>
+									</section>
+								</fieldset>
+
+							
+								<footer>
+									<%= f.submit "Register"  , class:'btn btn-primary' %>
+								</footer>
+
+								<div class="message">
+									<i class="fa fa-check"></i>
+									<p>
+										Thank you for your registration!
+									</p>
+								</div>
+	<%end %>
+						</div>
+						<p class="note text-center">*FREE Registration ends on October 2015.</p>
+						<h5 class="text-center">- Or sign in using -</h5>
+						<ul class="list-inline text-center">
+							<li>
+								<a href="javascript:void(0);" class="btn btn-primary btn-circle"><i class="fa fa-facebook"></i></a>
+							</li>
+							<li>
+								<a href="javascript:void(0);" class="btn btn-info btn-circle"><i class="fa fa-twitter"></i></a>
+							</li>
+							<li>
+								<a href="javascript:void(0);" class="btn btn-warning btn-circle"><i class="fa fa-linkedin"></i></a>
+							</li>
+						</ul>
+</div>
+
+
+<!-- Modal -->
+		<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+							&times;
+						</button>
+						<h4 class="modal-title" id="myModalLabel">Terms & Conditions</h4>
+					</div>
+					<div class="modal-body custom-scroll terms-body">
+						
+ 
+
+<%= content_for :script do %>
+	<script type="text/javascript">
+			runAllForms();
+			
+			// Validation
+			$(function() {
+				// Validation
+				$("#smart-form-register").validate({
+
+					// Rules for form validation
+					rules : {
+					
+						"<%=resource_name%>[email]"  : {
+							required : true,
+							email : true
+						},
+						"<%=resource_name%>[password]"  : {
+							required : true,
+							minlength : 3,
+							maxlength : 20
+						},
+						"<%=resource_name%>[password_confirmation]"  : {
+							required : true,
+							minlength : 3,
+							maxlength : 20,
+							equalTo : '#password'
+						},
+					},
+
+					// Messages for form validation
+					messages : {
+					
+						"<%=resource_name%>[email]"  : {
+							required : 'Please enter your email address',
+							email : 'Please enter a VALID email address'
+						},
+						"<%=resource_name%>[password]"  : {
+							required : 'Please enter your password'
+						},
+						"<%=resource_name%>[password_confirmation]"  : {
+							required : 'Please enter your password one more time',
+							equalTo : 'Please enter the same password as above'
+						},
+					},
+
+					// Ajax form submition
+					submitHandler : function(form) {
+						$(form).ajaxSubmit({
+							success : function() {
+								$("#smart-form-register").addClass('submited');
+							}
+						});
+					},
+
+					// Do not change code below
+					errorPlacement : function(error, element) {
+						error.insertAfter(element.parent());
+					}
+				});
+
+			});
+		</script>
 <% end %>
-
-<%= render "users/shared/links" %>

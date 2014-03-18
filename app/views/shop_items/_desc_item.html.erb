@@ -1,0 +1,141 @@
+<div class="row">
+	<div class="col-sm-12">
+		<div class="well well-light">
+			<h1 >宝贝内容</h1>
+			<hr>
+			<div class="row">
+				<div class="col-xs-12 col-sm-6 col-md-4 text-center" >
+					<%= image_tag  shop_item.thumb%> 
+				
+				</div>
+
+				<div class="col-xs-12 col-sm-6 col-md-8">
+					<ul>
+						<li> 
+							<span> <%=  shop_item.title%> </span>
+						</li>
+						<li>
+							<h1> <strong> ¥<%=  shop_item.price%> </strong> </h1> 
+						</li>
+
+						
+						<li>
+							<span>销售数</span>
+							<span> <%=  shop_item.sales_count%> </span>
+						</li>
+						<li>
+							<span>评论数</span>
+							<span> <%=  shop_item.comments_count%> </span>
+						</li>
+						<li>
+							<span> <%=  link_to '宝贝地址', 'http://detail.tmall.com/item.htm?id='+  shop_item.item_sn   ,target: "_blank"   %> </span>
+
+						</li>
+					</ul>
+					
+
+				</div>
+				<div class="item_history">
+					<div id="history_res"  style="display:none">
+						<table>
+							<tr>
+								<td> 时间 </td>
+								<td> 标题 </td>
+								<td> 价格 </td>			
+								<td> 主图 </td>	
+							</tr>
+							
+							<%  shop_item.versions.find(:all,:order => 'updated_at desc').each do |item| %>
+								<tr>
+									<td> <%= item.updated_at.strftime('%Y-%m-%d %H:%M:%S') %></td>
+									<td> <%= item.title %></td>
+									<td> <%= item.price %></td>
+									<td> <%= link_to (image_tag item.thumb ,:class=>'table_img_thumb'),item.thumb,target: "_blank" %></td>
+								</tr>
+							<% end %>
+						
+
+						</table>
+					</div>
+				</div>
+			</div>
+
+			<div class="content_history" style="margin-bottom:60px;">
+				<h1> 版本对比 </h2>
+				<hr>
+
+				<div class="col-xs-12 col-sm-6 col-md-6">
+				<%=  select_tag "fversion", options_from_collection_for_select( shop_item.content.versions.find(:all,:order => 'updated_at desc'), "version","updated_at") , :class=>'form-control'%>
+				</div>
+
+
+
+				<div class="col-xs-12 col-sm-6 col-md-6">
+				<%=  select_tag "sversion", options_from_collection_for_select( shop_item.content.versions.find(:all,:order => 'updated_at desc'), "version","updated_at"), :class=>'form-control col-xs-12 col-sm-6 col-md-6' %>
+
+				</div>
+
+				
+				<div class="text-center"> <%= button_tag "对比", data: { 'id' => "compare"},type:'button',id:'compare_btn' ,class:'btn btn-primary'%> 
+				</div>
+
+
+
+			</div>
+
+			<div>
+				<h1> 商品详情 </h2>	
+				<hr>
+				<div class="description text-center" style="width:750px;margin:0 auto">
+					<%=  shop_item.content.content.html_safe %>
+				</div>
+
+			</div>
+
+
+		</div>
+	</div>
+</div>
+
+<%= content_for :script do %>
+<script type="text/javascript">
+	
+	$(function(){
+
+		$('#compare_btn').click(function(){
+
+
+			var id = <%=  shop_item.id %>
+
+			var fversion = $('#fversion').val()
+			var sversion = $('#sversion').val();
+
+			var url = Routes.content_compare_path(id,fversion,sversion);
+
+			window.location.href = url;
+
+
+		});
+
+
+		$('#view_history').click(function(){
+			$('#history_res').toggle();
+
+		});
+
+		$('img').each(function(index,ele){
+
+
+			if($(ele).attr('data-ks-lazyload'))
+			{
+				$(ele).attr('src',$(ele).attr('data-ks-lazyload'));
+			}
+
+		});
+
+	});
+
+
+</script>
+<% end %>
+<%= yield :script if request.xhr? %>

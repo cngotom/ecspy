@@ -33,5 +33,24 @@ Ecspy::Application.configure do
   config.assets.compress = false
 
   # Expands the lines which load the assets
-  config.assets.debug = true
+  config.assets.debug = false
+
+  config.action_mailer.default_url_options = { :host => 'localhost:3000' }
+
+
+  config.action_mailer.perform_deliveries = false
+
 end
+
+ActionMailer::Base.delivery_method = :smtp  
+ActionMailer::Base.smtp_settings = {
+   :address              => "smtp.gmail.com",
+    :port                 => 587,
+    :domain               => 'gmail.com',
+    :user_name            => 'liuxingfeiyu',
+    :password             => '396263612sai',
+    :authentication       => 'plain',
+    :enable_starttls_auto => true
+}
+
+   

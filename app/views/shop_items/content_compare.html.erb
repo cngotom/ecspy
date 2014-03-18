@@ -1,13 +1,13 @@
 
 
-<div>
+<div class="row">
 	
-	<div style="width:50%;float:left">
+	<div class="col-xs-12 col-sm-6 col-md-6">
 		<%= @fcontent.html_safe %>
 	
 	</div>
 
-	<div style="width:50%;float:left">
+	<div class="col-xs-12 col-sm-6 col-md-6">
 		<%= @scontent.html_safe %>
 
 	</div>
@@ -15,7 +15,7 @@
 
 </div>
 
-
+<%= content_for :script do %>
 <script type="text/javascript">
 	
 $(function(){
@@ -35,3 +35,4 @@ $(function(){
 
 
 </script>
+<% end %>
