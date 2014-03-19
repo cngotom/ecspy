@@ -1,0 +1,951 @@
+Start item :37048489558
+pageStart
+wait for contfunction () {
+
+				 	 			$('#description>div.content img').each(function(index,ele)
+				 	 			{
+
+									if($(ele).attr('data-ks-lazyload'))
+									{
+										return false;
+									}
+				 	 			});
+
+
+				 	 			return $('#J_TabBar li:eq(2) a').html() != undefined && $('#description>div.content').html().trim()!='描述加载中';		
+				 	 		}
+wait for contfunction () {
+
+				 	 			$('#description>div.content img').each(function(index,ele)
+				 	 			{
+
+									if($(ele).attr('data-ks-lazyload'))
+									{
+										return false;
+									}
+				 	 			});
+
+
+				 	 			return $('#J_TabBar li:eq(2) a').html() != undefined && $('#description>div.content').html().trim()!='描述加载中';		
+				 	 		}
+wait for contfunction () {
+
+				 	 			$('#description>div.content img').each(function(index,ele)
+				 	 			{
+
+									if($(ele).attr('data-ks-lazyload'))
+									{
+										return false;
+									}
+				 	 			});
+
+
+				 	 			return $('#J_TabBar li:eq(2) a').html() != undefined && $('#description>div.content').html().trim()!='描述加载中';		
+				 	 		}
+wait for contfunction () {
+
+				 	 			$('#description>div.content img').each(function(index,ele)
+				 	 			{
+
+									if($(ele).attr('data-ks-lazyload'))
+									{
+										return false;
+									}
+				 	 			});
+
+
+				 	 			return $('#J_TabBar li:eq(2) a').html() != undefined && $('#description>div.content').html().trim()!='描述加载中';		
+				 	 		}
+wait for contfunction () {
+
+				 	 			$('#description>div.content img').each(function(index,ele)
+				 	 			{
+
+									if($(ele).attr('data-ks-lazyload'))
+									{
+										return false;
+									}
+				 	 			});
+
+
+				 	 			return $('#J_TabBar li:eq(2) a').html() != undefined && $('#description>div.content').html().trim()!='描述加载中';		
+				 	 		}
+wait for contfunction () {
+
+				 	 			$('#description>div.content img').each(function(index,ele)
+				 	 			{
+
+									if($(ele).attr('data-ks-lazyload'))
+									{
+										return false;
+									}
+				 	 			});
+
+
+				 	 			return $('#J_TabBar li:eq(2) a').html() != undefined && $('#description>div.content').html().trim()!='描述加载中';		
+				 	 		}
+wait for contfunction () {
+
+				 	 			$('#description>div.content img').each(function(index,ele)
+				 	 			{
+
+									if($(ele).attr('data-ks-lazyload'))
+									{
+										return false;
+									}
+				 	 			});
+
+
+				 	 			return $('#J_TabBar li:eq(2) a').html() != undefined && $('#description>div.content').html().trim()!='描述加载中';		
+				 	 		}
+wait for contfunction () {
+
+				 	 			$('#description>div.content img').each(function(index,ele)
+				 	 			{
+
+									if($(ele).attr('data-ks-lazyload'))
+									{
+										return false;
+									}
+				 	 			});
+
+
+				 	 			return $('#J_TabBar li:eq(2) a').html() != undefined && $('#description>div.content').html().trim()!='描述加载中';		
+				 	 		}
+wait for contfunction () {
+
+				 	 			$('#description>div.content img').each(function(index,ele)
+				 	 			{
+
+									if($(ele).attr('data-ks-lazyload'))
+									{
+										return false;
+									}
+				 	 			});
+
+
+				 	 			return $('#J_TabBar li:eq(2) a').html() != undefined && $('#description>div.content').html().trim()!='描述加载中';		
+				 	 		}
+Start item :37609460994
+pageStart
+wait for contfunction () {
+
+				 	 			$('#description>div.content img').each(function(index,ele)
+				 	 			{
+
+									if($(ele).attr('data-ks-lazyload'))
+									{
+										return false;
+									}
+				 	 			});
+
+
+				 	 			return $('#J_TabBar li:eq(2) a').html() != undefined && $('#description>div.content').html().trim()!='描述加载中';		
+				 	 		}
+J_showBuyerList is 月成交记录<span class="J_MonSales" style="display: inline; "><em class="J_TDealCount tm-MRswitchRecord">188</em>件</span>
+wait for contfunction () {
+	    											var pos = getElementAbsPos($('#J_showBuyerList')[0]);
+			 	 									window.scroll(pos.left,pos.top);
+
+	    											return $('#J_showBuyerList tr').length > 0;
+
+	    										}
+wait for contfunction () {
+	    											var pos = getElementAbsPos($('#J_showBuyerList')[0]);
+			 	 									window.scroll(pos.left,pos.top);
+
+	    											return $('#J_showBuyerList tr').length > 0;
+
+	    										}
+wait for contfunction () {
+	    											var pos = getElementAbsPos($('#J_showBuyerList')[0]);
+			 	 									window.scroll(pos.left,pos.top);
+
+	    											return $('#J_showBuyerList tr').length > 0;
+
+	    										}
+start page :0
+2014-03-18 17:08:08
+current: 1395133688
+start_time: 0
+2014-03-18 13:55:08
+current: 1395122108
+start_time: 0
+2014-03-18 13:32:49
+current: 1395120769
+start_time: 0
+2014-03-17 18:58:31
+current: 1395053911
+start_time: 0
+2014-03-17 16:44:52
+current: 1395045892
+start_time: 0
+2014-03-17 16:10:36
+current: 1395043836
+start_time: 0
+2014-03-17 15:56:04
+current: 1395042964
+start_time: 0
+2014-03-17 12:24:39
+current: 1395030279
+start_time: 0
+2014-03-17 09:38:22
+current: 1395020302
+start_time: 0
+2014-03-16 12:35:15
+current: 1394944515
+start_time: 0
+2014-03-16 11:27:13
+current: 1394940433
+start_time: 0
+2014-03-16 11:01:28
+current: 1394938888
+start_time: 0
+2014-03-16 10:56:53
+current: 1394938613
+start_time: 0
+2014-03-15 13:41:58
+current: 1394862118
+start_time: 0
+2014-03-15 09:38:04
+current: 1394847484
+start_time: 0
+wait for contfunction () {
+
+			    									var currentValue = $('#J_showBuyerList tr:eq(1)').html();
+			    									if(nowTrValue == currentValue)
+			    										return false;
+			    									else{
+			    										nowTrValue = currentValue;
+			    										return true;
+			    									}
+
+			    								}
+start page :1
+2014-03-15 08:59:46
+current: 1394845186
+start_time: 0
+2014-03-15 08:48:14
+current: 1394844494
+start_time: 0
+2014-03-13 13:03:27
+current: 1394687007
+start_time: 0
+2014-03-13 11:08:05
+current: 1394680085
+start_time: 0
+2014-03-13 10:39:18
+current: 1394678358
+start_time: 0
+2014-03-13 09:48:39
+current: 1394675319
+start_time: 0
+2014-03-13 09:14:01
+current: 1394673241
+start_time: 0
+2014-03-12 20:22:23
+current: 1394626943
+start_time: 0
+2014-03-12 13:36:27
+current: 1394602587
+start_time: 0
+2014-03-12 09:39:34
+current: 1394588374
+start_time: 0
+2014-03-12 07:52:24
+current: 1394581944
+start_time: 0
+2014-03-11 20:37:36
+current: 1394541456
+start_time: 0
+2014-03-11 15:46:35
+current: 1394523995
+start_time: 0
+2014-03-11 11:24:56
+current: 1394508296
+start_time: 0
+2014-03-10 21:54:00
+current: 1394459640
+start_time: 0
+wait for contfunction () {
+
+			    									var currentValue = $('#J_showBuyerList tr:eq(1)').html();
+			    									if(nowTrValue == currentValue)
+			    										return false;
+			    									else{
+			    										nowTrValue = currentValue;
+			    										return true;
+			    									}
+
+			    								}
+Start item :37609460994
+pageStart
+wait for contfunction () {
+
+				 	 			$('#description>div.content img').each(function(index,ele)
+				 	 			{
+
+									if($(ele).attr('data-ks-lazyload'))
+									{
+										return false;
+									}
+				 	 			});
+
+
+				 	 			return $('#J_TabBar li:eq(2) a').html() != undefined && $('#description>div.content').html().trim()!='描述加载中';		
+				 	 		}
+J_showBuyerList is 月成交记录<span class="J_MonSales" style="display: inline; "><em class="J_TDealCount tm-MRswitchRecord">188</em>件</span>
+wait for contfunction () {
+	    											var pos = getElementAbsPos($('#J_showBuyerList')[0]);
+			 	 									window.scroll(pos.left,pos.top);
+
+	    											return $('#J_showBuyerList tr').length > 0;
+
+	    										}
+wait for contfunction () {
+	    											var pos = getElementAbsPos($('#J_showBuyerList')[0]);
+			 	 									window.scroll(pos.left,pos.top);
+
+	    											return $('#J_showBuyerList tr').length > 0;
+
+	    										}
+start page :0
+2014-03-18 17:08:08
+current: 1395133688
+start_time: 0
+2014-03-18 13:55:08
+current: 1395122108
+start_time: 0
+2014-03-18 13:32:49
+current: 1395120769
+start_time: 0
+2014-03-17 18:58:31
+current: 1395053911
+start_time: 0
+2014-03-17 16:44:52
+current: 1395045892
+start_time: 0
+2014-03-17 16:10:36
+current: 1395043836
+start_time: 0
+2014-03-17 15:56:04
+current: 1395042964
+start_time: 0
+2014-03-17 12:24:39
+current: 1395030279
+start_time: 0
+2014-03-17 09:38:22
+current: 1395020302
+start_time: 0
+2014-03-16 12:35:15
+current: 1394944515
+start_time: 0
+2014-03-16 11:27:13
+current: 1394940433
+start_time: 0
+2014-03-16 11:01:28
+current: 1394938888
+start_time: 0
+2014-03-16 10:56:53
+current: 1394938613
+start_time: 0
+2014-03-15 13:41:58
+current: 1394862118
+start_time: 0
+2014-03-15 09:38:04
+current: 1394847484
+start_time: 0
+wait for contfunction () {
+
+			    									var currentValue = $('#J_showBuyerList tr:eq(1)').html();
+			    									if(nowTrValue == currentValue)
+			    										return false;
+			    									else{
+			    										nowTrValue = currentValue;
+			    										return true;
+			    									}
+
+			    								}
+start page :1
+2014-03-15 08:59:46
+current: 1394845186
+start_time: 0
+2014-03-15 08:48:14
+current: 1394844494
+start_time: 0
+2014-03-13 13:03:27
+current: 1394687007
+start_time: 0
+2014-03-13 11:08:05
+current: 1394680085
+start_time: 0
+2014-03-13 10:39:18
+current: 1394678358
+start_time: 0
+2014-03-13 09:48:39
+current: 1394675319
+start_time: 0
+2014-03-13 09:14:01
+current: 1394673241
+start_time: 0
+2014-03-12 20:22:23
+current: 1394626943
+start_time: 0
+2014-03-12 13:36:27
+current: 1394602587
+start_time: 0
+2014-03-12 09:39:34
+current: 1394588374
+start_time: 0
+2014-03-12 07:52:24
+current: 1394581944
+start_time: 0
+2014-03-11 20:37:36
+current: 1394541456
+start_time: 0
+2014-03-11 15:46:35
+current: 1394523995
+start_time: 0
+2014-03-11 11:24:56
+current: 1394508296
+start_time: 0
+2014-03-10 21:54:00
+current: 1394459640
+start_time: 0
+wait for contfunction () {
+
+			    									var currentValue = $('#J_showBuyerList tr:eq(1)').html();
+			    									if(nowTrValue == currentValue)
+			    										return false;
+			    									else{
+			    										nowTrValue = currentValue;
+			    										return true;
+			    									}
+
+			    								}
+start page :2
+2014-03-10 19:34:09
+current: 1394451249
+start_time: 0
+2014-03-10 19:21:28
+current: 1394450488
+start_time: 0
+2014-03-10 13:23:15
+current: 1394428995
+start_time: 0
+2014-03-10 11:32:23
+current: 1394422343
+start_time: 0
+2014-03-09 21:18:38
+current: 1394371118
+start_time: 0
+2014-03-09 13:28:46
+current: 1394342926
+start_time: 0
+2014-03-09 09:07:23
+current: 1394327243
+start_time: 0
+2014-03-08 15:36:13
+current: 1394264173
+start_time: 0
+2014-03-05 21:10:11
+current: 1394025011
+start_time: 0
+2014-03-05 11:36:38
+current: 1393990598
+start_time: 0
+2014-03-04 22:11:03
+current: 1393942263
+start_time: 0
+2014-03-04 21:14:30
+current: 1393938870
+start_time: 0
+2014-03-04 21:03:35
+current: 1393938215
+start_time: 0
+2014-03-04 16:31:38
+current: 1393921898
+start_time: 0
+2014-03-04 16:22:04
+current: 1393921324
+start_time: 0
+wait for contfunction () {
+
+			    									var currentValue = $('#J_showBuyerList tr:eq(1)').html();
+			    									if(nowTrValue == currentValue)
+			    										return false;
+			    									else{
+			    										nowTrValue = currentValue;
+			    										return true;
+			    									}
+
+			    								}
+start page :3
+2014-03-04 15:32:48
+current: 1393918368
+start_time: 0
+2014-03-04 14:39:29
+current: 1393915169
+start_time: 0
+Start item :37609460994
+pageStart
+wait for contfunction () {
+
+				 	 			$('#description>div.content img').each(function(index,ele)
+				 	 			{
+
+									if($(ele).attr('data-ks-lazyload'))
+									{
+										return false;
+									}
+				 	 			});
+
+
+				 	 			return $('#J_TabBar li:eq(2) a').html() != undefined && $('#description>div.content').html().trim()!='描述加载中';		
+				 	 		}
+wait for contfunction () {
+
+				 	 			$('#description>div.content img').each(function(index,ele)
+				 	 			{
+
+									if($(ele).attr('data-ks-lazyload'))
+									{
+										return false;
+									}
+				 	 			});
+
+
+				 	 			return $('#J_TabBar li:eq(2) a').html() != undefined && $('#description>div.content').html().trim()!='描述加载中';		
+				 	 		}
+TypeError: 'undefined' is not an object (evaluating 'this.handles.push')
+J_showBuyerList is 月成交记录<span class="J_MonSales" style="display: inline; "><em class="J_TDealCount tm-MRswitchRecord">188</em>件</span>
+wait for contfunction () {
+	    											var pos = getElementAbsPos($('#J_showBuyerList')[0]);
+			 	 									window.scroll(pos.left,pos.top);
+
+	    											return $('#J_showBuyerList tr').length > 0;
+
+	    										}
+wait for contfunction () {
+	    											var pos = getElementAbsPos($('#J_showBuyerList')[0]);
+			 	 									window.scroll(pos.left,pos.top);
+
+	    											return $('#J_showBuyerList tr').length > 0;
+
+	    										}
+wait for contfunction () {
+	    											var pos = getElementAbsPos($('#J_showBuyerList')[0]);
+			 	 									window.scroll(pos.left,pos.top);
+
+	    											return $('#J_showBuyerList tr').length > 0;
+
+	    										}
+start page :0
+2014-03-18 17:08:08
+current: 1395133688
+start_time: 0
+2014-03-18 13:55:08
+current: 1395122108
+start_time: 0
+2014-03-18 13:32:49
+current: 1395120769
+start_time: 0
+2014-03-17 18:58:31
+current: 1395053911
+start_time: 0
+2014-03-17 16:44:52
+current: 1395045892
+start_time: 0
+2014-03-17 16:10:36
+current: 1395043836
+start_time: 0
+2014-03-17 15:56:04
+current: 1395042964
+start_time: 0
+2014-03-17 12:24:39
+current: 1395030279
+start_time: 0
+2014-03-17 09:38:22
+current: 1395020302
+start_time: 0
+2014-03-16 12:35:15
+current: 1394944515
+start_time: 0
+2014-03-16 11:27:13
+current: 1394940433
+start_time: 0
+2014-03-16 11:01:28
+current: 1394938888
+start_time: 0
+2014-03-16 10:56:53
+current: 1394938613
+start_time: 0
+2014-03-15 13:41:58
+current: 1394862118
+start_time: 0
+2014-03-15 09:38:04
+current: 1394847484
+start_time: 0
+wait for contfunction () {
+
+			    									var currentValue = $('#J_showBuyerList tr:eq(1)').html();
+			    									if(nowTrValue == currentValue)
+			    										return false;
+			    									else{
+			    										nowTrValue = currentValue;
+			    										return true;
+			    									}
+
+			    								}
+start page :1
+2014-03-15 08:59:46
+current: 1394845186
+start_time: 0
+2014-03-15 08:48:14
+current: 1394844494
+start_time: 0
+2014-03-13 13:03:27
+current: 1394687007
+start_time: 0
+2014-03-13 11:08:05
+current: 1394680085
+start_time: 0
+2014-03-13 10:39:18
+current: 1394678358
+start_time: 0
+2014-03-13 09:48:39
+current: 1394675319
+start_time: 0
+2014-03-13 09:14:01
+current: 1394673241
+start_time: 0
+2014-03-12 20:22:23
+current: 1394626943
+start_time: 0
+2014-03-12 13:36:27
+current: 1394602587
+start_time: 0
+2014-03-12 09:39:34
+current: 1394588374
+start_time: 0
+2014-03-12 07:52:24
+current: 1394581944
+start_time: 0
+2014-03-11 20:37:36
+current: 1394541456
+start_time: 0
+2014-03-11 15:46:35
+current: 1394523995
+start_time: 0
+2014-03-11 11:24:56
+current: 1394508296
+start_time: 0
+2014-03-10 21:54:00
+current: 1394459640
+start_time: 0
+wait for contfunction () {
+
+			    									var currentValue = $('#J_showBuyerList tr:eq(1)').html();
+			    									if(nowTrValue == currentValue)
+			    										return false;
+			    									else{
+			    										nowTrValue = currentValue;
+			    										return true;
+			    									}
+
+			    								}
+start page :2
+2014-03-10 19:34:09
+current: 1394451249
+start_time: 0
+2014-03-10 19:21:28
+current: 1394450488
+start_time: 0
+2014-03-10 13:23:15
+current: 1394428995
+start_time: 0
+2014-03-10 11:32:23
+current: 1394422343
+start_time: 0
+2014-03-09 21:18:38
+current: 1394371118
+start_time: 0
+2014-03-09 13:28:46
+current: 1394342926
+start_time: 0
+2014-03-09 09:07:23
+current: 1394327243
+start_time: 0
+2014-03-08 15:36:13
+current: 1394264173
+start_time: 0
+2014-03-05 21:10:11
+current: 1394025011
+start_time: 0
+2014-03-05 11:36:38
+current: 1393990598
+start_time: 0
+2014-03-04 22:11:03
+current: 1393942263
+start_time: 0
+2014-03-04 21:14:30
+current: 1393938870
+start_time: 0
+2014-03-04 21:03:35
+current: 1393938215
+start_time: 0
+2014-03-04 16:31:38
+current: 1393921898
+start_time: 0
+2014-03-04 16:22:04
+current: 1393921324
+start_time: 0
+wait for contfunction () {
+
+			    									var currentValue = $('#J_showBuyerList tr:eq(1)').html();
+			    									if(nowTrValue == currentValue)
+			    										return false;
+			    									else{
+			    										nowTrValue = currentValue;
+			    										return true;
+			    									}
+
+			    								}
+start page :3
+2014-03-04 15:32:48
+current: 1393918368
+start_time: 0
+2014-03-04 14:39:29
+current: 1393915169
+start_time: 0
+Start item :37609460994
+pageStart
+wait for contfunction () {
+
+				 	 			$('#description>div.content img').each(function(index,ele)
+				 	 			{
+
+									if($(ele).attr('data-ks-lazyload'))
+									{
+										return false;
+									}
+				 	 			});
+
+
+				 	 			return $('#J_TabBar li:eq(2) a').html() != undefined && $('#description>div.content').html().trim()!='描述加载中';		
+				 	 		}
+wait for contfunction () {
+
+				 	 			$('#description>div.content img').each(function(index,ele)
+				 	 			{
+
+									if($(ele).attr('data-ks-lazyload'))
+									{
+										return false;
+									}
+				 	 			});
+
+
+				 	 			return $('#J_TabBar li:eq(2) a').html() != undefined && $('#description>div.content').html().trim()!='描述加载中';		
+				 	 		}
+Error:TypeError: 'undefined' is not an object (evaluating 'this.handles.push')
+J_showBuyerList is 月成交记录<span class="J_MonSales" style="display: inline; "><em class="J_TDealCount tm-MRswitchRecord">188</em>件</span>
+wait for contfunction () {
+	    											var pos = getElementAbsPos($('#J_showBuyerList')[0]);
+			 	 									window.scroll(pos.left,pos.top);
+
+	    											return $('#J_showBuyerList tr').length > 0;
+
+	    										}
+wait for contfunction () {
+	    											var pos = getElementAbsPos($('#J_showBuyerList')[0]);
+			 	 									window.scroll(pos.left,pos.top);
+
+	    											return $('#J_showBuyerList tr').length > 0;
+
+	    										}
+wait for contfunction () {
+	    											var pos = getElementAbsPos($('#J_showBuyerList')[0]);
+			 	 									window.scroll(pos.left,pos.top);
+
+	    											return $('#J_showBuyerList tr').length > 0;
+
+	    										}
+start page :0
+2014-03-18 17:08:08
+current: 1395133688
+start_time: 0
+2014-03-18 13:55:08
+current: 1395122108
+start_time: 0
+2014-03-18 13:32:49
+current: 1395120769
+start_time: 0
+2014-03-17 18:58:31
+current: 1395053911
+start_time: 0
+2014-03-17 16:44:52
+current: 1395045892
+start_time: 0
+2014-03-17 16:10:36
+current: 1395043836
+start_time: 0
+2014-03-17 15:56:04
+current: 1395042964
+start_time: 0
+2014-03-17 12:24:39
+current: 1395030279
+start_time: 0
+2014-03-17 09:38:22
+current: 1395020302
+start_time: 0
+2014-03-16 12:35:15
+current: 1394944515
+start_time: 0
+2014-03-16 11:27:13
+current: 1394940433
+start_time: 0
+2014-03-16 11:01:28
+current: 1394938888
+start_time: 0
+2014-03-16 10:56:53
+current: 1394938613
+start_time: 0
+2014-03-15 13:41:58
+current: 1394862118
+start_time: 0
+2014-03-15 09:38:04
+current: 1394847484
+start_time: 0
+wait for contfunction () {
+
+			    									var currentValue = $('#J_showBuyerList tr:eq(1)').html();
+			    									if(nowTrValue == currentValue)
+			    										return false;
+			    									else{
+			    										nowTrValue = currentValue;
+			    										return true;
+			    									}
+
+			    								}
+start page :1
+2014-03-15 08:59:46
+current: 1394845186
+start_time: 0
+2014-03-15 08:48:14
+current: 1394844494
+start_time: 0
+2014-03-13 13:03:27
+current: 1394687007
+start_time: 0
+2014-03-13 11:08:05
+current: 1394680085
+start_time: 0
+2014-03-13 10:39:18
+current: 1394678358
+start_time: 0
+2014-03-13 09:48:39
+current: 1394675319
+start_time: 0
+2014-03-13 09:14:01
+current: 1394673241
+start_time: 0
+2014-03-12 20:22:23
+current: 1394626943
+start_time: 0
+2014-03-12 13:36:27
+current: 1394602587
+start_time: 0
+2014-03-12 09:39:34
+current: 1394588374
+start_time: 0
+2014-03-12 07:52:24
+current: 1394581944
+start_time: 0
+2014-03-11 20:37:36
+current: 1394541456
+start_time: 0
+2014-03-11 15:46:35
+current: 1394523995
+start_time: 0
+2014-03-11 11:24:56
+current: 1394508296
+start_time: 0
+2014-03-10 21:54:00
+current: 1394459640
+start_time: 0
+wait for contfunction () {
+
+			    									var currentValue = $('#J_showBuyerList tr:eq(1)').html();
+			    									if(nowTrValue == currentValue)
+			    										return false;
+			    									else{
+			    										nowTrValue = currentValue;
+			    										return true;
+			    									}
+
+			    								}
+start page :2
+2014-03-10 19:34:09
+current: 1394451249
+start_time: 0
+2014-03-10 19:21:28
+current: 1394450488
+start_time: 0
+2014-03-10 13:23:15
+current: 1394428995
+start_time: 0
+2014-03-10 11:32:23
+current: 1394422343
+start_time: 0
+2014-03-09 21:18:38
+current: 1394371118
+start_time: 0
+2014-03-09 13:28:46
+current: 1394342926
+start_time: 0
+2014-03-09 09:07:23
+current: 1394327243
+start_time: 0
+2014-03-08 15:36:13
+current: 1394264173
+start_time: 0
+2014-03-05 21:10:11
+current: 1394025011
+start_time: 0
+2014-03-05 11:36:38
+current: 1393990598
+start_time: 0
+2014-03-04 22:11:03
+current: 1393942263
+start_time: 0
+2014-03-04 21:14:30
+current: 1393938870
+start_time: 0
+2014-03-04 21:03:35
+current: 1393938215
+start_time: 0
+2014-03-04 16:31:38
+current: 1393921898
+start_time: 0
+2014-03-04 16:22:04
+current: 1393921324
+start_time: 0
+wait for contfunction () {
+
+			    									var currentValue = $('#J_showBuyerList tr:eq(1)').html();
+			    									if(nowTrValue == currentValue)
+			    										return false;
+			    									else{
+			    										nowTrValue = currentValue;
+			    										return true;
+			    									}
+
+			    								}
+start page :3
+2014-03-04 15:32:48
+current: 1393918368
+start_time: 0
+2014-03-04 14:39:29
+current: 1393915169
+start_time: 0
