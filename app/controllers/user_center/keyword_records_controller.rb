@@ -23,8 +23,8 @@ class UserCenter::KeywordRecordsController < ApplicationController
 		if ShopKeywordRecord.where(['created_at > ?',last_time]).size == 0
 			last_time = last_time - 1.day
 		end
-		@records = initialize_grid(
-		  ShopKeywordRecord.includes(:shop,:shop_item,:shop_keyword).select('shop_keywords.user_id').where("user_id = 1 ").where(['
+		@records = initialize_grid(                                                                #where("user_id = 1 ")
+		  ShopKeywordRecord.includes(:shop,:shop_item,:shop_keyword).select('shop_keywords.user_id').where("user_id = #{current_user.id}").where(['
 
 		  	shop_keyword_records.created_at >=?',last_time]),
 
