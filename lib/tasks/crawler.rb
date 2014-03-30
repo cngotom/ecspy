@@ -301,6 +301,8 @@ module Crawler
 
 	class ZTC
 		extend Crawler
+		extend Resque::Plugins::JobStats
+		
 		RedisKey = 'RedisZTCKey'
 		@queue='ztc'
 

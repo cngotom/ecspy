@@ -19,6 +19,10 @@ class Keyword
 	extend Resque::Plugins::JobStats
 end
 
+class ZTC
+	extend Resque::Plugins::JobStats
+end
+
 
 end
 
