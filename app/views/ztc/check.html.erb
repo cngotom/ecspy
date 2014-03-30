@@ -1,0 +1,146 @@
+<style type="text/css">
+	.ztc_img{
+		width: 50px;
+		height: 50px;
+	}
+
+</style>
+<section id="widget-grid" class="">
+	
+	<!-- row -->
+	<div class="row">
+	
+		<!-- NEW WIDGET START -->
+		<article class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+	
+
+			
+		<div class="jarviswidget" id="wid-id-0" data-widget-colorbutton="false" data-widget-editbutton="false">
+			
+			<header>
+				<span class="widget-icon"> <i class="fa fa-eye"></i> </span>
+				<h2>直通车查询</h2>
+
+			</header>
+
+			<!-- widget div-->
+			<div>
+				<%= form_tag(ztc_save_path, method: "post") do %>
+					<!-- widget edit box -->
+					<div class="jarviswidget-editbox">
+						<!-- This area used as dropdown edit box -->
+
+					</div>
+					<!-- end widget edit box -->
+
+					<!-- widget content -->
+					<div class="widget-body">
+
+
+						<h3> 1、选择对象 </h3>
+						<%= label_tag(:keyword, "输入关键字：") %>
+	 					<%= text_field_tag(:keyword) %>	
+					
+
+						<%= button_tag("搜索",:id=>'search_btn',:type => 'button') %>
+						<%= button_tag("清空",:id=>'clear_btn',:type => 'button') %>
+
+						<div class='result row' >
+							
+						</div>
+		
+						<h3> 2、参数配置 </h3>
+						<%= label_tag(:count, "点击次数：") %>
+	 					<%= text_field_tag(:count,500) %>	<br>
+
+	 					<%= label_tag(:proxy, "代理地址：") %>
+	 					<%= text_field_tag(:proxy) %>	
+						<hr>
+						<%= submit_tag("开刷！") %>
+					</div>
+				<%end %>
+			</div>
+		</div>
+
+
+		</article>
+</div>
+</section>
+<script id="key-results-tmp" type="text/html">
+<ul>
+    <! for(i = 0; i < list.length; i ++) {  !>
+        <li class="col-xs-12 col-sm-12 col-md-6 col-lg-6"> 
+        	 <input name="items[]" type="checkbox" value="<!=list[i].id!> ">
+
+        	 <a target="_blank"  href="<!=list[i].link!>"> <!= list[i].title !> </a>  <a target="_blank" href="<!=list[i].img!>" ><img class="ztc_img" src="<!=list[i].img!>" /> </a>
+
+        </li>
+    <! } !>
+</ul>
+</script>
+
+
+<%= content_for :script do %>
+<script type="text/javascript">
+	
+	$(function(){
+
+		template.openTag = "<!";
+		template.closeTag = "!>";
+
+
+		
+        var spinner = new Spinner();
+		//select all
+		$('#search_btn').click(function(){
+			if($('#keyword').val() != '')
+			{
+				$('#search_btn').attr('disabled',true);
+				$.ajax({
+					'type':'get',
+					'url':'<%=ztc_check_path :format => "json"%>',
+					'dataType':'json',
+					'data':{'keyword':$('#keyword').val()},
+					beforeSend: function () {
+	                    //异步请求时spinner出现
+	                     var target = $(".widget-body").get(0);
+	                    spinner.spin(target);                    
+	                },
+					'success':function(data){
+						var reswrapper = $('.result')
+
+						var html = template.render('key-results-tmp', {list:data})
+						reswrapper.append(html);
+						spinner.spin();
+						$('#search_btn').attr('disabled',false);
+					}
+
+
+				})
+			}
+
+		});
+		//clear
+		$('#clear_btn').click(function(){
+			$('.result').html('');
+		})
+		//validate form
+		$('form').submit(function() {
+			var error = '';
+
+			if($("input[name='items[]']:checked").length == 0)
+				error += '至少应选择一个产品';
+
+
+			if(error!='')
+			{
+				alert(error);
+				return false;
+			}
+
+	        return true; // return false to cancel form action
+	    });
+	})
+
+</script>
+<% end %>

@@ -1,4 +1,5 @@
 require 'redis'
+require 'resque'
 require 'ostruct'
 
 
@@ -16,6 +17,7 @@ module Crawler
 
 	Exec = 'phantomjs  --load-images=no'
 	ExecTB = 'phantomjs --load-images=yes'
+	SlimerJS= 'slimerjs '
 	Debug = '--debug=yes'
 
 	GetListLog = "log/phantomjs/getlist.log"
@@ -28,6 +30,11 @@ module Crawler
 
 	GetKeywordRes = "log/phantomjs/getkeyword.res"
 	GetKeywordLog = "log/phantomjs/getkeyword.log"
+
+
+	GetZTCRes = "log/phantomjs/getztc.res"
+	GetZTCLog = "log/phantomjs/getztc.log"
+
 
 	def exec_with_timeout(cmd,timeout = 60,max_retry = 0)
 		begin
@@ -279,15 +286,122 @@ module Crawler
 				open(out_file) do |out|
 					keyword_redis_client.add out.read
 				end
+
+				keyword_redis_client.close
 			end
 			File.delete out_file if File.exist?(out_file)
-			keyword_redis_client.close
 			if retn.chomp != 'ok'
 				raise 'error'
 			end
 
 		end
 
+	end
+
+
+	class ZTC
+		extend Crawler
+		RedisKey = 'RedisZTCKey'
+		@queue='ztc'
+
+
+		def self.redis
+			@redis ||= Redis.new(:host => ResqueAddr, :port => 6379)
+
+		end
+
+
+		def self.get_ztc_list(key)
+			out_file_ext = Time.new.strftime('.%Y-%m-%d-%H-%M')
+			out_file = "#{GetZTCRes}-#{Process.pid}#{out_file_ext}"
+
+
+			key.extend GBKConvert
+			run_exe = "#{Exec} #{ScriptDir}/getztc.js #{key.to_gbk}  #{out_file} #{GetZTCLog}"
+
+			puts run_exe
+			retn = exec_with_timeout(run_exe)
+			
+			if retn.chomp == 'ok'
+				puts 'execute ok'
+				if File.exist?(out_file)
+					res = open(out_file).read
+				end
+			end
+
+			File.delete out_file if File.exist?(out_file)
+			res
+		end
+
+
+		def self.get_job_list
+			redis.lrange RedisKey,0,-1
+		end
+
+
+		def self.generate_jobs(arr)
+			#save count
+			arr = arr.dup
+			count = arr['count'].to_i
+
+
+			#save job id
+			start = redis.llen RedisKey
+			arr['id'] = start.to_i
+			arr['time'] = Time.now
+			redis.lpush RedisKey,JSON.generate(arr)
+
+			#init
+			redis.set "#{RedisKey}:#{arr['id']}",0
+
+			arr.delete 'count'
+			arr.delete 'time'
+			#generate jobs
+			count.times do |i|
+				Resque.enqueue(Crawler::ZTC,arr)
+			end
+
+		end
+
+		def self.get_job_done_count(id)
+			res = redis.get "#{RedisKey}:#{id}"
+			res.to_i
+		end
+
+
+		def self.clear_all
+			redis.del RedisKey
+			Resque::Job.destroy(@queue, self.name)
+		end
+
+		# def self.after_enqueue(keyword,item_id,proxy)
+		# 	puts 'after enque'
+		# end
+
+
+		def self.perform(arr)
+			keyword = arr['keyword']
+			item_id = arr['item_id']
+			proxy = arr['proxy']
+			proxystr = ''
+			proxystr = " --proxy-type=http --proxy=#{proxy}" if proxy
+ 
+			keyword.extend GBKConvert
+			keyword.to_gbk
+
+			run_exe = "#{Exec}  #{proxystr} #{ScriptDir}/clickztc.js #{keyword.to_gbk} #{item_id} #{GetZTCLog} #{GetZTCLog}"#no need outfile 
+			puts run_exe
+			retn = exec_with_timeout(run_exe)
+
+			puts retn
+		end
+
+
+
+
+		def self.after_perform(arr)#id,keyword,item_id,proxy)
+			redis.incr "#{RedisKey}:#{arr['id']}"
+		end
 	end
 
 

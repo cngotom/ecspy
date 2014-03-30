@@ -26,6 +26,8 @@
  *=require ./plugin/datatables/ZeroClipboard
  *=require ./plugin/datatables/media/js/TableTools.min
  *=require ./plugin/datatables/DT_bootstrap
+ *=require ./spin.min
+ *=require ./template
 
  * require demo
  */

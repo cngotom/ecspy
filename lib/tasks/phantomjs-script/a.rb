@@ -18,5 +18,5 @@ str.extend GBKConvert
 
 puts str.to_gbk
 
-
-puts `phantomjs  getsearch.js #{str.to_gbk} a.out a.log`
+puts "phantomjs  getztc.js #{str.to_gbk} a.out a.log"
+puts `phantomjs  getztc.js #{str.to_gbk} a.out a.log`

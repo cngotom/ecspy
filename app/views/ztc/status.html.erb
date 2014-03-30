@@ -1,0 +1,111 @@
+<section id="widget-grid" class="">
+	
+	<!-- row -->
+	<div class="row">
+	
+		<!-- NEW WIDGET START -->
+		<article class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+	
+
+			<% if flash[:notice] %>
+				<div class="alert alert-notice">
+					<strong><%= flash[:notice] %></strong>
+				</div>
+			<% end %>
+
+
+			
+
+
+			
+
+			<div class="jarviswidget jarviswidget-color-darken" id="wid-id-1" data-widget-editbutton="false">
+				<header>
+					<span class="widget-icon"> <i class="fa fa-table"></i> </span>
+					<h2> 任务队列 
+						
+					</h2>
+				</header>
+				<div>
+				
+					<!-- widget edit box -->
+					<div class="jarviswidget-editbox">
+						<!-- This area used as dropdown edit box -->
+
+					</div>
+					<!-- end widget edit box -->
+
+					<!-- widget content -->
+					<div class="widget-body no-padding">
+									
+						<div class="widget-body-toolbar">
+								<div class="text-right">
+									<%= link_to ztc_clear_path ,class:'btn btn-primary',method:'post' do%>
+										<i class="fa fa-plus"></i>清空
+									<% end %> 
+						 		</div> 
+							</div>	
+						<table class="table" id="shop_keyword_tabel" class="table table-striped table-bordered smart-form">
+							<thead>
+								<tr> 
+									<Th> 任务id</th>
+
+									<th> 关键字 </th>
+
+									<th> 产品id </th>
+
+									<th> 点击次数 </th>
+
+									<th> 完成次数 </th>
+
+									<th> 开始时间 </th>
+								</tr>
+							</thred>
+
+							<tbody>
+								<% @jobs_list.each do |job| %>
+									<tr>	
+										<td><%= job['id']%></td>
+										<td><%= job['keyword']%></td>
+										<td><%= job['item_id']%></td>
+										<td><%= job['count']%></td>
+										<td><%= job['done']%></td>
+										<td><%= job['time']%></td>
+
+									</tr>
+								       
+								<% end %>
+
+							</tbody>
+
+						</table>
+					</div>
+										<!-- end widget content -->
+					
+				</div>
+					<!-- end widget div -->
+
+			</div>
+			<!-- end widget -->
+
+
+		</article>
+
+	</div>
+
+</section>
+
+
+<ul>
+	
+	
+
+</ul>
+
+<%= content_for :script do %>
+<script type="text/javascript">
+	
+	
+
+</script>
+<% end %>

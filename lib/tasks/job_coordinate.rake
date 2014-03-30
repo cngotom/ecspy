@@ -39,6 +39,14 @@ task :job_info do
 	puts  Crawler::ItemListRedis.size
 end
 
+task :job_ztc_coord =>:environment do
+	args = {
+		'id' => '1',
+		'count'=>5
+	}
+	Crawler::ZTC.generate_jobs args
+end
+
 task :job_coord => :environment do
 	lock('job_coord.pid') do
 		if Resque.info[:pending] == 0 && Crawler::ItemListRedis.merged?

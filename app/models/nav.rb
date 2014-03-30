@@ -3,7 +3,7 @@ class Nav
 	
 	class << self
 		delegate :user_root_path,:user_center_keywords_path,:user_center_keyword_records_path,:user_center_shops_path,
-		:new_user_center_keyword_path,:user_center_shop_path,:new_user_center_shop_path,:user_center_items_path, to: 'Rails.application.routes.url_helpers' 
+		:new_user_center_keyword_path,:user_center_shop_path,:new_user_center_shop_path,:user_center_items_path,:ztc_check_path,:ztc_status_path, to: 'Rails.application.routes.url_helpers' 
 	end
 
 	NavGrid = {
@@ -48,6 +48,24 @@ class Nav
 						'title' => '新增',
 						'url' => new_user_center_shop_path
 				},
+
+			}
+
+		},
+		'ztc' =>{
+			'title' => '直通车助手',
+			'icon' => 'fa-truck',
+			'sub' => {
+
+				'check' => {
+					'title' => '直通车查询',
+					'url' => ztc_check_path
+				} ,
+				'status' =>{
+					'title' => '工作状态',
+					'url' => ztc_status_path
+				}
+				
 
 			}
 

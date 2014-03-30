@@ -1,0 +1,2 @@
+module ZtcHelper
+end
