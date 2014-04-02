@@ -302,7 +302,7 @@ module Crawler
 	class ZTC
 		extend Crawler
 		extend Resque::Plugins::JobStats
-		
+
 		RedisKey = 'RedisZTCKey'
 		@queue='ztc'
 
@@ -313,14 +313,15 @@ module Crawler
 		end
 
 
-		def self.get_ztc_list(key)
+		def self.get_ztc_list(key,proxy = nil)
 			out_file_ext = Time.new.strftime('.%Y-%m-%d-%H-%M')
 			out_file = "#{GetZTCRes}-#{Process.pid}#{out_file_ext}"
 
 
 			key.extend GBKConvert
-			run_exe = "#{Exec} #{ScriptDir}/getztc.js #{key.to_gbk}  #{out_file} #{GetZTCLog}"
+			run_exe = "#{Exec} --load-images=no #{ScriptDir}/getztc.js #{key.to_gbk}  #{out_file} #{GetZTCLog}"
 
+			run_exe = "#{Exec} --load-images=no  --proxy-type=http --proxy=#{proxy} #{ScriptDir}/getztc.js #{key.to_gbk}  #{out_file} #{GetZTCLog}"	if proxy && !proxy.empty?
 			puts run_exe
 			retn = exec_with_timeout(run_exe)
 			

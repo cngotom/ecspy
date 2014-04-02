@@ -49,9 +49,6 @@ def valide_proxy(host,port)
 		puts $!
 		false
 	end
-
-	
-
 end
 
 
@@ -64,11 +61,11 @@ if res['status'] == 0
 		puts "begin test #{host}"
 		if valide_proxy(host,port)
 			puts "#{host} #{port} OK" 
-			3.times do 
-				run = "slimerjs --proxy-type=http --proxy=#{host}:#{port} --load-images=no clickztc.js 黄瓜籽粉 15972071484  a.out a.log"
-				puts run
-				puts exec_with_timeout(run)
-			end
+			# 3.times do 
+			# 	run = "slimerjs --proxy-type=http --proxy=#{host}:#{port} --load-images=no clickztc.js 黄瓜籽粉 15972071484  a.out a.log"
+			# 	puts run
+			# 	puts exec_with_timeout(run)
+			# end
 		end
 	end
 end

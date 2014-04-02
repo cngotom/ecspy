@@ -37,7 +37,19 @@
 					<div class="widget-body">
 
 
-						<h3> 1、选择对象 </h3>
+						<h3> 1、参数配置 </h3>
+						
+	 					<%= label_tag(:proxy, "代理地址：") %>
+	 					<%= text_field_tag(:proxy) %>	
+						<%= button_tag("获取",:id=>'proxy_btn',:type => 'button') %><br>
+	
+
+						<%= label_tag(:count, "点击次数：") %>
+	 					<%= text_field_tag(:count,200) %>	
+
+
+
+						<h3> 2、选择对象 </h3>
 						<%= label_tag(:keyword, "输入关键字：") %>
 	 					<%= text_field_tag(:keyword) %>	
 					
@@ -49,12 +61,7 @@
 							
 						</div>
 		
-						<h3> 2、参数配置 </h3>
-						<%= label_tag(:count, "点击次数：") %>
-	 					<%= text_field_tag(:count,500) %>	<br>
-
-	 					<%= label_tag(:proxy, "代理地址：") %>
-	 					<%= text_field_tag(:proxy) %>	
+					
 						<hr>
 						<%= submit_tag("开刷！") %>
 					</div>
@@ -96,11 +103,15 @@
 			if($('#keyword').val() != '')
 			{
 				$('#search_btn').attr('disabled',true);
+
+				var data = {'keyword':$('#keyword').val()};
+				if($('#proxy').val())
+					data['proxy'] = $('#proxy').val();
 				$.ajax({
 					'type':'get',
 					'url':'<%=ztc_check_path :format => "json"%>',
 					'dataType':'json',
-					'data':{'keyword':$('#keyword').val()},
+					'data':data,
 					beforeSend: function () {
 	                    //异步请求时spinner出现
 	                     var target = $(".widget-body").get(0);
@@ -120,6 +131,38 @@
 			}
 
 		});
+
+
+		//proxybtn
+		$('#proxy_btn').click(function(){
+			$('#proxy_btn').attr('disabled',true);
+			$.ajax({
+				'type':'get',
+				'url':'<%=ztc_proxy_path :format => "json"%>',
+				'dataType':'json',
+				beforeSend: function () {
+                    //异步请求时spinner出现
+                     var target = $(".widget-body").get(0);
+                    spinner.spin(target);                    
+                },
+				'success':function(data){
+					if(data.code == 0)
+					{
+						$('#proxy').val(data.proxy);
+					}
+					else
+					{
+						alert('获取失败，请重新尝试');
+					}
+					spinner.spin();
+					$('#proxy_btn').attr('disabled',false);
+				}
+
+
+			})
+
+		});
+		
 		//clear
 		$('#clear_btn').click(function(){
 			$('.result').html('');

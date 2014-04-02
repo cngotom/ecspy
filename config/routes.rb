@@ -5,8 +5,10 @@ Ecspy::Application.routes.draw do
 
   get "ztc/check",:as => :ztc_check
   get "ztc/status",:as => :ztc_status
+  get "ztc/proxy",:as => :ztc_proxy
   post 'ztc/clear',:as => :ztc_clear
   post "ztc/save",:as => :ztc_save
+
 
   get "file_upload/index"
 

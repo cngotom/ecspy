@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140318843311) do
+ActiveRecord::Schema.define(:version => 20140402143424) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -70,6 +70,14 @@ ActiveRecord::Schema.define(:version => 20140318843311) do
 
   add_index "item_sales", ["buy_time"], :name => "index_item_sales_on_buy_time"
   add_index "item_sales", ["shop_item_id"], :name => "index_item_sales_on_shop_item_id"
+
+  create_table "proxies", :force => true do |t|
+    t.string   "addr"
+    t.float    "timeout"
+    t.datetime "use_time"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
   create_table "shop_item_content_versions", :force => true do |t|
     t.integer  "shop_item_content_id"

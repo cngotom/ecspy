@@ -9,8 +9,24 @@ class ZtcController < ApplicationController
   	 respond_to do |format|
       format.html
       format.json {
-      	 retn = Crawler::ZTC.get_ztc_list(params[:keyword])
+      	 retn = Crawler::ZTC.get_ztc_list(params[:keyword],params[:proxy])
          render  :text => retn
+      }
+    end
+  end
+
+
+   def proxy
+     respond_to do |format|
+      format.html
+      format.json {
+         retn = Proxy.get_proxy
+         res = {'code'=>1}
+         if retn #ok
+            res['code'] = 0
+            res['proxy'] = retn
+         end 
+         render  :json => res
       }
     end
   end
