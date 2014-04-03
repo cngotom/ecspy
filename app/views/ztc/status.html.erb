@@ -101,11 +101,19 @@
 	
 
 </ul>
-
+<script src="http://js.pusher.com/2.1/pusher.min.js" type="text/javascript"></script>
 <%= content_for :script do %>
 <script type="text/javascript">
-	
-	
+	  Pusher.log = function(message) {
+      if (window.console && window.console.log) {
+        window.console.log(message);
+      }
+    };
 
+    var pusher = new Pusher('dead170cf3df76678bc5');
+    var channel = pusher.subscribe('test_channel');
+    channel.bind('my_event', function(data) {
+      alert(data.message);
+    });
 </script>
 <% end %>

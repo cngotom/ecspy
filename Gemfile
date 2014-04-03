@@ -72,3 +72,5 @@ gem 'mysql2'
 gem "resque"
 gem 'resque-job-stats'
 
+gem 'pusher'
+
