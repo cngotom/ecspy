@@ -323,8 +323,8 @@ module Crawler
 
 			run_exe = "#{Exec} --load-images=no  --proxy-type=http --proxy=#{proxy} #{ScriptDir}/getztc.js #{key.to_gbk}  #{out_file} #{GetZTCLog}"	if proxy && !proxy.empty?
 			puts run_exe
-			retn = exec_with_timeout(run_exe)
-			
+			retn = exec_with_timeout(run_exe,20)
+			res = '[]'
 			if retn.chomp == 'ok'
 				puts 'execute ok'
 				if File.exist?(out_file)

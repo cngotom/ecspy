@@ -119,11 +119,20 @@
 	                },
 					'success':function(data){
 						var reswrapper = $('.result')
-
-						var html = template.render('key-results-tmp', {list:data})
-						reswrapper.append(html);
-						spinner.spin();
+							spinner.spin();
 						$('#search_btn').attr('disabled',false);
+
+						if(data.length == 0)
+						{	
+							alert('获取失败，请重新尝试');
+						}
+						else {
+
+							var html = template.render('key-results-tmp', {list:data})
+							reswrapper.append(html);
+						}
+											
+
 					}
 
 

@@ -6,7 +6,7 @@ class Proxy < ActiveRecord::Base
   GetProxyUrl = 'http://www.phone600.com/getapi.ashx?ddh=599029779147596&num=1&yys=1&am=3&guolv=y&mt=6&fm=text'
   def self.get_proxy
   	
-  	max = 10
+  	max = 5
 
   	max.times do  
   		proxy = open(GetProxyUrl).read.chomp
