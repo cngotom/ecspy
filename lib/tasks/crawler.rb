@@ -8,7 +8,6 @@ Resque.redis = "#{ResqueAddr}:6379"
 
 module Crawler
 
-	 
 
 	ScriptDir = File.join(Rails.root,'lib','tasks','phantomjs-script')
 

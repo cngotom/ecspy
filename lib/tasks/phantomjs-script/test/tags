@@ -1,0 +1,16 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+A	test_pry.rb	/^class A$/;"	c
+exec_with_timeout	proxy_valid.rb	/^def exec_with_timeout(cmd,timeout = 60,max_retry = 0)$/;"	f
+exec_with_timeout	time_out.rb	/^def exec_with_timeout(cmd,timeout = 60)$/;"	f
+hello	test_pry.rb	/^  def hello() puts "hello world!" end$/;"	f	class:A
+loop_run	proxy_valid.rb	/^def loop_run $/;"	f
+my_system	time_out.rb	/^def my_system(cmd,timeout = 60)$/;"	f
+page	loadspeed.js	/^var page = require('webpage').create(),$/;"	v
+test_proxy	proxy_valid.rb	/^def test_proxy$/;"	f
+valide_proxy	proxy_valid.rb	/^def valide_proxy(host,port)$/;"	f
+work	proxy_valid.rb	/^def work $/;"	f

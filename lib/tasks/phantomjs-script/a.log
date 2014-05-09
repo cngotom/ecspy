@@ -1,0 +1,1333 @@
+Start item :35018792719
+pageStart
+3900
+undefined
+wait for contfunction () {
+
+				 	 			$('#description>div.content img').each(function(index,ele)
+				 	 			{
+
+									if($(ele).attr('data-ks-lazyload'))
+									{
+										return false;
+									}
+				 	 			});
+
+								console.log($('#J_TabBar li:eq(2) a').html());
+
+
+				 	 			return $('#J_TabBar li:eq(2) a').html() != undefined && $('#description>div.content').html().trim()!='描述加载中';		
+				 	 		}
+undefined
+wait for contfunction () {
+
+				 	 			$('#description>div.content img').each(function(index,ele)
+				 	 			{
+
+									if($(ele).attr('data-ks-lazyload'))
+									{
+										return false;
+									}
+				 	 			});
+
+								console.log($('#J_TabBar li:eq(2) a').html());
+
+
+				 	 			return $('#J_TabBar li:eq(2) a').html() != undefined && $('#description>div.content').html().trim()!='描述加载中';		
+				 	 		}
+undefined
+wait for contfunction () {
+
+				 	 			$('#description>div.content img').each(function(index,ele)
+				 	 			{
+
+									if($(ele).attr('data-ks-lazyload'))
+									{
+										return false;
+									}
+				 	 			});
+
+								console.log($('#J_TabBar li:eq(2) a').html());
+
+
+				 	 			return $('#J_TabBar li:eq(2) a').html() != undefined && $('#description>div.content').html().trim()!='描述加载中';		
+				 	 		}
+undefined
+wait for contfunction () {
+
+				 	 			$('#description>div.content img').each(function(index,ele)
+				 	 			{
+
+									if($(ele).attr('data-ks-lazyload'))
+									{
+										return false;
+									}
+				 	 			});
+
+								console.log($('#J_TabBar li:eq(2) a').html());
+
+
+				 	 			return $('#J_TabBar li:eq(2) a').html() != undefined && $('#description>div.content').html().trim()!='描述加载中';		
+				 	 		}
+undefined
+wait for contfunction () {
+
+				 	 			$('#description>div.content img').each(function(index,ele)
+				 	 			{
+
+									if($(ele).attr('data-ks-lazyload'))
+									{
+										return false;
+									}
+				 	 			});
+
+								console.log($('#J_TabBar li:eq(2) a').html());
+
+
+				 	 			return $('#J_TabBar li:eq(2) a').html() != undefined && $('#description>div.content').html().trim()!='描述加载中';		
+				 	 		}
+undefined
+wait for contfunction () {
+
+				 	 			$('#description>div.content img').each(function(index,ele)
+				 	 			{
+
+									if($(ele).attr('data-ks-lazyload'))
+									{
+										return false;
+									}
+				 	 			});
+
+								console.log($('#J_TabBar li:eq(2) a').html());
+
+
+				 	 			return $('#J_TabBar li:eq(2) a').html() != undefined && $('#description>div.content').html().trim()!='描述加载中';		
+				 	 		}
+undefined
+wait for contfunction () {
+
+				 	 			$('#description>div.content img').each(function(index,ele)
+				 	 			{
+
+									if($(ele).attr('data-ks-lazyload'))
+									{
+										return false;
+									}
+				 	 			});
+
+								console.log($('#J_TabBar li:eq(2) a').html());
+
+
+				 	 			return $('#J_TabBar li:eq(2) a').html() != undefined && $('#description>div.content').html().trim()!='描述加载中';		
+				 	 		}
+undefined
+wait for contfunction () {
+
+				 	 			$('#description>div.content img').each(function(index,ele)
+				 	 			{
+
+									if($(ele).attr('data-ks-lazyload'))
+									{
+										return false;
+									}
+				 	 			});
+
+								console.log($('#J_TabBar li:eq(2) a').html());
+
+
+				 	 			return $('#J_TabBar li:eq(2) a').html() != undefined && $('#description>div.content').html().trim()!='描述加载中';		
+				 	 		}
+undefined
+wait for contfunction () {
+
+				 	 			$('#description>div.content img').each(function(index,ele)
+				 	 			{
+
+									if($(ele).attr('data-ks-lazyload'))
+									{
+										return false;
+									}
+				 	 			});
+
+								console.log($('#J_TabBar li:eq(2) a').html());
+
+
+				 	 			return $('#J_TabBar li:eq(2) a').html() != undefined && $('#description>div.content').html().trim()!='描述加载中';		
+				 	 		}
+undefined
+Start item :35018792719
+pageStart
+1950
+undefined
+wait for contfunction () {
+
+				 	 			$('#description>div.content img').each(function(index,ele)
+				 	 			{
+
+									if($(ele).attr('data-ks-lazyload'))
+									{
+										return false;
+									}
+				 	 			});
+
+								console.log($('#J_TabBar li:eq(2) a').html());
+
+
+				 	 			return $('#J_TabBar li:eq(2) a').html() != undefined && $('#description>div.content').html().trim()!='描述加载中';		
+				 	 		}
+月成交记录<span class="J_MonSales" style="display: inline; "><em class="J_TDealCount tm-MRswitchRecord">504</em>件</span>
+J_showBuyerList is 月成交记录<span class="J_MonSales" style="display: inline; "><em class="J_TDealCount tm-MRswitchRecord">504</em>件</span>
+wait for contfunction () {
+	    											var pos = getElementAbsPos($('#J_showBuyerList')[0]);
+			 	 									window.scroll(pos.left,pos.top);
+
+	    											return $('#J_showBuyerList tr').length > 0;
+
+	    										}
+wait for contfunction () {
+	    											var pos = getElementAbsPos($('#J_showBuyerList')[0]);
+			 	 									window.scroll(pos.left,pos.top);
+
+	    											return $('#J_showBuyerList tr').length > 0;
+
+	    										}
+start page :0
+2014-05-09 14:31:43
+current: 1399617103
+start_time: 1390151959
+2014-05-09 14:06:08
+current: 1399615568
+start_time: 1390151959
+2014-05-09 13:51:47
+current: 1399614707
+start_time: 1390151959
+2014-05-09 12:39:36
+current: 1399610376
+start_time: 1390151959
+2014-05-09 11:40:43
+current: 1399606843
+start_time: 1390151959
+2014-05-08 21:18:29
+current: 1399555109
+start_time: 1390151959
+2014-05-08 20:41:55
+current: 1399552915
+start_time: 1390151959
+2014-05-08 19:13:10
+current: 1399547590
+start_time: 1390151959
+2014-05-08 17:18:28
+current: 1399540708
+start_time: 1390151959
+2014-05-08 16:51:58
+current: 1399539118
+start_time: 1390151959
+2014-05-08 16:30:47
+current: 1399537847
+start_time: 1390151959
+2014-05-08 16:18:32
+current: 1399537112
+start_time: 1390151959
+2014-05-08 15:58:05
+current: 1399535885
+start_time: 1390151959
+2014-05-08 12:48:26
+current: 1399524506
+start_time: 1390151959
+2014-05-08 12:46:27
+current: 1399524387
+start_time: 1390151959
+wait for contfunction () {
+
+			    									var currentValue = $('#J_showBuyerList tr:eq(1)').html();
+			    									if(nowTrValue == currentValue)
+			    										return false;
+			    									else{
+			    										nowTrValue = currentValue;
+			    										return true;
+			    									}
+
+			    								}
+start page :1
+2014-05-08 12:26:27
+current: 1399523187
+start_time: 1390151959
+2014-05-08 12:24:14
+current: 1399523054
+start_time: 1390151959
+2014-05-08 10:09:34
+current: 1399514974
+start_time: 1390151959
+2014-05-08 09:52:42
+current: 1399513962
+start_time: 1390151959
+2014-05-08 09:42:53
+current: 1399513373
+start_time: 1390151959
+2014-05-08 07:36:23
+current: 1399505783
+start_time: 1390151959
+2014-05-07 22:43:59
+current: 1399473839
+start_time: 1390151959
+2014-05-07 22:22:41
+current: 1399472561
+start_time: 1390151959
+2014-05-07 21:23:36
+current: 1399469016
+start_time: 1390151959
+2014-05-07 21:16:49
+current: 1399468609
+start_time: 1390151959
+2014-05-07 20:22:45
+current: 1399465365
+start_time: 1390151959
+2014-05-07 20:18:03
+current: 1399465083
+start_time: 1390151959
+2014-05-07 20:14:34
+current: 1399464874
+start_time: 1390151959
+2014-05-07 20:10:00
+current: 1399464600
+start_time: 1390151959
+2014-05-07 18:19:45
+current: 1399457985
+start_time: 1390151959
+wait for contfunction () {
+
+			    									var currentValue = $('#J_showBuyerList tr:eq(1)').html();
+			    									if(nowTrValue == currentValue)
+			    										return false;
+			    									else{
+			    										nowTrValue = currentValue;
+			    										return true;
+			    									}
+
+			    								}
+start page :2
+2014-05-07 16:50:20
+current: 1399452620
+start_time: 1390151959
+2014-05-07 15:39:21
+current: 1399448361
+start_time: 1390151959
+2014-05-07 14:47:10
+current: 1399445230
+start_time: 1390151959
+2014-05-07 14:41:03
+current: 1399444863
+start_time: 1390151959
+2014-05-07 13:22:25
+current: 1399440145
+start_time: 1390151959
+2014-05-07 13:20:49
+current: 1399440049
+start_time: 1390151959
+2014-05-06 22:13:57
+current: 1399385637
+start_time: 1390151959
+2014-05-06 21:04:01
+current: 1399381441
+start_time: 1390151959
+2014-05-06 20:27:05
+current: 1399379225
+start_time: 1390151959
+2014-05-06 19:47:53
+current: 1399376873
+start_time: 1390151959
+2014-05-06 19:03:30
+current: 1399374210
+start_time: 1390151959
+2014-05-06 16:11:56
+current: 1399363916
+start_time: 1390151959
+2014-05-06 16:06:15
+current: 1399363575
+start_time: 1390151959
+2014-05-06 13:40:57
+current: 1399354857
+start_time: 1390151959
+2014-05-06 12:35:37
+current: 1399350937
+start_time: 1390151959
+wait for contfunction () {
+
+			    									var currentValue = $('#J_showBuyerList tr:eq(1)').html();
+			    									if(nowTrValue == currentValue)
+			    										return false;
+			    									else{
+			    										nowTrValue = currentValue;
+			    										return true;
+			    									}
+
+			    								}
+start page :3
+2014-05-08 11:58:04
+current: 1399521484
+start_time: 1390151959
+2014-05-06 11:12:42
+current: 1399345962
+start_time: 1390151959
+2014-05-06 11:05:12
+current: 1399345512
+start_time: 1390151959
+2014-05-06 10:30:26
+current: 1399343426
+start_time: 1390151959
+2014-05-06 09:17:28
+current: 1399339048
+start_time: 1390151959
+2014-05-06 06:42:42
+current: 1399329762
+start_time: 1390151959
+2014-05-06 06:37:32
+current: 1399329452
+start_time: 1390151959
+2014-05-05 23:28:08
+current: 1399303688
+start_time: 1390151959
+2014-05-05 21:45:16
+current: 1399297516
+start_time: 1390151959
+2014-05-05 20:27:32
+current: 1399292852
+start_time: 1390151959
+2014-05-05 20:06:27
+current: 1399291587
+start_time: 1390151959
+2014-05-05 19:59:43
+current: 1399291183
+start_time: 1390151959
+2014-05-05 19:48:52
+current: 1399290532
+start_time: 1390151959
+2014-05-05 16:31:20
+current: 1399278680
+start_time: 1390151959
+2014-05-05 13:07:19
+current: 1399266439
+start_time: 1390151959
+wait for contfunction () {
+
+			    									var currentValue = $('#J_showBuyerList tr:eq(1)').html();
+			    									if(nowTrValue == currentValue)
+			    										return false;
+			    									else{
+			    										nowTrValue = currentValue;
+			    										return true;
+			    									}
+
+			    								}
+start page :4
+2014-05-05 13:01:28
+current: 1399266088
+start_time: 1390151959
+2014-05-05 12:58:46
+current: 1399265926
+start_time: 1390151959
+2014-05-05 11:36:44
+current: 1399261004
+start_time: 1390151959
+2014-05-05 11:16:50
+current: 1399259810
+start_time: 1390151959
+2014-05-05 09:00:56
+current: 1399251656
+start_time: 1390151959
+2014-05-05 08:52:35
+current: 1399251155
+start_time: 1390151959
+2014-05-05 07:43:17
+current: 1399246997
+start_time: 1390151959
+2014-05-04 21:30:44
+current: 1399210244
+start_time: 1390151959
+2014-05-04 19:52:52
+current: 1399204372
+start_time: 1390151959
+2014-05-04 18:56:31
+current: 1399200991
+start_time: 1390151959
+2014-05-04 18:19:09
+current: 1399198749
+start_time: 1390151959
+2014-05-04 18:18:58
+current: 1399198738
+start_time: 1390151959
+2014-05-04 18:15:08
+current: 1399198508
+start_time: 1390151959
+2014-05-04 17:26:23
+current: 1399195583
+start_time: 1390151959
+2014-05-04 16:22:45
+current: 1399191765
+start_time: 1390151959
+wait for contfunction () {
+
+			    									var currentValue = $('#J_showBuyerList tr:eq(1)').html();
+			    									if(nowTrValue == currentValue)
+			    										return false;
+			    									else{
+			    										nowTrValue = currentValue;
+			    										return true;
+			    									}
+
+			    								}
+start page :5
+2014-05-04 21:27:48
+current: 1399210068
+start_time: 1390151959
+2014-05-04 16:12:12
+current: 1399191132
+start_time: 1390151959
+2014-05-04 16:11:37
+current: 1399191097
+start_time: 1390151959
+2014-05-04 15:28:48
+current: 1399188528
+start_time: 1390151959
+2014-05-04 15:24:12
+current: 1399188252
+start_time: 1390151959
+2014-05-04 14:45:13
+current: 1399185913
+start_time: 1390151959
+2014-05-04 14:30:21
+current: 1399185021
+start_time: 1390151959
+2014-05-04 13:35:36
+current: 1399181736
+start_time: 1390151959
+2014-05-04 12:38:15
+current: 1399178295
+start_time: 1390151959
+2014-05-04 12:14:56
+current: 1399176896
+start_time: 1390151959
+2014-05-04 12:09:07
+current: 1399176547
+start_time: 1390151959
+2014-05-04 11:42:28
+current: 1399174948
+start_time: 1390151959
+2014-05-04 11:03:18
+current: 1399172598
+start_time: 1390151959
+2014-05-04 10:46:24
+current: 1399171584
+start_time: 1390151959
+2014-05-04 10:34:51
+current: 1399170891
+start_time: 1390151959
+wait for contfunction () {
+
+			    									var currentValue = $('#J_showBuyerList tr:eq(1)').html();
+			    									if(nowTrValue == currentValue)
+			    										return false;
+			    									else{
+			    										nowTrValue = currentValue;
+			    										return true;
+			    									}
+
+			    								}
+start page :6
+2014-05-04 10:29:45
+current: 1399170585
+start_time: 1390151959
+2014-05-04 10:08:02
+current: 1399169282
+start_time: 1390151959
+2014-05-04 09:47:32
+current: 1399168052
+start_time: 1390151959
+2014-05-03 22:24:26
+current: 1399127066
+start_time: 1390151959
+2014-05-03 21:53:07
+current: 1399125187
+start_time: 1390151959
+2014-05-03 21:48:26
+current: 1399124906
+start_time: 1390151959
+2014-05-03 17:45:05
+current: 1399110305
+start_time: 1390151959
+2014-05-03 15:27:41
+current: 1399102061
+start_time: 1390151959
+2014-05-03 11:45:01
+current: 1399088701
+start_time: 1390151959
+2014-05-03 11:25:28
+current: 1399087528
+start_time: 1390151959
+2014-05-03 00:16:49
+current: 1399047409
+start_time: 1390151959
+2014-05-03 00:14:46
+current: 1399047286
+start_time: 1390151959
+2014-05-02 23:05:43
+current: 1399043143
+start_time: 1390151959
+2014-05-02 22:23:04
+current: 1399040584
+start_time: 1390151959
+2014-05-02 22:15:02
+current: 1399040102
+start_time: 1390151959
+wait for contfunction () {
+
+			    									var currentValue = $('#J_showBuyerList tr:eq(1)').html();
+			    									if(nowTrValue == currentValue)
+			    										return false;
+			    									else{
+			    										nowTrValue = currentValue;
+			    										return true;
+			    									}
+
+			    								}
+start page :7
+2014-05-02 21:24:01
+current: 1399037041
+start_time: 1390151959
+2014-05-02 17:14:54
+current: 1399022094
+start_time: 1390151959
+2014-05-02 15:31:54
+current: 1399015914
+start_time: 1390151959
+2014-05-02 15:04:35
+current: 1399014275
+start_time: 1390151959
+2014-05-02 14:25:32
+current: 1399011932
+start_time: 1390151959
+2014-05-02 13:22:14
+current: 1399008134
+start_time: 1390151959
+2014-05-02 11:14:33
+current: 1399000473
+start_time: 1390151959
+2014-05-02 09:43:27
+current: 1398995007
+start_time: 1390151959
+2014-05-02 08:41:04
+current: 1398991264
+start_time: 1390151959
+2014-05-01 23:51:24
+current: 1398959484
+start_time: 1390151959
+2014-05-01 22:42:53
+current: 1398955373
+start_time: 1390151959
+2014-05-01 20:47:52
+current: 1398948472
+start_time: 1390151959
+2014-05-01 17:55:55
+current: 1398938155
+start_time: 1390151959
+2014-05-01 17:22:00
+current: 1398936120
+start_time: 1390151959
+2014-05-01 16:05:30
+current: 1398931530
+start_time: 1390151959
+wait for contfunction () {
+
+			    									var currentValue = $('#J_showBuyerList tr:eq(1)').html();
+			    									if(nowTrValue == currentValue)
+			    										return false;
+			    									else{
+			    										nowTrValue = currentValue;
+			    										return true;
+			    									}
+
+			    								}
+start page :8
+2014-05-01 13:58:09
+current: 1398923889
+start_time: 1390151959
+2014-05-01 10:43:42
+current: 1398912222
+start_time: 1390151959
+2014-05-01 10:27:10
+current: 1398911230
+start_time: 1390151959
+2014-05-01 08:41:38
+current: 1398904898
+start_time: 1390151959
+2014-05-01 00:39:28
+current: 1398875968
+start_time: 1390151959
+2014-05-01 00:22:07
+current: 1398874927
+start_time: 1390151959
+2014-04-30 22:56:36
+current: 1398869796
+start_time: 1390151959
+2014-04-30 18:10:06
+current: 1398852606
+start_time: 1390151959
+2014-04-30 15:24:24
+current: 1398842664
+start_time: 1390151959
+2014-04-30 12:49:37
+current: 1398833377
+start_time: 1390151959
+2014-04-30 12:16:56
+current: 1398831416
+start_time: 1390151959
+2014-04-30 06:24:53
+current: 1398810293
+start_time: 1390151959
+2014-04-30 01:43:39
+current: 1398793419
+start_time: 1390151959
+2014-04-29 23:38:20
+current: 1398785900
+start_time: 1390151959
+2014-04-29 20:18:41
+current: 1398773921
+start_time: 1390151959
+wait for contfunction () {
+
+			    									var currentValue = $('#J_showBuyerList tr:eq(1)').html();
+			    									if(nowTrValue == currentValue)
+			    										return false;
+			    									else{
+			    										nowTrValue = currentValue;
+			    										return true;
+			    									}
+
+			    								}
+start page :9
+2014-04-29 18:21:15
+current: 1398766875
+start_time: 1390151959
+2014-04-29 16:25:38
+current: 1398759938
+start_time: 1390151959
+2014-04-29 16:24:58
+current: 1398759898
+start_time: 1390151959
+2014-04-29 15:59:41
+current: 1398758381
+start_time: 1390151959
+2014-04-29 15:44:52
+current: 1398757492
+start_time: 1390151959
+2014-04-29 14:50:10
+current: 1398754210
+start_time: 1390151959
+2014-04-29 14:03:52
+current: 1398751432
+start_time: 1390151959
+2014-04-29 13:19:31
+current: 1398748771
+start_time: 1390151959
+2014-04-29 11:52:05
+current: 1398743525
+start_time: 1390151959
+2014-04-29 10:58:55
+current: 1398740335
+start_time: 1390151959
+2014-04-29 08:18:34
+current: 1398730714
+start_time: 1390151959
+2014-04-29 08:14:50
+current: 1398730490
+start_time: 1390151959
+2014-04-28 22:58:23
+current: 1398697103
+start_time: 1390151959
+2014-04-28 22:19:31
+current: 1398694771
+start_time: 1390151959
+2014-04-28 22:06:11
+current: 1398693971
+start_time: 1390151959
+wait for contfunction () {
+
+			    									var currentValue = $('#J_showBuyerList tr:eq(1)').html();
+			    									if(nowTrValue == currentValue)
+			    										return false;
+			    									else{
+			    										nowTrValue = currentValue;
+			    										return true;
+			    									}
+
+			    								}
+start page :10
+2014-04-28 22:00:13
+current: 1398693613
+start_time: 1390151959
+2014-04-28 20:57:41
+current: 1398689861
+start_time: 1390151959
+2014-04-28 17:32:57
+current: 1398677577
+start_time: 1390151959
+2014-04-28 17:27:42
+current: 1398677262
+start_time: 1390151959
+2014-04-28 15:55:29
+current: 1398671729
+start_time: 1390151959
+2014-04-28 15:24:57
+current: 1398669897
+start_time: 1390151959
+2014-04-28 13:37:28
+current: 1398663448
+start_time: 1390151959
+2014-04-28 10:17:17
+current: 1398651437
+start_time: 1390151959
+2014-04-28 09:31:42
+current: 1398648702
+start_time: 1390151959
+2014-04-28 00:20:48
+current: 1398615648
+start_time: 1390151959
+2014-04-27 22:05:37
+current: 1398607537
+start_time: 1390151959
+2014-04-27 21:20:16
+current: 1398604816
+start_time: 1390151959
+2014-04-27 20:17:15
+current: 1398601035
+start_time: 1390151959
+2014-04-27 18:53:45
+current: 1398596025
+start_time: 1390151959
+2014-04-27 18:34:48
+current: 1398594888
+start_time: 1390151959
+wait for contfunction () {
+
+			    									var currentValue = $('#J_showBuyerList tr:eq(1)').html();
+			    									if(nowTrValue == currentValue)
+			    										return false;
+			    									else{
+			    										nowTrValue = currentValue;
+			    										return true;
+			    									}
+
+			    								}
+start page :11
+2014-04-27 18:07:04
+current: 1398593224
+start_time: 1390151959
+2014-04-27 16:40:53
+current: 1398588053
+start_time: 1390151959
+2014-04-27 16:12:53
+current: 1398586373
+start_time: 1390151959
+2014-04-27 13:50:14
+current: 1398577814
+start_time: 1390151959
+2014-04-27 10:54:12
+current: 1398567252
+start_time: 1390151959
+2014-04-27 10:31:53
+current: 1398565913
+start_time: 1390151959
+2014-04-27 10:28:59
+current: 1398565739
+start_time: 1390151959
+2014-04-27 09:01:33
+current: 1398560493
+start_time: 1390151959
+2014-04-27 08:53:37
+current: 1398560017
+start_time: 1390151959
+2014-04-27 08:29:52
+current: 1398558592
+start_time: 1390151959
+2014-04-27 05:08:36
+current: 1398546516
+start_time: 1390151959
+2014-04-26 23:26:47
+current: 1398526007
+start_time: 1390151959
+2014-04-26 21:38:22
+current: 1398519502
+start_time: 1390151959
+2014-04-26 19:57:14
+current: 1398513434
+start_time: 1390151959
+2014-04-26 19:19:07
+current: 1398511147
+start_time: 1390151959
+wait for contfunction () {
+
+			    									var currentValue = $('#J_showBuyerList tr:eq(1)').html();
+			    									if(nowTrValue == currentValue)
+			    										return false;
+			    									else{
+			    										nowTrValue = currentValue;
+			    										return true;
+			    									}
+
+			    								}
+start page :12
+2014-04-26 18:31:09
+current: 1398508269
+start_time: 1390151959
+2014-04-26 16:02:46
+current: 1398499366
+start_time: 1390151959
+2014-04-26 07:34:15
+current: 1398468855
+start_time: 1390151959
+2014-04-26 01:59:27
+current: 1398448767
+start_time: 1390151959
+2014-04-25 21:27:31
+current: 1398432451
+start_time: 1390151959
+2014-04-25 19:27:57
+current: 1398425277
+start_time: 1390151959
+2014-04-25 19:02:11
+current: 1398423731
+start_time: 1390151959
+2014-04-25 11:28:02
+current: 1398396482
+start_time: 1390151959
+2014-04-25 09:19:32
+current: 1398388772
+start_time: 1390151959
+2014-04-24 21:08:45
+current: 1398344925
+start_time: 1390151959
+2014-04-24 18:30:28
+current: 1398335428
+start_time: 1390151959
+2014-04-24 18:17:15
+current: 1398334635
+start_time: 1390151959
+2014-04-24 17:21:46
+current: 1398331306
+start_time: 1390151959
+2014-04-24 16:13:30
+current: 1398327210
+start_time: 1390151959
+2014-04-24 14:33:13
+current: 1398321193
+start_time: 1390151959
+wait for contfunction () {
+
+			    									var currentValue = $('#J_showBuyerList tr:eq(1)').html();
+			    									if(nowTrValue == currentValue)
+			    										return false;
+			    									else{
+			    										nowTrValue = currentValue;
+			    										return true;
+			    									}
+
+			    								}
+start page :13
+2014-04-24 14:26:27
+current: 1398320787
+start_time: 1390151959
+2014-04-24 11:31:42
+current: 1398310302
+start_time: 1390151959
+2014-04-24 11:17:08
+current: 1398309428
+start_time: 1390151959
+2014-04-24 09:26:13
+current: 1398302773
+start_time: 1390151959
+2014-04-24 00:05:23
+current: 1398269123
+start_time: 1390151959
+2014-04-23 22:42:25
+current: 1398264145
+start_time: 1390151959
+2014-04-23 22:27:46
+current: 1398263266
+start_time: 1390151959
+2014-04-23 22:13:48
+current: 1398262428
+start_time: 1390151959
+2014-04-23 22:00:55
+current: 1398261655
+start_time: 1390151959
+2014-04-23 18:48:06
+current: 1398250086
+start_time: 1390151959
+2014-04-23 17:24:33
+current: 1398245073
+start_time: 1390151959
+2014-04-23 16:46:43
+current: 1398242803
+start_time: 1390151959
+2014-04-23 14:09:06
+current: 1398233346
+start_time: 1390151959
+2014-04-22 19:06:59
+current: 1398164819
+start_time: 1390151959
+2014-04-22 14:50:39
+current: 1398149439
+start_time: 1390151959
+wait for contfunction () {
+
+			    									var currentValue = $('#J_showBuyerList tr:eq(1)').html();
+			    									if(nowTrValue == currentValue)
+			    										return false;
+			    									else{
+			    										nowTrValue = currentValue;
+			    										return true;
+			    									}
+
+			    								}
+start page :14
+2014-04-22 13:54:11
+current: 1398146051
+start_time: 1390151959
+2014-04-22 12:55:07
+current: 1398142507
+start_time: 1390151959
+2014-04-22 11:41:46
+current: 1398138106
+start_time: 1390151959
+2014-04-22 11:06:54
+current: 1398136014
+start_time: 1390151959
+2014-04-22 06:35:02
+current: 1398119702
+start_time: 1390151959
+2014-04-22 00:18:31
+current: 1398097111
+start_time: 1390151959
+2014-04-22 00:02:13
+current: 1398096133
+start_time: 1390151959
+2014-04-21 22:00:49
+current: 1398088849
+start_time: 1390151959
+2014-04-21 20:59:06
+current: 1398085146
+start_time: 1390151959
+2014-04-21 15:23:39
+current: 1398065019
+start_time: 1390151959
+2014-04-21 14:23:47
+current: 1398061427
+start_time: 1390151959
+2014-04-21 13:58:00
+current: 1398059880
+start_time: 1390151959
+2014-04-21 13:42:20
+current: 1398058940
+start_time: 1390151959
+2014-04-21 13:03:56
+current: 1398056636
+start_time: 1390151959
+2014-04-21 11:21:54
+current: 1398050514
+start_time: 1390151959
+wait for contfunction () {
+
+			    									var currentValue = $('#J_showBuyerList tr:eq(1)').html();
+			    									if(nowTrValue == currentValue)
+			    										return false;
+			    									else{
+			    										nowTrValue = currentValue;
+			    										return true;
+			    									}
+
+			    								}
+start page :15
+2014-04-21 11:21:57
+current: 1398050517
+start_time: 1390151959
+2014-04-21 11:13:48
+current: 1398050028
+start_time: 1390151959
+2014-04-20 22:59:11
+current: 1398005951
+start_time: 1390151959
+2014-04-20 20:45:29
+current: 1397997929
+start_time: 1390151959
+2014-04-20 20:42:16
+current: 1397997736
+start_time: 1390151959
+2014-04-20 18:24:38
+current: 1397989478
+start_time: 1390151959
+2014-04-20 16:45:04
+current: 1397983504
+start_time: 1390151959
+2014-04-20 16:18:55
+current: 1397981935
+start_time: 1390151959
+2014-04-20 15:35:52
+current: 1397979352
+start_time: 1390151959
+2014-04-20 15:20:12
+current: 1397978412
+start_time: 1390151959
+2014-04-20 13:57:19
+current: 1397973439
+start_time: 1390151959
+2014-04-20 13:40:12
+current: 1397972412
+start_time: 1390151959
+2014-04-20 09:54:54
+current: 1397958894
+start_time: 1390151959
+2014-04-20 09:37:34
+current: 1397957854
+start_time: 1390151959
+2014-04-20 07:15:29
+current: 1397949329
+start_time: 1390151959
+wait for contfunction () {
+
+			    									var currentValue = $('#J_showBuyerList tr:eq(1)').html();
+			    									if(nowTrValue == currentValue)
+			    										return false;
+			    									else{
+			    										nowTrValue = currentValue;
+			    										return true;
+			    									}
+
+			    								}
+start page :16
+2014-04-20 11:09:07
+current: 1397963347
+start_time: 1390151959
+2014-04-19 23:16:22
+current: 1397920582
+start_time: 1390151959
+2014-04-19 21:52:38
+current: 1397915558
+start_time: 1390151959
+2014-04-19 21:40:13
+current: 1397914813
+start_time: 1390151959
+2014-04-19 20:34:16
+current: 1397910856
+start_time: 1390151959
+2014-04-19 20:33:29
+current: 1397910809
+start_time: 1390151959
+2014-04-19 20:26:47
+current: 1397910407
+start_time: 1390151959
+2014-04-19 19:27:05
+current: 1397906825
+start_time: 1390151959
+2014-04-19 18:07:14
+current: 1397902034
+start_time: 1390151959
+2014-04-19 17:21:31
+current: 1397899291
+start_time: 1390151959
+2014-04-19 16:52:23
+current: 1397897543
+start_time: 1390151959
+2014-04-19 15:43:32
+current: 1397893412
+start_time: 1390151959
+2014-04-19 15:35:21
+current: 1397892921
+start_time: 1390151959
+2014-04-19 15:21:30
+current: 1397892090
+start_time: 1390151959
+2014-04-19 14:11:49
+current: 1397887909
+start_time: 1390151959
+wait for contfunction () {
+
+			    									var currentValue = $('#J_showBuyerList tr:eq(1)').html();
+			    									if(nowTrValue == currentValue)
+			    										return false;
+			    									else{
+			    										nowTrValue = currentValue;
+			    										return true;
+			    									}
+
+			    								}
+start page :17
+2014-04-19 13:27:34
+current: 1397885254
+start_time: 1390151959
+2014-04-19 12:18:03
+current: 1397881083
+start_time: 1390151959
+2014-04-19 10:38:40
+current: 1397875120
+start_time: 1390151959
+2014-04-19 09:47:53
+current: 1397872073
+start_time: 1390151959
+2014-04-19 09:29:53
+current: 1397870993
+start_time: 1390151959
+2014-04-18 19:46:55
+current: 1397821615
+start_time: 1390151959
+2014-04-18 17:20:13
+current: 1397812813
+start_time: 1390151959
+2014-04-18 13:00:00
+current: 1397797200
+start_time: 1390151959
+2014-04-18 11:27:32
+current: 1397791652
+start_time: 1390151959
+2014-04-18 10:35:49
+current: 1397788549
+start_time: 1390151959
+2014-04-18 10:24:54
+current: 1397787894
+start_time: 1390151959
+2014-04-18 09:07:33
+current: 1397783253
+start_time: 1390151959
+2014-04-18 01:23:14
+current: 1397755394
+start_time: 1390151959
+2014-04-17 22:56:12
+current: 1397746572
+start_time: 1390151959
+2014-04-17 22:44:15
+current: 1397745855
+start_time: 1390151959
+wait for contfunction () {
+
+			    									var currentValue = $('#J_showBuyerList tr:eq(1)').html();
+			    									if(nowTrValue == currentValue)
+			    										return false;
+			    									else{
+			    										nowTrValue = currentValue;
+			    										return true;
+			    									}
+
+			    								}
+start page :18
+2014-04-17 20:09:19
+current: 1397736559
+start_time: 1390151959
+2014-04-17 19:45:49
+current: 1397735149
+start_time: 1390151959
+2014-04-17 18:07:34
+current: 1397729254
+start_time: 1390151959
+2014-04-17 18:06:55
+current: 1397729215
+start_time: 1390151959
+2014-04-17 17:12:23
+current: 1397725943
+start_time: 1390151959
+2014-04-17 17:11:41
+current: 1397725901
+start_time: 1390151959
+2014-04-17 17:00:23
+current: 1397725223
+start_time: 1390151959
+2014-04-17 16:25:02
+current: 1397723102
+start_time: 1390151959
+2014-04-17 16:08:09
+current: 1397722089
+start_time: 1390151959
+2014-04-17 14:28:32
+current: 1397716112
+start_time: 1390151959
+2014-04-17 14:00:34
+current: 1397714434
+start_time: 1390151959
+2014-04-17 12:07:34
+current: 1397707654
+start_time: 1390151959
+2014-04-17 10:07:25
+current: 1397700445
+start_time: 1390151959
+2014-04-16 23:44:38
+current: 1397663078
+start_time: 1390151959
+2014-04-16 22:25:26
+current: 1397658326
+start_time: 1390151959
+wait for contfunction () {
+
+			    									var currentValue = $('#J_showBuyerList tr:eq(1)').html();
+			    									if(nowTrValue == currentValue)
+			    										return false;
+			    									else{
+			    										nowTrValue = currentValue;
+			    										return true;
+			    									}
+
+			    								}
+start page :19
+2014-04-16 20:56:53
+current: 1397653013
+start_time: 1390151959
+2014-04-16 20:17:01
+current: 1397650621
+start_time: 1390151959
+2014-04-16 20:16:01
+current: 1397650561
+start_time: 1390151959
+2014-04-16 16:26:15
+current: 1397636775
+start_time: 1390151959
+2014-04-16 16:25:47
+current: 1397636747
+start_time: 1390151959
+2014-04-16 16:24:19
+current: 1397636659
+start_time: 1390151959
+2014-04-16 14:33:05
+current: 1397629985
+start_time: 1390151959
+2014-04-16 14:27:41
+current: 1397629661
+start_time: 1390151959
+2014-04-16 13:43:04
+current: 1397626984
+start_time: 1390151959
+2014-04-16 13:20:41
+current: 1397625641
+start_time: 1390151959
+2014-04-15 22:41:54
+current: 1397572914
+start_time: 1390151959
+2014-04-15 22:27:00
+current: 1397572020
+start_time: 1390151959
+2014-04-15 22:24:00
+current: 1397571840
+start_time: 1390151959
+2014-04-15 16:23:32
+current: 1397550212
+start_time: 1390151959
+2014-04-15 14:40:33
+current: 1397544033
+start_time: 1390151959
+wait for contfunction () {
+
+			    									var currentValue = $('#J_showBuyerList tr:eq(1)').html();
+			    									if(nowTrValue == currentValue)
+			    										return false;
+			    									else{
+			    										nowTrValue = currentValue;
+			    										return true;
+			    									}
+
+			    								}
