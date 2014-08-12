@@ -12,7 +12,7 @@ class Shop < ActiveRecord::Base
 	has_many :shop_contents, :through => :shop_items,:source => :content
 
 	#not update in 6 hours or created in 6 hours
-	scope :recently_not_updated,where( ["updated_at < ? or ( created_at > ?  and updated_at = created_at )", Time.now - 2.hour, Time.now - 2.hour])
+	scope :recently_not_updated,where( ["updated_at < ? or ( created_at > ?  and updated_at = created_at )", Time.now - 12.hour, Time.now - 12.hour])
 
 	#scope :unwatched, lamda {|user|  self.ALl - User.find(user).followed  }
 
