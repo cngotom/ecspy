@@ -63,6 +63,7 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.7.0)
+    daemons (1.1.9)
     devise (3.2.4)
       bcrypt (~> 3.0)
       orm_adapter (~> 0.1)
@@ -71,6 +72,7 @@ GEM
       warden (~> 1.2.3)
     diff-lcs (1.2.5)
     erubis (2.7.0)
+    eventmachine (1.0.3)
     execjs (2.0.2)
     formtastic (2.2.1)
       actionpack (>= 3.0)
@@ -203,6 +205,10 @@ GEM
     therubyracer (0.12.1)
       libv8 (~> 3.16.14.0)
       ref
+    thin (1.6.3)
+      daemons (~> 1.0, >= 1.0.9)
+      eventmachine (~> 1.0)
+      rack (~> 1.0)
     thor (0.19.1)
     thread_safe (0.3.3)
     tilt (1.4.1)
@@ -219,6 +225,9 @@ GEM
       rack (>= 1.0)
     wice_grid (3.2.1)
       kaminari (>= 0.13.0)
+    yaml_db (0.3.0)
+      rails (>= 3.0, < 4.3)
+      rake (>= 0.8.7)
 
 PLATFORMS
   ruby
@@ -248,5 +257,7 @@ DEPENDENCIES
   simple_form
   sqlite3
   therubyracer
+  thin
   uglifier (>= 1.0.3)
   wice_grid (= 3.2.1)
+  yaml_db

@@ -67,10 +67,11 @@ gem "wice_grid", '3.2.1'
 gem 'redis'
 gem 'redis-lock'
 
+gem 'yaml_db'
 gem 'mysql2'
+gem 'thin'
 
 gem "resque"
 gem 'resque-job-stats'
-
 gem 'pusher'
 
