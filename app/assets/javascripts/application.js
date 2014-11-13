@@ -16,6 +16,6 @@
 //= require bootstrap
 //= require_tree .
 //= require wice_grid
-//= require highcharts
+//= require highcharts-all
 //= require exporting
 //= require smart_admin
