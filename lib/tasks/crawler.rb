@@ -45,7 +45,7 @@ module Crawler
 			puts "#{cmd} time out "
 			Process.kill 9, pipe.pid
 			max_retry -= 1
-			retry if max_retry >= 0 
+			retry if max_retry >= 0
 
 			'killed because timeout'
 		end
@@ -77,7 +77,7 @@ module Crawler
 			@redis.LPOP  @redis_key
 		end
 
-		def size 
+		def size
 			@redis.llen @redis_key
 		end
 
@@ -113,11 +113,11 @@ module Crawler
 
 
 			# puts list_redis_client.size
-			# puts sales_redis_client.size 
+			# puts sales_redis_client.size
 			# puts  closed_redis_client.size
 			# puts content_redis_client.size
 
-			list_redis_client.size == 0 && sales_redis_client.size == 0 && closed_redis_client.size == 0 && content_redis_client.size == 0 
+			list_redis_client.size == 0 && sales_redis_client.size == 0 && closed_redis_client.size == 0 && content_redis_client.size == 0
 
 		end
 
@@ -192,11 +192,12 @@ module Crawler
 				run_exe  = "#{Exec} #{ScriptDir}/getitem.js #{item.item_sn} #{timestamp} #{out_file} #{GetSalesLog}"
 				puts run_exe
 				retn = exec_with_timeout run_exe
-			else
-				run_exe = "#{ExecTB} #{ScriptDir}/getitem_tb.js #{item.item_sn} #{timestamp} #{out_file} #{GetSalesLog}"
-				puts run_exe
-				retn = exec_with_timeout run_exe
-			end	
+    # does not support taobao
+		#	else
+		#		run_exe = "#{ExecTB} #{ScriptDir}/getitem_tb.js #{item.item_sn} #{timestamp} #{out_file} #{GetSalesLog}"
+		#		puts run_exe
+		#		retn = exec_with_timeout run_exe
+			end
 
 			if retn.chomp == 'ok'
 				puts 'execute ok'
@@ -204,7 +205,7 @@ module Crawler
 				if File.exist?(out_file)
 					open(out_file) do |out|
 						index = 0
-						out.each_line do |line|	
+						out.each_line do |line|
 							if index == 0
 								line = JSON.parse(line)
 								line['id'] = item.id
@@ -239,7 +240,7 @@ module Crawler
 				raise retn
 			end
 
-			
+
 
 		end
 
@@ -387,11 +388,11 @@ module Crawler
 			proxy = arr['proxy']
 			proxystr = ''
 			proxystr = " --proxy-type=http --proxy=#{proxy}" if proxy
- 
+
 			keyword.extend GBKConvert
 			keyword.to_gbk
 
-			run_exe = "#{Exec}  #{proxystr} #{ScriptDir}/clickztc.js #{keyword.to_gbk} #{item_id} #{GetZTCLog} #{GetZTCLog}"#no need outfile 
+			run_exe = "#{Exec}  #{proxystr} #{ScriptDir}/clickztc.js #{keyword.to_gbk} #{item_id} #{GetZTCLog} #{GetZTCLog}"#no need outfile
 			puts run_exe
 			retn = exec_with_timeout(run_exe)
 

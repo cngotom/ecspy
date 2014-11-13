@@ -38,7 +38,7 @@ class Shop < ActiveRecord::Base
 
 	# def today_sales(offset = 0)
 	# 	sum = []
-	# 	shop_items.each {|item| 
+	# 	shop_items.each {|item|
 	# 		#puts " #{item.id} #{item.title} #{item.today_sales_money} #{item.today_sales_money}"
 	# 		res = item.today_sales(offset)
 	# 		sum.concat res if res.count > 0
@@ -50,13 +50,13 @@ class Shop < ActiveRecord::Base
 	def today_sales_count(offset = 0)
 		shop_items.inject(0) {|sum,item|
 			#puts " #{item.id} #{item.title} #{item.today_sales_count}"
-			
+
 			sum + item.today_sales_count(offset)
 		}
 	end
 
 	def today_sales_money(offset = 0)
-		shop_items.inject(0) {|sum,item| 
+		shop_items.inject(0) {|sum,item|
 			#puts " #{item.id} #{item.title} #{item.today_sales_money} #{item.today_sales_money}"
 			sum + item.today_sales_money(offset)
 		}
@@ -71,7 +71,7 @@ class Shop < ActiveRecord::Base
 			watched_ids << w
 		end
 		#in case of watche_ids is null
-		watched_ids << -1 
+		watched_ids << -1
 		where(['id not in (?)', watched_ids ])
 
 	end
@@ -84,12 +84,13 @@ class Shop < ActiveRecord::Base
 
 	validate :url_validate
 	def url_validate
-	    unless url  =~ /^http:\/\/(\w)*.(tmall|taobao).com\/$/ 
+	    #unless url  =~ /^http:\/\/(\w)*.(tmall|taobao).com\/$/
+	    unless url  =~ /^http:\/\/(\w)*.(tmall).com\/$/
 	    	errors[:url] << 'url格式不正确 参考 ： http://slwsp.tmall.com/'
 	    end
   	end
 
-# 
+#
 	# before save do
 	# 	url << '/' if url.last != '/'
 	# end

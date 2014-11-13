@@ -69,7 +69,8 @@
 
 		$('#shop_url').blur(function(){
 
-			if( /^http:\/\/\w*\.(tmall|taobao)\.com\//i.test($(this).val()))
+			//if( /^http:\/\/\w*\.(tmall|taobao)\.com\//i.test($(this).val()))
+			if( /^http:\/\/\w*\.(tmall)\.com\//i.test($(this).val()))
 			{
 				modify_val = $(this).val().substr(0,  $(this).val().indexOf("com/") + 4 );
 
