@@ -93,7 +93,8 @@ def merge
 	#merge item list
 	list_redis_client = Crawler::ItemListRedis.new(:key => 'RedisItemList')
 	while (data = list_redis_client.pop) != nil do
-		data = JSON.parse(data)
+    next if data.to_s.chomp.empty?
+    data = JSON.parse(data) 
 
 		shop = Shop.find(data['shop_id'])
 

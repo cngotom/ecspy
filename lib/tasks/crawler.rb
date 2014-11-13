@@ -212,7 +212,7 @@ module Crawler
 								content_redis_client.add line.to_json
 							else
 								#first line is description
-                next if line.chomp.empty?
+                next if line.to_s.chomp.empty?
 								line = JSON.parse(line)
 								line['id'] = item.id
 								sales_redis_client.add line.to_json
