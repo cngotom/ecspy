@@ -30,5 +30,6 @@
  *=require ./template
 
  * require demo
+ * require app
  */
 
