@@ -24,15 +24,30 @@ phantomjs  --load-images=no ./lib/tasks/phantomjs-script/getitem.js 35018792719 
 ```
 
 
-centos 重启
-/etc/init.d/mysqld start mysql启动
+#启动 from centos
+##rvm version
+rvm use 1.9.3
+
+##start mysql
+/etc/init.d/mysqld start
+
+##start merger
 RAILS_ENV=production nohup rake merge_daemon > /dev/null &
 
+##start redis
 redis-server /etc/redis.conf 
+
+##start resque
 resque-web -p 8282
+
+##start rails
 thin start -C myapp.yml
 
- /etc/init.d/crond start
-
-QUEUE=*  rake resque_work
+##start resque workers
 QUEUE=* nohup rake resque_work &`
+
+##start crond(optional)
+/etc/init.d/crond start
+
+
+
