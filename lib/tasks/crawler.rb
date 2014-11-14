@@ -147,6 +147,7 @@ module Crawler
 			puts run_exe
 			retn = exec_with_timeout(run_exe)
 			# => retn = 'ok'
+      retn = retn.to_s.split("\n").first
 			if retn.chomp == 'ok'
 				puts 'execute ok'
 
@@ -199,6 +200,7 @@ module Crawler
 		#		retn = exec_with_timeout run_exe
 			end
 
+      retn = retn.to_s.split("\n").first
 			if retn.chomp == 'ok'
 				puts 'execute ok'
 
