@@ -238,9 +238,9 @@ module Crawler
 
 			if retn.chomp != 'closed' && retn.chomp != 'ok'
 				puts retn
+				closed_redis_client.add({'id' => item.id }.to_json)
 				raise retn
 			end
-
 
 
 		end
