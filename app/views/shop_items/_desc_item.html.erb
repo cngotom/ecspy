@@ -50,7 +50,10 @@
 									<td> <%= item.updated_at.strftime('%Y-%m-%d %H:%M:%S') %></td>
 									<td> <%= item.title %></td>
 									<td> <%= item.price %></td>
-									<td> <%= link_to (image_tag item.thumb ,:class=>'table_img_thumb'),item.thumb,target: "_blank" %></td>
+                  <td> <%= if !item.thumb.empty? 
+                             link_to (image_tag item.thumb ,:class=>'table_img_thumb'),item.thumb,target: "_blank"
+                           end
+                        %></td>
 								</tr>
 							<% end %>
 						
